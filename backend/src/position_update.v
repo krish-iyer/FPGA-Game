@@ -84,34 +84,48 @@ module position_update_function (input clk,
         else begin 
             if ((move_direction == RIGHT) && 
                  ((valid_moves & RIGHT) != 0)) begin  
+                 
+                 reg_new_pos_x= curr_pos_x + DISTANCE_BETWEEN_BLOCKS; 
+                 reg_new_pos_y= curr_pos_y; 
             
             
             end 
             else if ((move_direction == LEFT) && 
                     ((valid_moves & LEFT) != 0)) begin  
+                    
+                 reg_new_pos_x= curr_pos_x - DISTANCE_BETWEEN_BLOCKS; 
+                 reg_new_pos_y= curr_pos_y; 
             
             
             end 
             else if ((move_direction == UP) && 
-                     ((valid_moves & UP) != 0)) begin  
+                     ((valid_moves & UP) != 0)) begin 
+                     
+                     reg_new_pos_x= curr_pos_x; 
+                     reg_new_pos_y= curr_pos_y + DISTANCE_BETWEEN_BLOCKS;  
             
             
             end 
             else if ((move_direction == DOWN) && 
                     ((valid_moves & DOWN) != 0)) begin  
+                    
+                    reg_new_pos_x= curr_pos_x; 
+                    reg_new_pos_y= curr_pos_y - DISTANCE_BETWEEN_BLOCKS;
             
             
             end          
             else begin 
-            
+                    reg_new_pos_x = curr_pos_x; 
+                    reg_new_pos_y = curr_pos_y; 
             
             end 
         end  
             
     end 
+    
+    assign new_pos_x = reg_new_pos_x; 
+    assign new_pos_y = reg_new_pos_y; 
 	
-	
-
 
 
 endmodule
