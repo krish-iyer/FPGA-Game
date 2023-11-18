@@ -18,29 +18,31 @@ module _map_index_to_display_tb();
         // basic test case 
         // keeping the movement to the center with 7 pixels and 
         // keeping the visible area in mind (336,27)
-        // should produce (334,34)
+        // should produce (343,34)
         matrix_idx_x = 7'd0; 
-        matrix_idx_y= 7'd0; 
+        matrix_idx_y= 6'd0; 
         
-        
+        # 5
         
         // middle equal indices 
         // keeping the movement to the center with 7 pixels and 
         // keeping the visible area in mind (336,27)
         // should produce (455,146)
         matrix_idx_x = 7'd7; 
-        matrix_idx_y= 7'd7; 
+        matrix_idx_y= 6'd7; 
         
+        #5
         // not equal indices 
         // keeping the movement to the center with 7 pixels and 
         // keeping the visible area in mind (336,27)
         // should produce (487,114)
         matrix_idx_x = 7'd9; 
-        matrix_idx_y= 7'd5; 
+        matrix_idx_y= 6'd5;
+  
         
        
 
-        #1200 $finish;
+        #5 $finish;
 
     end
     
