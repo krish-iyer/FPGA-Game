@@ -62,10 +62,6 @@
     ```
     
 
-# Resource
-
-[Part 1 — Pac Man Tutorial 1.0 documentation (pygamezero-pacman.readthedocs.io)](https://pygamezero-pacman.readthedocs.io/en/latest/part1.html)
-
 # Functions to implement
 
 1. BlockMemory IP
