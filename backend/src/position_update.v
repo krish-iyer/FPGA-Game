@@ -47,7 +47,7 @@ module position_update_function (input clk,
 	reg [9:0]reg_new_pos_y; 
 	
 	
-	valid_move_detector (.curr_pos_x(curr_pos_x), .curr_pos_y(curr_pos_y), 
+	valid_move_detector inside_pos_update_valid_move_detector (.curr_pos_x(curr_pos_x), .curr_pos_y(curr_pos_y), 
 							.valid_moves(valid_moves));
 	
 	always @(posedge clk, rst) begin
