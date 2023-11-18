@@ -17,16 +17,29 @@ module valid_move_detector (input clk, input rst,
 	parameter RIGHT= 4'b0001; 
 	parameter LEFT=  4'b1000;	
 	parameter UP=    4'b0010;
-	parameter DOWN=  4'b0100;  			
+	parameter DOWN=  4'b0100;  	
+	
+	// TODO TODO TODO TODO TODO	
+	// TODO TODO TODO TODO TODO	
+	// TODO TODO TODO TODO TODO	
+	// TODO TODO TODO TODO TODO	
+	// TODO TODO TODO TODO TODO	
+	// TODO TODO TODO TODO TODO	
     // this code will be updated later 
     // it is now allowing all moves, but later it will use the memory block 
     // to extract the date from it and return the valid moves 
-    always @(posedge clk, rst)
-    begin 
+    always @(posedge clk, rst) begin
+     
         if (rst)
-            reg_valid_moves= 4'b0000; 
+            reg_valid_moves= 4'b0000;
+        
+        else begin 
+            reg_valid_moves= RIGHT & LEFT & UP & DOWN; 
+        end  
             
-    end 							
+    end 	
+    
+    assign valid_moves= reg_valid_moves; 						
     
 
 
