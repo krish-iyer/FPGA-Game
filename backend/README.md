@@ -10,7 +10,7 @@
 # Some Helpful Maps
 
 ## map
-    
+
 - latest map [20 X 20]
     
     ```
@@ -87,8 +87,9 @@
 // 1000-> left
 // 0010-> up
 // 0100-> down
-module input_board (input key_input,
-										output [3:0]move_direction);
+module input_board (); 
+	input key_input; 
+	output [3:0] move_direction;
 // here goes your code 
 endmodule
 ```
@@ -96,7 +97,6 @@ endmodule
 ## Map index to display Function
 
 ```verilog
-
 // this function maps a matrix position to the actual display positions
 
 // this function also should  the resolution of the VGA
@@ -118,17 +118,20 @@ endmodule
 // each pixel represents 16x16 pixels in the original display
 // matrix_idx_x -> 7 bits
 // matrix_idx_y -> 6 bits 
-module _map_index_to_display (input [6:0]matrix_idx_x,
-															input [5:0]matrix_idx_y,
-															output [10:0]display_pos_x,
-															output [9:0]display_pos_y);
+module _map_index_to_display (); 
+  input [6:0]matrix_idx_x;
+  input [5:0]matrix_idx_y;
+  output [10:0]display_pos_x;
+  output [9:0]display_pos_y;
 // here goes your code 
 endmodule
  
-module _display_to_map_index (input [6:0]display_pos_x,
-															input [5:0]display_pos_y,
-															output [10:0]matrix_idx_x,
-															output [9:0]matrix_idx_y);
+module _display_to_map_index (); 
+  input [6:0]display_pos_x;
+  input [5:0]display_pos_y;
+  output [10:0]matrix_idx_x;
+  output [9:0]matrix_idx_y;
+
 endmodule
 ```
 
@@ -147,17 +150,20 @@ endmodule
 // Pinky (pink)   -> 2 
 // Inky (cyan)    -> 3
 // Clyde (orange) -> 4 
-module position_update_function ( input clk,
-																	input rst, 
-																	input [10:0] curr_pos_x,
-																	input [9:0]curr_pos_y,
-																	input [3:0] move_direction,
-																	input [2:0] which_sprite,
-																	output [10:0]new_pos_x,
-																	output [9:0]new_pos_y);
+module position_update_function (); 
+
+	input clk;
+	input rst; 
+	input [10:0] curr_pos_x;
+	input [9:0]curr_pos_y;
+	input [3:0] move_direction;
+	input [2:0] which_sprite;
+	output [10:0]new_pos_x;
+	output [9:0]new_pos_y; 
+				
+				
 
 endmodule
-
 ```
 
 ## Ghost Control Function
@@ -165,11 +171,14 @@ endmodule
 ```verilog
 // this function takes the positions of the ghost and the pacman
 // return move_direction for the ghost
-module ghost_control (input [10:0]ghost_curr_pos_x,
-											input [9:0]ghost_curr_pos_y,
-											input [10:0]pacman_curr_pos_x,
-											input [9:0]pacman_curr_pos_y,
-											output [3:0]move_direction);
+module ghost_control (); 
+
+			input [10:0]ghost_curr_pos_x; 
+			input [9:0]ghost_curr_pos_y; 
+			input [10:0]pacman_curr_pos_x; 
+			input [9:0]pacman_curr_pos_y; 
+			output [3:0]move_direction; 
+		
 
 endmodule
 ```
@@ -188,13 +197,14 @@ endmodule
 // 0010-> up
 // 0100-> down
 // 0110 -> it can move up and down but not right and left
-module valid_move_detector (input clk,
-														input rst, 
-														input [10:0]curr_pos_x,
-														input [9:0]curr_pos_y, 
-														output [3:0] valid_moves);
+module valid_move_detector (); 
+	input clk;
+	input rst; 
+	input [10:0]curr_pos_x;
+	input [9:0]curr_pos_y; 
+	output [3:0] valid_moves;
 
-endmodule 
+endmodule
 ```
 
 ## Collision Detection
@@ -203,12 +213,14 @@ endmodule
 // this module takes all the positions of a ghost and pacman
 // it returns if pacman is dead or not
 // it should use the display to matrix index mapping function
-module collision_detection (input [10:0]ghost_curr_pos_x,
-														input [9:0]ghost_curr_pos_y,
-														input [10:0]pacman_curr_pos_x,
-														input [9:0]pacman_curr_pos_y,
-														output pacman_is_dead);
+module collision_detection (); 
+
+	input [10:0]ghost_curr_pos_x; 
+	input [9:0]ghost_curr_pos_y; 
+	input [10:0]pacman_curr_pos_x; 
+	input [9:0]pacman_curr_pos_y; 
+	output pacman_is_dead;
 											
 
-endmodule 
+endmodule
 ```
