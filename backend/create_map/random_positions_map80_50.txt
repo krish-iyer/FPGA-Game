@@ -1,52 +1,52 @@
 {
   "M": {
     "matrix_index_pos": [
-      5,
-      33
+      64,
+      17
     ],
     "display_pos": [
-      423,
-      562
+      1367,
+      306
     ]
   },
   "P": {
     "matrix_index_pos": [
-      7,
-      33
+      6,
+      25
     ],
     "display_pos": [
-      455,
-      562
+      439,
+      434
     ]
   },
   "B": {
     "matrix_index_pos": [
-      11,
-      26
+      66,
+      6
     ],
     "display_pos": [
-      519,
-      450
+      1399,
+      130
     ]
   },
   "I": {
     "matrix_index_pos": [
-      9,
-      26
+      43,
+      23
     ],
     "display_pos": [
-      487,
-      450
+      1031,
+      402
     ]
   },
   "C": {
     "matrix_index_pos": [
-      28,
-      21
+      67,
+      2
     ],
     "display_pos": [
-      791,
-      370
+      1415,
+      66
     ]
   }
 }
