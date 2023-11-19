@@ -97,7 +97,7 @@ def determine_random_positions(dim_horizontal: int, dim_vertical: int, dot_equal
             idx_vertical= random.randint(0, dim_vertical - 1)
             print ("idx_horizontal: {}, idx_vertical: {}, string length: {}".format(idx_horizontal, idx_vertical, len(dot_wall_representation)))
             # added one to account for the endline character
-            str_idx= idx_horizontal * (dim_vertical+1) + idx_vertical
+            str_idx= idx_vertical * (dim_horizontal+1) + idx_horizontal
             if dot_equal_representation[str_idx] == '.':
                 found_flag = True 
                 # replace the dot with the corresponding character
