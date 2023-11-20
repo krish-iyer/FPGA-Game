@@ -13,25 +13,28 @@ module position_update_function (input clk,
                                  output [9:0]new_pos_y);
  
     // here defines the reset positions for the sprites 
+    // we assume the  matrix 
+    // all default positions are taken from the random_position file 
+    // created on the create_map branch 
     parameter PACMAN= 0;
-    parameter PACMAN_RESET_POS_X= 11'd10;
-    parameter PACMAN_RESET_POS_Y= 10'd10;
+    parameter PACMAN_RESET_POS_X= 11'd1367;
+    parameter PACMAN_RESET_POS_Y= 10'd306;
     
     parameter BLINKY=1; 
-    parameter BLINKY_POS_X= 11'd10;
-    parameter BLINKY_RESET_POS_Y= 10'd10;
+    parameter BLINKY_POS_X= 11'd1399;
+    parameter BLINKY_RESET_POS_Y= 10'd130;
     
     parameter PINKY=2; 
-    parameter PINKY_RESET_POS_X= 11'd10;
-    parameter PINKY_RESET_POS_Y= 10'd10;
+    parameter PINKY_RESET_POS_X= 11'd439;
+    parameter PINKY_RESET_POS_Y= 10'd434;
     
     parameter INKY=3; 
-    parameter INKY_RESET_POS_X= 11'd10;
-    parameter INKY_RESET_POS_Y= 10'd10;
+    parameter INKY_RESET_POS_X= 11'd1031;
+    parameter INKY_RESET_POS_Y= 10'd402;
     
     parameter CLYDE=4; 
-    parameter CLYDE_RESET_POS_X= 11'd10;
-    parameter CLYDE_RESET_POS_Y= 10'd10;
+    parameter CLYDE_RESET_POS_X= 11'd1415;
+    parameter CLYDE_RESET_POS_Y= 10'd66;
     
     
     // here defines the directions 
@@ -40,11 +43,29 @@ module position_update_function (input clk,
 	parameter UP=    4'b0010;
 	parameter DOWN=  4'b0100; 
 	
+	// this is the distance between the center of blocks 
 	parameter DISTANCE_BETWEEN_BLOCKS= 15; 
 	
+	// here defines the wrap_around positions
+	// if pacman or ghosts are at the right most and 
+	// they get out of the screen it will come to the left most 
+	// also this check will be good to make sure the characters 
+	// are not out of display 
+    // here Right and Left wrap around positions corresponds to x 	
+    // otherwise corresponds to y
+    // Keep in mind that the starting visible area are: 
+    // horizontally 336 
+    // vertically 27 
+    parameter WRAP_RIGHT= 343; // get it to the the left of the screen [x=7+336]
+    parameter WRAP_LEFT= 1607; // assuming that matrix is 80X50 [x=79*16+7+336]
+    parameter WRAP_UP= 818;  //get it to the bottom of the screen [y=49*16+7+27]
+    parameter WRAP_DOWN= 34; // get it to the top of the screen [y=7+27]
+    
 	wire [3:0] valid_moves;
 	reg [10:0]reg_new_pos_x; 
 	reg [9:0]reg_new_pos_y; 
+	
+	
 	
 	
 	valid_move_detector inside_pos_update_valid_move_detector (.curr_pos_x(curr_pos_x), .curr_pos_y(curr_pos_y), 
@@ -83,17 +104,26 @@ module position_update_function (input clk,
         
         else begin 
             if ((move_direction == RIGHT) && 
-                 ((valid_moves & RIGHT) != 0)) begin  
+                 ((valid_moves & RIGHT) != 0)) begin 
                  
-                 reg_new_pos_x= curr_pos_x + DISTANCE_BETWEEN_BLOCKS; 
+                 // wrap around for the right move 
+                 if ((curr_pos_x + DISTANCE_BETWEEN_BLOCKS) > WRAP_LEFT) 
+                        curr_pos_x = WRAP_RIGHT; 
+                 else 
+                    reg_new_pos_x= curr_pos_x + DISTANCE_BETWEEN_BLOCKS; 
+                    
                  reg_new_pos_y= curr_pos_y; 
             
             
             end 
             else if ((move_direction == LEFT) && 
                     ((valid_moves & LEFT) != 0)) begin  
-                    
-                 reg_new_pos_x= curr_pos_x - DISTANCE_BETWEEN_BLOCKS; 
+                 
+                 if ((curr_pos_x - DISTANCE_BETWEEN_BLOCKS)< WRAP_RIGHT)
+                    reg_new_pos_x= WRAP_LEFT; 
+                 else 
+                    reg_new_pos_x= curr_pos_x - DISTANCE_BETWEEN_BLOCKS;
+                     
                  reg_new_pos_y= curr_pos_y; 
             
             
@@ -102,15 +132,29 @@ module position_update_function (input clk,
                      ((valid_moves & UP) != 0)) begin 
                      
                      reg_new_pos_x= curr_pos_x; 
-                     reg_new_pos_y= curr_pos_y + DISTANCE_BETWEEN_BLOCKS;  
+                     
+                     if ((curr_pos_y - DISTANCE_BETWEEN_BLOCKS) < WRAP_DOWN)
+                        reg_new_pos_y = WRAP_UP; 
+                     else 
+                        reg_new_pos_y= curr_pos_y - DISTANCE_BETWEEN_BLOCKS;
+                        
+                     
+                       
             
             
             end 
             else if ((move_direction == DOWN) && 
-                    ((valid_moves & DOWN) != 0)) begin  
+                    ((valid_moves & DOWN) != 0)) begin 
+
+                    reg_new_pos_x= curr_pos_x;  
                     
-                    reg_new_pos_x= curr_pos_x; 
-                    reg_new_pos_y= curr_pos_y - DISTANCE_BETWEEN_BLOCKS;
+                    if ((curr_pos_y + DISTANCE_BETWEEN_BLOCKS)> WRAP_UP)
+                        reg_new_pos_y = WRAP_DOWN; 
+                    else 
+                        reg_new_pos_y= curr_pos_y + DISTANCE_BETWEEN_BLOCKS;
+                        
+                    
+                    
             
             
             end          
