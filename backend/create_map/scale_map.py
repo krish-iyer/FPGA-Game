@@ -123,8 +123,23 @@ def determine_random_positions(dim_horizontal: int, dim_vertical: int, dot_equal
 
     return dot_equal_representation
                 
-            
 
+def create_coe_file(dim_horizontal: int, dim_vertical: int,  zero_one_representation: str) -> str:
+    RADIX: int= 2  
+    coe_str: str= """; this map is 80 X 50 with base {0}
+; this coe defines the map of the game to be put in the block memory 
+; we defined the seperator as , character
+
+memory_initialization_radix = {0};
+memory_initialization_vector =\n""".format(RADIX)
+
+    zero_one_representation= zero_one_representation.replace("\n", ",\n")
+    coe_str += zero_one_representation
+
+    coe_file_name: str= "coe_map{}_{}.coe".format(dim_horizontal, dim_vertical)
+    fwrite= open(coe_file_name, "w")
+    fwrite.write(coe_str)
+    return coe_str
 
 
 if __name__ == "__main__":
@@ -138,3 +153,4 @@ if __name__ == "__main__":
     zero_one_representation: str= scale_map(dim_horizontal,dim_vertical,"map20_20.txt")
     dot_wall_representation: str= determine_dot_equal_representation(dim_horizontal, dim_vertical,zero_one_representation )
     random_positions_pacman: str= determine_random_positions(dim_horizontal, dim_vertical, dot_wall_representation)
+    coe_str: str= create_coe_file(dim_horizontal, dim_vertical, zero_one_representation)
