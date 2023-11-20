@@ -95,6 +95,24 @@ module ghost_control (
                 else 
                    reg_move_dir= DOWN;    
 	   
+	       default:  
+	           // here we made the priority for up/down then right/left 
+	           // these are not cases we should provide based on the mask 
+	           // we created earlier with the previous direction 
+	           // it can't assert the right and the left at once 
+	           // so is for up and down  
+                if (no_reverse_valid_moves & UP == UP)
+                   reg_move_dir = UP;
+                else if (no_reverse_valid_moves & DOWN == DOWN)
+                   reg_move_dir= DOWN; 
+                else if (no_reverse_valid_moves & RIGHT == RIGHT)
+                   reg_move_dir= RIGHT; 
+                else if (no_reverse_valid_moves & LEFT == LEFT)
+                   reg_move_dir= LEFT; 
+                
+                else 
+                    reg_move_dir = 4'b0000;   
+                  
 	   endcase 
    
     end 
