@@ -12,11 +12,11 @@ module collision_detection (
 	); 
 	
 	
-    wire [10:0]pacman_matrix_idx_x;
-    wire [9:0]pacman_matrix_idx_y;
+    wire [6:0]pacman_matrix_idx_x;
+    wire [5:0]pacman_matrix_idx_y;
 
-    wire [10:0]ghost_matrix_idx_x;
-    wire [9:0] ghost_matrix_idx_y;
+    wire [6:0]ghost_matrix_idx_x;
+    wire [5:0] ghost_matrix_idx_y;
                                   
                                   
 	
