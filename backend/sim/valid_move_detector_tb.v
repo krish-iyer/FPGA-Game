@@ -14,7 +14,7 @@ module valid_move_detector_tb();
 
     initial begin
         clka = 1 ; 
-    
+        # 20     
         // I will reverse what I did in the map_index_to_display testbench 
 
         // middle equal indices 
@@ -26,7 +26,7 @@ module valid_move_detector_tb();
         display_pos_x = 11'd455; 
         display_pos_y= 10'd146; 
         
-        #5
+        #30
         // not equal indices 
         // keeping the movement to the center with 7 pixels and 
         // keeping the visible area in mind (336,27)
@@ -35,6 +35,18 @@ module valid_move_detector_tb();
         // valid_moves = 4'b 1111; 
         display_pos_x = 11'd487; 
         display_pos_y= 10'd114; 
+       
+       
+       #30
+        // not equal indices 
+        // different values than the previous test cases 
+        // keeping the movement to the center with 7 pixels and 
+        // keeping the visible area in mind (336,27)
+        // should produce (1,25)
+        // also this allows movement in all directions  but up
+        // valid_moves = 4'b 1101; 
+        display_pos_x = 11'd359; 
+        display_pos_y= 10'd434; 
         
 
         #100 $finish;
