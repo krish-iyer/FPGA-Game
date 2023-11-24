@@ -3,7 +3,8 @@
 // it returns the updated position for any sprite
 // it uses Map index to display Helper Function
 // it also uses teh valid move detector function to detect if the move is valid 
-module position_update_function (input clk,
+module position_update_function (
+                                input clk, 
                                  input rst,
                                  input [10:0]curr_pos_x,
                                  input [9:0]curr_pos_y,
@@ -16,12 +17,13 @@ module position_update_function (input clk,
     // we assume the  matrix 
     // all default positions are taken from the random_position file 
     // created on the create_map branch 
+    // pacman -> 0; blinky -> 1; pinky -> 2; inky -> 3; clyde -> 4; 
     parameter PACMAN= 0;
     parameter PACMAN_RESET_POS_X= 11'd1367;
     parameter PACMAN_RESET_POS_Y= 10'd306;
     
     parameter BLINKY=1; 
-    parameter BLINKY_POS_X= 11'd1399;
+    parameter BLINKY_RESET_POS_X= 11'd1399;
     parameter BLINKY_RESET_POS_Y= 10'd130;
     
     parameter PINKY=2; 
@@ -44,7 +46,7 @@ module position_update_function (input clk,
 	parameter DOWN=  4'b0100; 
 	
 	// this is the distance between the center of blocks 
-	parameter DISTANCE_BETWEEN_BLOCKS= 15; 
+	parameter DISTANCE_BETWEEN_BLOCKS= 16; 
 	
 	// here defines the wrap_around positions
 	// if pacman or ghosts are at the right most and 
@@ -68,10 +70,10 @@ module position_update_function (input clk,
 	
 	
 	
-	valid_move_detector inside_pos_update_valid_move_detector (.curr_pos_x(curr_pos_x), .curr_pos_y(curr_pos_y), 
+	valid_move_detector inside_pos_update_valid_move_detector (.clk(clk),.curr_pos_x(curr_pos_x), .curr_pos_y(curr_pos_y), 
 							.valid_moves(valid_moves));
 	
-	always @(posedge clk, rst) begin
+	always @(*) begin
      
         if (rst)begin 
             case (which_sprite)
@@ -108,7 +110,7 @@ module position_update_function (input clk,
                  
                  // wrap around for the right move 
                  if ((curr_pos_x + DISTANCE_BETWEEN_BLOCKS) > WRAP_LEFT) 
-                        curr_pos_x = WRAP_RIGHT; 
+                        reg_new_pos_x = WRAP_RIGHT; 
                  else 
                     reg_new_pos_x= curr_pos_x + DISTANCE_BETWEEN_BLOCKS; 
                     
