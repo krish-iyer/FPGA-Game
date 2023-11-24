@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
--- Date        : Sat Oct 28 18:17:27 2023
+-- Date        : Sat Oct 28 18:17:26 2023
 -- Host        : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top clk_wiz_0 -prefix
+--               clk_wiz_0_ clk_wiz_0_stub.vhdl
 -- Design      : clk_wiz_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1

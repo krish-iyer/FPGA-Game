@@ -1,0 +1,29 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav

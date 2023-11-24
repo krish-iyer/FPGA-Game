@@ -1,0 +1,1259 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Nov 24 18:53:43 2023
+# Process ID: 7856
+# Current directory: /home/krishnan/vivado_ws/vga
+# Command line: vivado
+# Log file: /home/krishnan/vivado_ws/vga/vivado.log
+# Journal file: /home/krishnan/vivado_ws/vga/vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script '/home/krishnan/.Xilinx/Vivado/2019.2/Vivado_init.tcl'
+start_gui
+open_project /home/krishnan/vivado_ws/vga/vga.xpr
+WARNING: [Board 49-69] Validation failed for board file /tools/Xilinx/Vitis/Vivado/2019.2/data/boards/board_files/zub1cg/1.0/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for avnet.com:zuboard_1cg:szg_std_j6:1.0
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - /tools/Xilinx/Vitis/Vivado/2019.2/data/boards/board_files/zub1cg/1.0/board.xml
+WARNING: [Board 49-69] Validation failed for board file /tools/Xilinx/Vitis/Vivado/2019.2/data/boards/board_files/zub1cg/1.1/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for avnet.com:zuboard_1cg:hsio_std_j6:1.1
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - /tools/Xilinx/Vitis/Vivado/2019.2/data/boards/board_files/zub1cg/1.1/board.xml
+WARNING: [Board 49-69] Validation failed for board file /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.0/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for avnet.com:zuboard_1cg:szg_std_j6:1.0
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.0/board.xml
+WARNING: [Board 49-69] Validation failed for board file /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.1/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for avnet.com:zuboard_1cg:hsio_std_j6:1.1
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.1/board.xml
+Scanning sources...
+Finished scanning sources
+WARNING: [Board 49-69] Validation failed for board file /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.0/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for avnet.com:zuboard_1cg:szg_std_j6:1.0
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.0/board.xml
+WARNING: [Board 49-69] Validation failed for board file /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.1/board.xml:
+ Component Sub Type should be ddr/switch/push_button/lcd/led/ethernet/sfp/sma/mux/reset/system_reset/uart/mgt_clock/system_clock/memory_flash_qspi/memory_flash_bpi/memory/dimm/pmod/fmc_hpc/fmc_lpc/fmc_plus/pcie/fixed_io/chip for avnet.com:zuboard_1cg:hsio_std_j6:1.1
+
+CRITICAL WARNING: [Board 49-56] Problem parsing board file - /tools/Xilinx/Vivado/2019.2/data/boards/board_files/zub1cg/1.1/board.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vitis/Vivado/2019.2/data/ip'.
+open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 7134.980 ; gain = 558.234 ; free physical = 9649 ; free virtual = 35725
+update_compile_order -fileset sources_1
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 19:00:35 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+open_hw_manager
+connect_hw_server -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.2
+  **** Build date : Nov  6 2019 at 22:13:42
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+****** Xilinx cs_server v2019.2.0
+  **** Build date : Nov 07 2019-08:41:48
+    ** Copyright 2017-2019 Xilinx, Inc. All Rights Reserved.
+
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292ABF737A
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 19:06:49 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 19:06:49 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/coe_map80_50.coe' provided. It will be converted relative to IP Instance files '../../../../vga.srcs/sources_1/new/coe_map80_50.coe'
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name pacman_map_blockmem
+set_property -dict [list CONFIG.Component_Name {pacman_map_blockmem} CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {80} CONFIG.Write_Depth_A {50} CONFIG.Read_Width_A {80} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {80} CONFIG.Read_Width_B {80} CONFIG.Enable_B {Always_Enabled} CONFIG.Register_PortB_Output_of_Memory_Primitives {false} CONFIG.Load_Init_File {true} CONFIG.Coe_File {/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/coe_map80_50.coe} CONFIG.Port_A_Write_Rate {0} CONFIG.Port_B_Clock {0} CONFIG.Port_B_Write_Rate {0} CONFIG.Port_B_Enable_Rate {0}] [get_ips pacman_map_blockmem]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'pacman_map_blockmem' to 'pacman_map_blockmem' is not allowed and is ignored.
+INFO: [IP_Flow 19-3484] Absolute path of file '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/coe_map80_50.coe' provided. It will be converted relative to IP Instance files '../../new/coe_map80_50.coe'
+generate_target {instantiation_template} [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'pacman_map_blockmem'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'pacman_map_blockmem'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'pacman_map_blockmem'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'pacman_map_blockmem'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'pacman_map_blockmem'...
+catch { config_ip_cache -export [get_ips -all pacman_map_blockmem] }
+export_ip_user_files -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem.xci]
+launch_runs -jobs 8 pacman_map_blockmem_synth_1
+[Fri Nov 24 19:15:55 2023] Launched pacman_map_blockmem_synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/pacman_map_blockmem_synth_1/runme.log
+export_simulation -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem.xci] -directory /home/krishnan/vivado_ws/vga/vga.ip_user_files/sim_scripts -ip_user_files_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files -ipstatic_source_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/modelsim} {questa=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/questa} {ies=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/ies} {xcelium=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/xcelium} {vcs=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/vcs} {riviera=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+ERROR: [VRFC 10-2989] 'curr_y' is not declared [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:45]
+ERROR: [VRFC 10-2865] module 'drawcon' ignored due to previous errors [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:23]
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/xvlog.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:12 . Memory (MB): peak = 9397.477 ; gain = 0.000 ; free physical = 7443 ; free virtual = 33931
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+
+****** Webtalk v2019.2 (64-bit)
+  **** SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+  **** IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/xsim.dir/vga_out_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Nov 24 19:37:39 2023...
+run_program: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 9432.488 ; gain = 0.000 ; free physical = 7362 ; free virtual = 33918
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+WARNING: Simulation object /vga_out_tb/game_top_inst/vga_out_inst/pix_r_val was not found in the design.
+WARNING: Simulation object /vga_out_tb/game_top_inst/vga_out_inst/pix_g_val was not found in the design.
+WARNING: Simulation object /vga_out_tb/game_top_inst/vga_out_inst/pix_b_val was not found in the design.
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 9495.520 ; gain = 98.043 ; free physical = 7280 ; free virtual = 33844
+run all
+run: Time (s): cpu = 00:00:04 ; elapsed = 00:00:14 . Memory (MB): peak = 9495.520 ; gain = 0.000 ; free physical = 7267 ; free virtual = 33879
+save_wave_config {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg}
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+relaunch_sim: Time (s): cpu = 00:00:20 ; elapsed = 00:00:07 . Memory (MB): peak = 9495.520 ; gain = 0.000 ; free physical = 7309 ; free virtual = 33874
+run all
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:11 . Memory (MB): peak = 9495.520 ; gain = 0.000 ; free physical = 7223 ; free virtual = 33827
+save_wave_config {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 9697.617 ; gain = 45.023 ; free physical = 7245 ; free virtual = 33816
+run all
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 9697.617 ; gain = 0.000 ; free physical = 7205 ; free virtual = 33814
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 9737.637 ; gain = 40.020 ; free physical = 7233 ; free virtual = 33800
+run all
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 9737.637 ; gain = 0.000 ; free physical = 7208 ; free virtual = 33798
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:09:18 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:09:18 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 10100.812 ; gain = 16.008 ; free physical = 7085 ; free virtual = 33711
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:10:37 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:10:37 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 10113.820 ; gain = 13.008 ; free physical = 7073 ; free virtual = 33700
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:13:33 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:13:33 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10172.848 ; gain = 27.012 ; free physical = 7067 ; free virtual = 33697
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:15:13 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:15:13 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+save_wave_config {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 10217.871 ; gain = 13.008 ; free physical = 7090 ; free virtual = 33701
+run all
+run: Time (s): cpu = 00:00:04 ; elapsed = 00:00:13 . Memory (MB): peak = 10217.871 ; gain = 0.000 ; free physical = 7050 ; free virtual = 33707
+run all
+blk_mem_gen_v8_4_4 WARNING: Address 32 is outside range for A Read
+run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:22 . Memory (MB): peak = 10217.871 ; gain = 0.000 ; free physical = 6988 ; free virtual = 33712
+run all
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 10217.871 ; gain = 0.000 ; free physical = 6967 ; free virtual = 33718
+run all
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 10217.871 ; gain = 0.000 ; free physical = 6941 ; free virtual = 33720
+save_wave_config {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 10259.891 ; gain = 40.020 ; free physical = 7074 ; free virtual = 33699
+run all
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 10259.891 ; gain = 0.000 ; free physical = 7071 ; free virtual = 33718
+run all
+run all
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:19 . Memory (MB): peak = 10259.891 ; gain = 0.000 ; free physical = 6999 ; free virtual = 33718
+run all
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 10259.891 ; gain = 0.000 ; free physical = 6961 ; free virtual = 33709
+save_wave_config {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:35:43 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:35:43 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:39:20 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:39:20 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 10350.934 ; gain = 24.012 ; free physical = 6946 ; free virtual = 33675
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:44:24 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:44:24 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:49:23 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:49:23 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 10382.949 ; gain = 8.004 ; free physical = 6518 ; free virtual = 33418
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:55:38 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:55:38 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 10516.016 ; gain = 16.008 ; free physical = 6259 ; free virtual = 33255
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 21:57:23 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 21:57:23 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10628.070 ; gain = 13.008 ; free physical = 6480 ; free virtual = 33271
+run all
+WARNING: [Simulator 45-29] Cannot open source file /wrk/2019.2/continuous/2019_11_06_2708876/packages/customer/vivado/data/ip/xilinx/blk_mem_gen_v8_4/simulation/blk_mem_gen_v8_4.v: file does not exist.
+run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:15 . Memory (MB): peak = 10628.070 ; gain = 0.000 ; free physical = 6464 ; free virtual = 33262
+run all
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 10636.074 ; gain = 0.000 ; free physical = 6488 ; free virtual = 33301
+save_wave_config {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 10641.078 ; gain = 5.004 ; free physical = 6529 ; free virtual = 33296
+run all
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 10641.078 ; gain = 0.000 ; free physical = 6499 ; free virtual = 33300
+update_compile_order -fileset sources_1
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 10894.305 ; gain = 0.000 ; free physical = 6262 ; free virtual = 33069
+INFO: [Netlist 29-17] Analyzing 20 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'clk_wiz_0_inst/clk_in1' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 11447.469 ; gain = 0.000 ; free physical = 5748 ; free virtual = 32555
+Restored from archive | CPU: 0.020000 secs | Memory: 0.386307 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 11447.469 ; gain = 0.000 ; free physical = 5748 ; free virtual = 32555
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 11447.469 ; gain = 0.000 ; free physical = 5748 ; free virtual = 32555
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:16 ; elapsed = 00:00:15 . Memory (MB): peak = 11722.230 ; gain = 923.078 ; free physical = 5664 ; free virtual = 32474
+report_utilization -name utilization_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 23:13:12 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 23:13:12 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 12091.406 ; gain = 21.012 ; free physical = 5563 ; free virtual = 32417
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File '/tools/Xilinx/Vitis/Vivado/2019.2/data/xsim/xsim.ini' copied to run dir:'/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'vga_out_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/coe_map80_50.coe'
+INFO: [SIM-utils-43] Exported '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/pacman_map_blockmem.mif'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xvlog --incr --relax -prj vga_out_tb_vlog.prj
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_wiz_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_div
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module drawcon
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module game_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module vga_out_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9bd712847341a08a8c5cf3bf2a01eb --incr --debug typical --relax --mt 8 -L blk_mem_gen_v8_4_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot vga_out_tb_behav xil_defaultlib.vga_out_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module unisims_ver.IBUF
+Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
+Compiling module unisims_ver.BUFG
+Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
+Compiling module xil_defaultlib.clk_wiz_0
+Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.pacman_map_blockmem
+Compiling module xil_defaultlib.drawcon
+Compiling module xil_defaultlib.vga_out
+Compiling module xil_defaultlib.game_top
+Compiling module xil_defaultlib.vga_out_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot vga_out_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "vga_out_tb_behav -key {Behavioral:sim_1:Functional:vga_out_tb} -tclbatch {vga_out_tb.tcl} -view {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module vga_out_tb.game_top_inst.drawcon_inst.map.inst.native_mem_module.blk_mem_gen_v8_4_4_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Warning: [Unisim MMCME2_ADV-20] Input CLKIN1 period and attribute CLKIN1_PERIOD are not same. Instance vga_out_tb.game_top_inst.clk_wiz_0_inst.inst.mmcm_adv_inst 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'vga_out_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 12101.410 ; gain = 10.004 ; free physical = 5593 ; free virtual = 32417
+run all
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 12101.410 ; gain = 0.000 ; free physical = 5571 ; free virtual = 32428
+run all
+run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 12101.410 ; gain = 0.000 ; free physical = 5550 ; free virtual = 32423
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 23:21:50 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 23:21:50 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 12226.473 ; gain = 26.016 ; free physical = 5514 ; free virtual = 32389
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 23:29:46 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 23:29:46 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP '/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' is already up-to-date
+[Fri Nov 24 23:34:17 2023] Launched synth_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/synth_1/runme.log
+[Fri Nov 24 23:34:17 2023] Launched impl_1...
+Run output will be captured here: /home/krishnan/vivado_ws/vga/vga.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 12264.488 ; gain = 24.012 ; free physical = 5278 ; free virtual = 32153
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.

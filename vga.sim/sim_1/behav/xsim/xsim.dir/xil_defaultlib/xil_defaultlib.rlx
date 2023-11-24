@@ -1,0 +1,13 @@
+0.6
+2019.2
+Nov  6 2019
+21:42:20
+/home/krishnan/vivado_ws/vga/vga.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v,1698524791,verilog,,,,vga_out_tb,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,1698522503,verilog,,/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v,,clk_wiz_0,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v,1698522503,verilog,,/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v,,clk_wiz_0_clk_wiz,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v,1700842553,verilog,,/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v,,pacman_map_blockmem,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v,1700851074,verilog,,/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v,,clk_div,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v,1700856776,verilog,,/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v,,drawcon,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v,1700843177,verilog,,/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v,,game_top,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v,1698612824,verilog,,/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v,,vga_out,,,../../../../vga.srcs/sources_1/ip/clk_wiz_0,,,,,

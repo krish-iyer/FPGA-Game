@@ -23,44 +23,58 @@
 
 module vga_out(
     input clk,
+    input [3:0] r, g, b,
     output [3:0] pix_r, pix_g, pix_b,
-    output hsync, vsync
+    output hsync, vsync,
+    output reg [10:0] curr_x,
+    output reg [9:0] curr_y
     );
-
-    wire clk_83_MHz;
-
-
-
-    reg [11:0] hcount = 0;      // max : 1679
+    
+    reg [10:0] hcount = 0;      // max : 1679
     reg [9:0] vcount = 0;       // max : 827
 
-    wire [3:0] pix_r_val, pix_g_val, pix_b_val;
-
-    assign pix_r_val = 2;
-    assign pix_g_val = 6;
-    assign pix_b_val = 3;
-
+    initial curr_x = 0;
+    initial curr_y = 0;
+    
     always@(posedge clk) begin
         
         hcount <= hcount + 1;   // blocking assignment will only take it to 1678
-        if(hcount == 1679) begin
+        if(hcount == 1678) begin
             hcount <= 0;
             vcount <= vcount + 1;
         end
-        if(vcount == 827) begin
+        if(vcount == 826) begin
             vcount <= 0;
         end
+        
     end
 
+    always@(posedge clk) begin
+        
+        if(hcount >= 336 && hcount <= 1615) begin
+            curr_x <= curr_x + 1;
+        end
+        if(curr_x == 1279) begin
+            curr_x <= 0;
+            if(vcount >= 27 && vcount <= 826) begin
+                curr_y <= curr_y + 1;
+            end
+        end
+        if(curr_y == 799) begin
+            curr_y <= 0;
+        end
+
+    end
+    
 assign hsync = hcount <= 135 ? 0 : 1;
 assign vsync = vcount <= 2 ? 1 : 0;
 
 assign pix_r = hcount >= 336 ? hcount <= 1615 ? vcount >= 27 ? vcount <= 826 ? 
-                pix_r_val : 0 : 0 : 0 : 0;  
+                r : 0 : 0 : 0 : 0;  
 assign pix_g = hcount >= 336 ? hcount <= 1615 ? vcount >= 27 ? vcount <= 826 ? 
-                pix_g_val : 0 : 0 : 0 : 0;  
+                g : 0 : 0 : 0 : 0;  
 assign pix_b = hcount >= 336 ? hcount <= 1615 ? vcount >= 27 ? vcount <= 826 ?
-                pix_b_val : 0 : 0 : 0 : 0;
+                b : 0 : 0 : 0 : 0;
 
 
 endmodule

@@ -26,7 +26,7 @@ reg clk;
 wire [3:0] pix_r, pix_g, pix_b;
 wire hsync, vsync;
 
-vga_out vga_out_inst(
+game_top game_top_inst(
     .clk(clk),
     .pix_r(pix_r), .pix_g(pix_g), .pix_b(pix_b),
     .hsync(hsync), .vsync(vsync)
@@ -36,6 +36,6 @@ initial begin
     clk = 0;
 end
 
-always #5 clk = ~clk;
+always #0.5 clk = ~clk;
 
 endmodule
