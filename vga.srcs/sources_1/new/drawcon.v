@@ -43,6 +43,7 @@ wire [79:0] map_row;
 reg mod_y = 0;
 reg mod_x = 0;
 reg map_pix = 0;
+reg draw_food = 0;
 
 always @(posedge clk) begin
     if(map_idx_y == 50) begin
@@ -60,7 +61,16 @@ always @(posedge clk) begin
         map_pix <= map_row[map_idx_x];
         map_idx_x <= map_idx_x + 1;
     end
-end 
+end
+
+always @(posedge clk) begin
+    if(draw_x[3:0] >=6 && draw_x[3:0] <= 9 && draw_y[3:0] >= 6  && draw_y[3:0] <= 9 && map_pix) begin
+            draw_food <= 1;
+    end
+    else begin
+        draw_food <= 0;
+    end
+end
 
 pacman_map_blockmem map(
     .clka(clk),                            
@@ -96,7 +106,12 @@ always@(posedge clk) begin
             g <= blk_g;
             b <= blk_b;
         end
-    end  
+    end
+    else if(draw_food) begin
+        r <= 15;
+        g <= 15;
+        b <= 15;
+    end
     else begin
         r <= bg_r;
         g <= bg_g;

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Fri Nov 24 23:35:34 2023
+| Date             : Sat Nov 25 00:35:04 2023
 | Host             : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
 | Command          : report_power -file game_top_power_routed.rpt -pb game_top_power_summary_routed.pb -rpx game_top_power_routed.rpx
 | Design           : game_top
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.210        |
+| Total On-Chip Power (W)  | 0.211        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.112        |
-| Device Static (W)        | 0.097        |
+| Dynamic (W)              | 0.113        |
+| Device Static (W)        | 0.098        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.0         |
 | Junction Temperature (C) | 26.0         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |      358 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      171 |     63400 |            0.27 |
+| Slice Logic    |    <0.001 |      372 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      178 |     63400 |            0.28 |
 |   CARRY4       |    <0.001 |       17 |     15850 |            0.11 |
-|   Register     |    <0.001 |       89 |    126800 |            0.07 |
+|   Register     |    <0.001 |       90 |    126800 |            0.07 |
 |   F7/F8 Muxes  |    <0.001 |       15 |     63400 |            0.02 |
 |   Others       |     0.000 |       13 |       --- |             --- |
-| Signals        |    <0.001 |      271 |       --- |             --- |
+| Signals        |    <0.001 |      288 |       --- |             --- |
 | Block RAM      |     0.005 |      1.5 |       135 |            1.11 |
 | MMCM           |     0.101 |        1 |         6 |           16.67 |
-| I/O            |     0.003 |       20 |       210 |            9.52 |
-| Static Power   |     0.097 |          |           |                 |
-| Total          |     0.210 |          |           |                 |
+| I/O            |     0.004 |       20 |       210 |            9.52 |
+| Static Power   |     0.098 |          |           |                 |
+| Total          |     0.211 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,7 +75,7 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
 | Vccint    |       1.000 |     0.023 |       0.008 |      0.015 |
-| Vccaux    |       1.800 |     0.074 |       0.056 |      0.018 |
+| Vccaux    |       1.800 |     0.075 |       0.056 |      0.018 |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -145,7 +145,7 @@ Table of Contents
 +------------------+-----------+
 | Name             | Power (W) |
 +------------------+-----------+
-| game_top         |     0.112 |
+| game_top         |     0.113 |
 |   clk_wiz_0_inst |     0.102 |
 |     inst         |     0.102 |
 |   drawcon_inst   |     0.006 |
