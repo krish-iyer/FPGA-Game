@@ -56,7 +56,7 @@ module valid_move_detector (input clk,
      // also the current position for any ghost or pacman will never be at the edges
      // we just need to handle the wrap_around boundary cases 
      
-     reg  Right, Left, Up, Down;
+     wire  Right, Left, Up, Down;
      parameter MAT_LAST_IDX = 79;
      wire [6:0] right_index=  $unsigned( matrix_idx_x + 1);
      wire [6:0] left_index=  $unsigned( matrix_idx_x - 1);
@@ -65,17 +65,22 @@ module valid_move_detector (input clk,
 //      wire [79:0] test_dout_same_row;
 //     assign test_dout_same_row = dout_same_row | -1; 
      
-     always @(posedge clk )begin 
-        if (odd_even)begin
-          Right <= (matrix_idx_x == MAT_LAST_IDX)? 1 : dout_same_row [ $unsigned(right_index) ];                                    
-    //     assign Left= (matrix_idx_x == 0) ? 1 : dout_same_row [ left_index];   
-          Left <= dout_same_row [ $unsigned (left_index) ];   
-          Up <= dout_above_row [ $unsigned( matrix_idx_x) ]; 
-          Down <= dout_below_row [ $unsigned( matrix_idx_x) ];
-        end
-        odd_even <= ~ odd_even;  
-     end 
-                                       
+     // always @(posedge clk )begin 
+     // //    if (odd_even)begin
+     //      Right <= (matrix_idx_x == MAT_LAST_IDX)? 1 : dout_same_row [ right_index ];                                    
+     //      Left <= (matrix_idx_x == 0) ? 1 : dout_same_row [ left_index];   
+     //      // Left <= dout_same_row [ $unsigned (left_index) ];   
+     //      Up <= dout_above_row [ $unsigned( matrix_idx_x) ]; 
+     //      Down <= dout_below_row [ $unsigned( matrix_idx_x) ];
+     // //    end
+     // //    odd_even <= ~ odd_even;  
+     // end 
+
+     assign Right = (matrix_idx_x == MAT_LAST_IDX)? 1 : dout_same_row [ right_index ];                                    
+     assign Left = (matrix_idx_x == 0) ? 1 : dout_same_row [ left_index];   
+     // Left <= dout_same_row [ $unsigned (left_index) ];   
+     assign Up = dout_above_row [ $unsigned( matrix_idx_x) ]; 
+     assign Down = dout_below_row [ $unsigned( matrix_idx_x) ];                                  
                                                                                                                                
     assign valid_moves= {Left, Down, Up, Right}; 						
 //    assign valid_moves= 1; 						
