@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="184030229fs"></ZoomStartTime>
-      <ZoomEndTime time="184046897fs"></ZoomEndTime>
-      <Cursor1Time time="184034204fs"></Cursor1Time>
+      <ZoomStartTime time="985466fs"></ZoomStartTime>
+      <ZoomEndTime time="1002907fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="283"></NameColumnWidth>
-      <ValueColumnWidth column_width="139"></ValueColumnWidth>
+      <ValueColumnWidth column_width="131"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="24" />
+   <WVObjectSize size="26" />
    <wvobject type="logic" fp_name="/vga_out_tb/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -134,5 +134,13 @@
    <wvobject type="logic" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/draw_food">
       <obj_property name="ElementShortName">draw_food</obj_property>
       <obj_property name="ObjectShortName">draw_food</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/pacman_sprite_idx">
+      <obj_property name="ElementShortName">pacman_sprite_idx[3:0]</obj_property>
+      <obj_property name="ObjectShortName">pacman_sprite_idx[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/pacman_sprite_row">
+      <obj_property name="ElementShortName">pacman_sprite_row[3:0]</obj_property>
+      <obj_property name="ObjectShortName">pacman_sprite_row[3:0]</obj_property>
    </wvobject>
 </wave_config>

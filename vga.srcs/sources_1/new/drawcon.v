@@ -45,6 +45,9 @@ reg mod_x = 0;
 reg map_pix = 0;
 reg draw_food = 0;
 
+reg [3:0] pacman_sprite_idx = 0;
+wire [15:0] pacman_sprite_row;
+
 always @(posedge clk) begin
     if(draw_y[4] ^ mod_y) begin
         mod_y <= draw_y[4];
@@ -81,6 +84,12 @@ pacman_map_blockmem map(
     .douta(map_row)
 );
 
+pacman_sprite pacman_sprite_inst(
+    .clka(clk),                            
+    .addra($unsigned(pacman_sprite_idx)),
+    .douta(pacman_sprite_row)
+);
+
 always@(posedge clk) begin
     // if(((draw_x >= 0 && draw_x <= 10) || (draw_x >= 1269 && draw_x <= 1279)) || ((draw_y >= 0 && draw_y <= 10)  || (draw_y >= 789 && draw_y <= 799))) begin
     //     bg_r <= 15;
@@ -103,11 +112,17 @@ always@(posedge clk) begin
 
     if((draw_x > blkpos_x && draw_x < (blkpos_x+16)) && (draw_y > blkpos_y && 
         draw_y < (blkpos_y+16))) begin
-
-        if(blk_r != 0 && blk_g !=0 && blk_b !=0 ) begin
+        
+        pacman_sprite_idx <= (draw_y - blkpos_y);
+        if(pacman_sprite_row[draw_x - blkpos_x]) begin
             r <= blk_r;
             g <= blk_g;
             b <= blk_b;
+        end
+        else begin
+            r <= 0;
+            g <= 0;
+            b <= 0;
         end
     end
     else if(draw_food) begin

@@ -1,10 +1,10 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
--- Date        : Fri Nov 24 19:16:58 2023
+-- Date        : Fri Nov 24 19:16:57 2023
 -- Host        : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
--- Command     : write_vhdl -force -mode synth_stub
---               /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top pacman_map_blockmem -prefix
+--               pacman_map_blockmem_ pacman_map_blockmem_stub.vhdl
 -- Design      : pacman_map_blockmem
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1

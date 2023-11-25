@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
 -- Date        : Fri Nov 24 19:16:58 2023
 -- Host        : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top pacman_map_blockmem -prefix
+--               pacman_map_blockmem_ pacman_map_blockmem_sim_netlist.vhdl
 -- Design      : pacman_map_blockmem
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,8 +20,6 @@ entity pacman_map_blockmem_blk_mem_gen_prim_wrapper_init is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of pacman_map_blockmem_blk_mem_gen_prim_wrapper_init : entity is "blk_mem_gen_prim_wrapper_init";
 end pacman_map_blockmem_blk_mem_gen_prim_wrapper_init;
 
 architecture STRUCTURE of pacman_map_blockmem_blk_mem_gen_prim_wrapper_init is
@@ -474,8 +472,6 @@ entity pacman_map_blockmem_blk_mem_gen_prim_width is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of pacman_map_blockmem_blk_mem_gen_prim_width : entity is "blk_mem_gen_prim_width";
 end pacman_map_blockmem_blk_mem_gen_prim_width;
 
 architecture STRUCTURE of pacman_map_blockmem_blk_mem_gen_prim_width is
@@ -520,8 +516,6 @@ entity pacman_map_blockmem_blk_mem_gen_generic_cstr is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of pacman_map_blockmem_blk_mem_gen_generic_cstr : entity is "blk_mem_gen_generic_cstr";
 end pacman_map_blockmem_blk_mem_gen_generic_cstr;
 
 architecture STRUCTURE of pacman_map_blockmem_blk_mem_gen_generic_cstr is
@@ -549,8 +543,6 @@ entity pacman_map_blockmem_blk_mem_gen_top is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of pacman_map_blockmem_blk_mem_gen_top : entity is "blk_mem_gen_top";
 end pacman_map_blockmem_blk_mem_gen_top;
 
 architecture STRUCTURE of pacman_map_blockmem_blk_mem_gen_top is
@@ -572,8 +564,6 @@ entity pacman_map_blockmem_blk_mem_gen_v8_4_4_synth is
     clka : in STD_LOGIC;
     addra : in STD_LOGIC_VECTOR ( 5 downto 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of pacman_map_blockmem_blk_mem_gen_v8_4_4_synth : entity is "blk_mem_gen_v8_4_4_synth";
 end pacman_map_blockmem_blk_mem_gen_v8_4_4_synth;
 
 architecture STRUCTURE of pacman_map_blockmem_blk_mem_gen_v8_4_4_synth is
@@ -805,8 +795,6 @@ entity pacman_map_blockmem_blk_mem_gen_v8_4_4 is
   attribute C_WRITE_WIDTH_B of pacman_map_blockmem_blk_mem_gen_v8_4_4 : entity is 80;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of pacman_map_blockmem_blk_mem_gen_v8_4_4 : entity is "artix7";
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of pacman_map_blockmem_blk_mem_gen_v8_4_4 : entity is "blk_mem_gen_v8_4_4";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of pacman_map_blockmem_blk_mem_gen_v8_4_4 : entity is "yes";
 end pacman_map_blockmem_blk_mem_gen_v8_4_4;

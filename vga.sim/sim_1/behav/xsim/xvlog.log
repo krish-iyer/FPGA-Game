@@ -1,3 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/sim/pacman_sprite.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pacman_sprite
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module pacman_map_blockmem
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" into library xil_defaultlib

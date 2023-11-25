@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Sat Nov 25 02:34:31 2023
+| Date         : Sat Nov 25 04:30:20 2023
 | Host         : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_utilization -file game_top_utilization_synth.rpt -pb game_top_utilization_synth.pb
 | Design       : game_top
@@ -30,14 +30,14 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  164 |     0 |     63400 |  0.26 |
-|   LUT as Logic          |  164 |     0 |     63400 |  0.26 |
+| Slice LUTs*             |  176 |     0 |     63400 |  0.28 |
+|   LUT as Logic          |  176 |     0 |     63400 |  0.28 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
-| Slice Registers         |   87 |     0 |    126800 |  0.07 |
-|   Register as Flip Flop |   87 |     0 |    126800 |  0.07 |
+| Slice Registers         |   93 |     0 |    126800 |  0.07 |
+|   Register as Flip Flop |   93 |     0 |    126800 |  0.07 |
 |   Register as Latch     |    0 |     0 |    126800 |  0.00 |
-| F7 Muxes                |    7 |     0 |     31700 |  0.02 |
-| F8 Muxes                |    0 |     0 |     15850 |  0.00 |
+| F7 Muxes                |   10 |     0 |     31700 |  0.03 |
+| F8 Muxes                |    3 |     0 |     15850 |  0.02 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 9     |          Yes |         Set |            - |
-| 78    |          Yes |       Reset |            - |
+| 84    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -146,18 +146,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |   78 |        Flop & Latch |
-| LUT6     |   63 |                 LUT |
-| LUT2     |   52 |                 LUT |
-| LUT4     |   43 |                 LUT |
-| LUT3     |   26 |                 LUT |
+| FDRE     |   84 |        Flop & Latch |
+| LUT6     |   71 |                 LUT |
+| LUT2     |   53 |                 LUT |
+| LUT4     |   51 |                 LUT |
+| LUT3     |   24 |                 LUT |
 | LUT5     |   21 |                 LUT |
 | CARRY4   |   17 |          CarryLogic |
 | OBUF     |   14 |                  IO |
-| LUT1     |   10 |                 LUT |
+| LUT1     |   11 |                 LUT |
+| MUXF7    |   10 |               MuxFx |
 | FDSE     |    9 |        Flop & Latch |
-| MUXF7    |    7 |               MuxFx |
 | IBUF     |    6 |                  IO |
+| MUXF8    |    3 |               MuxFx |
 +----------+------+---------------------+
 
 
@@ -167,6 +168,7 @@ Table of Contents
 +---------------------+------+
 |       Ref Name      | Used |
 +---------------------+------+
+| pacman_sprite       |    1 |
 | pacman_map_blockmem |    1 |
 | clk_wiz_0           |    1 |
 +---------------------+------+

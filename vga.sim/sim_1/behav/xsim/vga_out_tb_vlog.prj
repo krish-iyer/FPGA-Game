@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../vga.srcs/sources_1/ip/clk_wiz_0" \
+"../../../../vga.srcs/sources_1/ip/pacman_sprite/sim/pacman_sprite.v" \
 "../../../../vga.srcs/sources_1/ip/pacman_map_blockmem/sim/pacman_map_blockmem.v" \
 "../../../../vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
 "../../../../vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.v" \
