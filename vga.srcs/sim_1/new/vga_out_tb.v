@@ -24,6 +24,7 @@ module vga_out_tb();
 
 reg clk;
 wire [3:0] pix_r, pix_g, pix_b;
+reg btn_u, btn_d, btn_l, btn_r, btn_c;
 wire hsync, vsync;
 
 game_top game_top_inst(
@@ -34,6 +35,7 @@ game_top game_top_inst(
 
 initial begin
     clk = 0;
+    btn_d = 1;
 end
 
 always #0.5 clk = ~clk;

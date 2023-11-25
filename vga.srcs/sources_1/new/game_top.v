@@ -56,38 +56,41 @@ module game_top(
     reg [3:0] ghost_4_dir = 0;
 
     wire clk_50_Hz;
+    wire clk_wide_sprite_Hz;
 
-    clk_div #(.DIV(2)) clk_div(
+    clk_div #(.DIV(8)) clk_div_in(
         .clk(clk),
         .clk_out(clk_50_Hz)
     );
 
-    // always@(posedge clk_50_Hz) begin
+    clk_div #(.DIV(24)) clk_div_sprite_wide(
+        .clk(clk),
+        .clk_out(clk_wide_sprite_Hz)
+    );
 
-    //     if(btn_c == 1) begin
-    //         blkpos_x <= 650;
-    //         blkpos_y <= 376;
-    //     end
-    //     else if(btn_d == 1 && blkpos_y <= 753) begin
-    //         blkpos_y <= blkpos_y + 4;
-    //     end
-    //     else if(btn_u == 1 && blkpos_y >= 14 ) begin
-    //         blkpos_y <= blkpos_y - 4;
-    //     end
-    //     else if(btn_l == 1 && blkpos_x >= 14) begin
-    //         blkpos_x <= blkpos_x - 4;
-    //     end
-    //     else if(btn_r == 1 && blkpos_x <= 1233) begin
-    //         blkpos_x <= blkpos_x + 4;
-    //     end
-    // end
+    always @(posedge clk_wide_sprite_Hz) begin
+        pacman_dir[0] <= pacman_dir[0] ^ 1;
+        ghost_1_dir[0] <= ghost_1_dir[0] ^ 1;
+        ghost_2_dir[0] <= ghost_2_dir[0] ^ 1;
+        ghost_3_dir[0] <= ghost_3_dir[0] ^ 1;
+        ghost_4_dir[0] <= ghost_4_dir[0] ^ 1;
 
-    // drawcon drawcon_inst(
-    //     .clk(clk_83_MHz),
-    //     .r(r), .g(g), .b(b),
-    //     .draw_x(curr_x), .draw_y(curr_y),
-    //     .blkpos_x(blkpos_x), .blkpos_y(blkpos_y)
-    // );  
+    end
+
+    always@(posedge clk_50_Hz) begin
+        if(btn_d == 1) begin
+            pacman_dir[3:1] <= 4'b011;
+        end
+        else if(btn_u == 1 ) begin
+            pacman_dir[3:1] <= 4'b0100;
+        end
+        else if(btn_l == 1) begin
+            pacman_dir[3:1] <= 4'b0010;
+        end
+        else if(btn_r == 1) begin
+            pacman_dir[3:1] <= 4'b0000;
+        end
+    end 
 
     drawcon drawcon_inst(
         .clk(clk_83_MHz),
@@ -103,7 +106,7 @@ module game_top(
         .ghost_3_blkpos_y(ghost_3_blkpos_y),
         .ghost_4_blkpos_x(ghost_4_blkpos_x), 
         .ghost_4_blkpos_y(ghost_4_blkpos_y),
-        .pacman_dir(pacman_dir),
+        .pacman_dir (pacman_dir),
         .ghost_1_dir(ghost_1_dir),
         .ghost_2_dir(ghost_2_dir),
         .ghost_3_dir(ghost_3_dir),

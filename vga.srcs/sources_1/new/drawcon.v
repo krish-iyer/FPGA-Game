@@ -44,8 +44,8 @@ module drawcon(
 
 reg [3:0] bg_r, bg_g, bg_b;
 reg [3:0] blk_r = 15; 
-reg [3:0] blk_g = 12; 
-reg [3:0] blk_b = 0;
+reg [3:0] blk_g = 14; 
+reg [3:0] blk_b = 2;
 
 reg [3:0] ghost_1_body_r = 13; 
 reg [3:0] ghost_1_body_g = 7; 
@@ -77,7 +77,7 @@ reg mod_x = 0;
 reg map_pix = 0;
 reg draw_food = 0;
 
-reg [3:0] pacman_sprite_idx = 0;
+reg [6:0] pacman_sprite_idx = 0;
 wire [15:0] pacman_sprite_row;
 
 reg [6:0]   ghost_1_sprite_idx = 0;
@@ -191,7 +191,7 @@ always@(posedge clk) begin
         
         if ((draw_x > pacman_blkpos_x && draw_x < (pacman_blkpos_x+16)) && (draw_y > pacman_blkpos_y && 
         draw_y < (pacman_blkpos_y+16))) begin
-            pacman_sprite_idx <= (draw_y - pacman_blkpos_y);
+            pacman_sprite_idx <= (draw_y - pacman_blkpos_y)+pacman_dir*16;
             if(pacman_sprite_row[draw_x - pacman_blkpos_x]) begin
                 r <= blk_r;
                 g <= blk_g;
@@ -205,7 +205,7 @@ always@(posedge clk) begin
         end
         else if ((draw_x > ghost_1_blkpos_x && draw_x < (ghost_1_blkpos_x+16)) && (draw_y > ghost_1_blkpos_y && 
         draw_y < (ghost_1_blkpos_y+16))) begin
-            ghost_1_sprite_idx <= (draw_y - ghost_1_blkpos_y);
+            ghost_1_sprite_idx <= (draw_y - ghost_1_blkpos_y)+ghost_1_dir*16;
             case (ghost_1_sprite_row[(draw_x - ghost_1_blkpos_x)*4+:4])
                 16'h02:begin
                     r <= ghost_1_body_r;
@@ -226,7 +226,7 @@ always@(posedge clk) begin
         end
         else if ((draw_x > ghost_2_blkpos_x && draw_x < (ghost_2_blkpos_x+16)) && (draw_y > ghost_2_blkpos_y && 
         draw_y < (ghost_2_blkpos_y+16))) begin
-            ghost_2_sprite_idx <= (draw_y - ghost_2_blkpos_y);
+            ghost_2_sprite_idx <= (draw_y - ghost_2_blkpos_y)+ghost_2_dir*16;
             case (ghost_2_sprite_row[(draw_x - ghost_2_blkpos_x)*4+:4])
                 16'h02:begin
                     r <= ghost_2_body_r;
@@ -247,7 +247,7 @@ always@(posedge clk) begin
         end
         else if ((draw_x > ghost_3_blkpos_x && draw_x < (ghost_3_blkpos_x+16)) && (draw_y > ghost_3_blkpos_y && 
         draw_y < (ghost_3_blkpos_y+16))) begin
-            ghost_3_sprite_idx <= (draw_y - ghost_3_blkpos_y);
+            ghost_3_sprite_idx <= (draw_y - ghost_3_blkpos_y)+ghost_3_dir*16;
             case (ghost_3_sprite_row[(draw_x - ghost_3_blkpos_x)*4+:4])
                 16'h02:begin
                     r <= ghost_3_body_r;
@@ -268,7 +268,7 @@ always@(posedge clk) begin
         end
         else if ((draw_x > ghost_4_blkpos_x && draw_x < (ghost_4_blkpos_x+16)) && (draw_y > ghost_4_blkpos_y && 
         draw_y < (ghost_4_blkpos_y+16))) begin
-            ghost_4_sprite_idx <= (draw_y - ghost_4_blkpos_y);
+            ghost_4_sprite_idx <= (draw_y - ghost_4_blkpos_y)+ghost_4_dir*16;
             case (ghost_4_sprite_row[(draw_x - ghost_4_blkpos_x)*4+:4])
                 16'h02:begin
                     r <= ghost_4_body_r;

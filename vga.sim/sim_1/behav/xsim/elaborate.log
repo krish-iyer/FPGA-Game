@@ -4,9 +4,11 @@ Running: /tools/Xilinx/Vitis/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 5d9b
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 7 for port 'addra' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:100]
-WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 256 for port 'douta' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:107]
-WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:29]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 256 for port 'douta' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:140]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 256 for port 'douta' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:146]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 256 for port 'douta' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:152]
+WARNING: [VRFC 10-3091] actual bit length 64 differs from formal bit length 256 for port 'douta' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:158]
+WARNING: [VRFC 10-5021] port 'rst' is not connected on this instance [/home/krishnan/vivado_ws/vga/vga.srcs/sim_1/new/vga_out_tb.v:30]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -16,7 +18,7 @@ Compiling module unisims_ver.MMCME2_ADV(CLKFBOUT_MULT_F=28.37...
 Compiling module unisims_ver.BUFG
 Compiling module xil_defaultlib.clk_wiz_0_clk_wiz
 Compiling module xil_defaultlib.clk_wiz_0
-Compiling module xil_defaultlib.clk_div(DIV=2)
+Compiling module xil_defaultlib.clk_div(DIV=8)
 Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
 Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
 Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
