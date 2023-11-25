@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
 // Date        : Sat Nov 25 04:26:06 2023
 // Host        : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top pacman_sprite -prefix
+//               pacman_sprite_ pacman_sprite_sim_netlist.v
 // Design      : pacman_sprite
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -188,7 +188,6 @@ module pacman_sprite
         .web(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_generic_cstr" *) 
 module pacman_sprite_blk_mem_gen_generic_cstr
    (douta,
     clka,
@@ -207,7 +206,6 @@ module pacman_sprite_blk_mem_gen_generic_cstr
         .douta(douta));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_width" *) 
 module pacman_sprite_blk_mem_gen_prim_width
    (douta,
     clka,
@@ -226,7 +224,6 @@ module pacman_sprite_blk_mem_gen_prim_width
         .douta(douta));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_prim_wrapper_init" *) 
 module pacman_sprite_blk_mem_gen_prim_wrapper_init
    (douta,
     clka,
@@ -385,7 +382,6 @@ module pacman_sprite_blk_mem_gen_prim_wrapper_init
         .WEBWE({1'b0,1'b0,1'b0,1'b0}));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_top" *) 
 module pacman_sprite_blk_mem_gen_top
    (douta,
     clka,
@@ -429,7 +425,7 @@ endmodule
 (* C_WEA_WIDTH = "1" *) (* C_WEB_WIDTH = "1" *) (* C_WRITE_DEPTH_A = "128" *) 
 (* C_WRITE_DEPTH_B = "128" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) (* C_WRITE_MODE_B = "WRITE_FIRST" *) 
 (* C_WRITE_WIDTH_A = "16" *) (* C_WRITE_WIDTH_B = "16" *) (* C_XDEVICEFAMILY = "artix7" *) 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* downgradeipidentifiedwarnings = "yes" *) 
 module pacman_sprite_blk_mem_gen_v8_4_4
    (clka,
     rsta,
@@ -641,7 +637,6 @@ module pacman_sprite_blk_mem_gen_v8_4_4
         .douta(douta));
 endmodule
 
-(* ORIG_REF_NAME = "blk_mem_gen_v8_4_4_synth" *) 
 module pacman_sprite_blk_mem_gen_v8_4_4_synth
    (douta,
     clka,

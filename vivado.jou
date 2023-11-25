@@ -550,3 +550,117 @@ set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
 set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
 program_hw_devices [get_hw_devices xc7a100t_0]
 refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name blk_mem_gen_0
+set_property -dict [list CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {256} CONFIG.Write_Depth_A {128} CONFIG.Read_Width_A {256} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {256} CONFIG.Read_Width_B {256} CONFIG.Load_Init_File {true} CONFIG.Coe_File {/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/ghost.coe} CONFIG.Port_A_Write_Rate {0}] [get_ips blk_mem_gen_0]
+generate_target {instantiation_template} [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+generate_target all [get_files  /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+catch { config_ip_cache -export [get_ips -all blk_mem_gen_0] }
+export_ip_user_files -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci]
+launch_runs -jobs 8 blk_mem_gen_0_synth_1
+export_simulation -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -directory /home/krishnan/vivado_ws/vga/vga.ip_user_files/sim_scripts -ip_user_files_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files -ipstatic_source_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/modelsim} {questa=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/questa} {ies=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/ies} {xcelium=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/xcelium} {vcs=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/vcs} {riviera=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci] -no_script -reset -force -quiet
+remove_files  -fileset blk_mem_gen_0 /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
+file delete -force /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/blk_mem_gen_0
+create_ip -name blk_mem_gen -vendor xilinx.com -library ip -version 8.4 -module_name ghost_sprite
+set_property -dict [list CONFIG.Component_Name {ghost_sprite} CONFIG.Memory_Type {Single_Port_ROM} CONFIG.Write_Width_A {256} CONFIG.Write_Depth_A {128} CONFIG.Read_Width_A {256} CONFIG.Enable_A {Always_Enabled} CONFIG.Write_Width_B {256} CONFIG.Read_Width_B {256} CONFIG.Load_Init_File {true} CONFIG.Coe_File {/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/ghost.coe} CONFIG.Port_A_Write_Rate {0}] [get_ips ghost_sprite]
+generate_target {instantiation_template} [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/ghost_sprite/ghost_sprite.xci]
+generate_target all [get_files  /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/ghost_sprite/ghost_sprite.xci]
+catch { config_ip_cache -export [get_ips -all ghost_sprite] }
+export_ip_user_files -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/ghost_sprite/ghost_sprite.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/ghost_sprite/ghost_sprite.xci]
+export_simulation -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/ghost_sprite/ghost_sprite.xci] -directory /home/krishnan/vivado_ws/vga/vga.ip_user_files/sim_scripts -ip_user_files_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files -ipstatic_source_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/modelsim} {questa=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/questa} {ies=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/ies} {xcelium=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/xcelium} {vcs=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/vcs} {riviera=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+open_project /home/krishnan/tinker_ws/vivado_ws/tinker/tinker.xpr
+update_compile_order -fileset sources_1
+close [ open /home/krishnan/tinker_ws/vivado_ws/tinker/tinker.srcs/sources_1/new/instr_fetch_stage.v w ]
+add_files /home/krishnan/tinker_ws/vivado_ws/tinker/tinker.srcs/sources_1/new/instr_fetch_stage.v
+update_compile_order -fileset sources_1
+close [ open /home/krishnan/tinker_ws/vivado_ws/tinker/tinker.srcs/sources_1/new/instr_fetch.v w ]
+add_files /home/krishnan/tinker_ws/vivado_ws/tinker/tinker.srcs/sources_1/new/instr_fetch.v
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /home/krishnan/tinker_ws/vivado_ws/tinker/decoder_tb_behav.wcfg
+source decoder_tb.tcl
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+close_sim
+close_project
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+reset_run pacman_sprite_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_sim
+generate_target Simulation [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite.xci]
+export_ip_user_files -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite.xci] -directory /home/krishnan/vivado_ws/vga/vga.ip_user_files/sim_scripts -ip_user_files_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files -ipstatic_source_dir /home/krishnan/vivado_ws/vga/vga.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/modelsim} {questa=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/questa} {ies=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/ies} {xcelium=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/xcelium} {vcs=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/vcs} {riviera=/home/krishnan/vivado_ws/vga/vga.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+launch_simulation
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+run all
+run all
+run all
+relaunch_sim
+run all
+run all
+run all
+save_wave_config {/home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config /home/krishnan/vivado_ws/vga/vga_out_tb_behav.wcfg
+source vga_out_tb.tcl
+run all
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {/home/krishnan/vivado_ws/vga/vga.runs/impl_1/game_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

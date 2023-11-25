@@ -81,6 +81,7 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet /home/krishnan/vivado_ws/vga/vga.runs/synth_1/game_top.dcp
+  read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/ghost_sprite/ghost_sprite.xci
   read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem.xci
   read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite.xci

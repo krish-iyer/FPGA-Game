@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-// Date        : Sat Nov 25 04:26:06 2023
+// Date        : Sat Nov 25 04:26:05 2023
 // Host        : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top pacman_sprite -prefix
+//               pacman_sprite_ pacman_sprite_stub.v
 // Design      : pacman_sprite
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
