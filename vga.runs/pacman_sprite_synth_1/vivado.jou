@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Sat Nov 25 17:50:36 2023
-# Process ID: 10108
+# Start of session at: Sun Nov 26 00:39:41 2023
+# Process ID: 26787
 # Current directory: /home/krishnan/vivado_ws/vga/vga.runs/pacman_sprite_synth_1
 # Command line: vivado -log pacman_sprite.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pacman_sprite.tcl
 # Log file: /home/krishnan/vivado_ws/vga/vga.runs/pacman_sprite_synth_1/pacman_sprite.vds

@@ -2,6 +2,7 @@
 
 memory_initialization_radix = 2;
 memory_initialization_vector =
+; RIGHT
 0000011111100000,
 0000111111110000,
 0001111111111100,

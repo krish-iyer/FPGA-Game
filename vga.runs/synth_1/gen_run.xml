@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700938786">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1700950236">
   <File Type="VDS-TIMINGSUMMARY" Name="game_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="game_top.dcp"/>
   <File Type="RDS-UTIL-PB" Name="game_top_utilization_synth.pb"/>
@@ -71,6 +71,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/num_sprites.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="game_top"/>
@@ -102,5 +108,6 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="pacman_sprite"/>
+  <BlockFileSet Type="BlockSrcs" Name="num_sprite"/>
   <BlockFileSet Type="BlockSrcs" Name="pacman_map_blockmem"/>
 </GenRun>

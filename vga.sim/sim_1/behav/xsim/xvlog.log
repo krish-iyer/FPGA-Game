@@ -1,3 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/num_sprite/sim/num_sprite.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module num_sprite
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/ghost_sprite/sim/ghost_sprite.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ghost_sprite
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/sim/pacman_sprite.v" into library xil_defaultlib

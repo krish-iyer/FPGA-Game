@@ -37,19 +37,19 @@ CRITICAL WARNING: [Board 49-56] Problem parsing board file - /tools/Xilinx/Vivad
 Command: synth_design -top game_top -part xc7a100tcsg324-1
 Starting synth_design
 WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
-/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite.xci
+/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/num_sprite/num_sprite.xci
 
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 29269 
+INFO: Helper process launched with PID 19180 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2330.211 ; gain = 201.609 ; free physical = 1280 ; free virtual = 27932
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2331.180 ; gain = 201.609 ; free physical = 318 ; free virtual = 27868
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'game_top' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/clk_wiz_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/clk_wiz_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'clk_div' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v:23]
 	Parameter DIV bound to: 8 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'clk_div' (2#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v:23]
@@ -57,26 +57,28 @@ INFO: [Synth 8-6157] synthesizing module 'clk_div__parameterized0' [/home/krishn
 	Parameter DIV bound to: 24 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'clk_div__parameterized0' (2#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v:23]
 INFO: [Synth 8-6157] synthesizing module 'drawcon' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:23]
-INFO: [Synth 8-6157] synthesizing module 'pacman_map_blockmem' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/pacman_map_blockmem_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'pacman_map_blockmem' (3#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/pacman_map_blockmem_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'pacman_sprite' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/pacman_sprite_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'pacman_sprite' (4#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/pacman_sprite_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/ghost_sprite_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'ghost_sprite' (5#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-29242-OptiPlex7090/realtime/ghost_sprite_stub.v:6]
-WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:140]
-WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:146]
-WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:152]
-WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:158]
-INFO: [Synth 8-4471] merging register 'bg_g_reg[3:0]' into 'bg_r_reg[3:0]' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:169]
-WARNING: [Synth 8-6014] Unused sequential element bg_g_reg was removed.  [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:169]
-INFO: [Synth 8-6155] done synthesizing module 'drawcon' (6#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pacman_map_blockmem' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/pacman_map_blockmem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pacman_map_blockmem' (3#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/pacman_map_blockmem_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'pacman_sprite' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/pacman_sprite_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'pacman_sprite' (4#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/pacman_sprite_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/ghost_sprite_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'ghost_sprite' (5#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/ghost_sprite_stub.v:6]
+WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:153]
+WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:159]
+WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:165]
+WARNING: [Synth 8-689] width (64) of port connection 'douta' does not match port width (256) of module 'ghost_sprite' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:171]
+INFO: [Synth 8-6157] synthesizing module 'num_sprite' [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/num_sprite_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'num_sprite' (6#1) [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/.Xil/Vivado-19123-OptiPlex7090/realtime/num_sprite_stub.v:6]
+INFO: [Synth 8-4471] merging register 'bg_g_reg[3:0]' into 'bg_r_reg[3:0]' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:188]
+WARNING: [Synth 8-6014] Unused sequential element bg_g_reg was removed.  [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:188]
+INFO: [Synth 8-6155] done synthesizing module 'drawcon' (7#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v:23]
 INFO: [Synth 8-6157] synthesizing module 'vga_out' [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'vga_out' (7#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v:24]
-INFO: [Synth 8-6155] done synthesizing module 'game_top' (8#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'vga_out' (8#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/vga_out.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'game_top' (9#1) [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/game_top.v:23]
 WARNING: [Synth 8-3331] design game_top has unconnected port rst
 WARNING: [Synth 8-3331] design game_top has unconnected port btn_c
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2393.930 ; gain = 265.328 ; free physical = 1314 ; free virtual = 27966
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2394.898 ; gain = 265.328 ; free physical = 359 ; free virtual = 27901
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -89,12 +91,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2396.898 ; gain = 268.297 ; free physical = 1308 ; free virtual = 27961
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2394.898 ; gain = 265.328 ; free physical = 536 ; free virtual = 28014
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2396.898 ; gain = 268.297 ; free physical = 1308 ; free virtual = 27961
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2394.898 ; gain = 265.328 ; free physical = 536 ; free virtual = 28014
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2396.898 ; gain = 0.000 ; free physical = 1302 ; free virtual = 27954
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2394.898 ; gain = 0.000 ; free physical = 521 ; free virtual = 28000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -113,6 +115,8 @@ Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_
 Finished Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem/pacman_map_blockmem_in_context.xdc] for cell 'drawcon_inst/map'
 Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite/pacman_sprite_in_context.xdc] for cell 'drawcon_inst/pacman_sprite_inst'
 Finished Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite/pacman_sprite_in_context.xdc] for cell 'drawcon_inst/pacman_sprite_inst'
+Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/num_sprite/num_sprite/num_sprite_in_context.xdc] for cell 'drawcon_inst/num_sprite_inst'
+Finished Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/num_sprite/num_sprite/num_sprite_in_context.xdc] for cell 'drawcon_inst/num_sprite_inst'
 Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/constrs_1/imports/cs256-fall23/nexys-a7-100t-master.xdc]
 Finished Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.srcs/constrs_1/imports/cs256-fall23/nexys-a7-100t-master.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/krishnan/vivado_ws/vga/vga.srcs/constrs_1/imports/cs256-fall23/nexys-a7-100t-master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/game_top_propImpl.xdc].
@@ -121,26 +125,27 @@ Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/krishnan/vivado_ws/vga/vga.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2561.680 ; gain = 0.000 ; free physical = 1215 ; free virtual = 27868
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2565.617 ; gain = 0.000 ; free physical = 375 ; free virtual = 27882
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2561.680 ; gain = 0.000 ; free physical = 1215 ; free virtual = 27868
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2565.617 ; gain = 0.000 ; free physical = 375 ; free virtual = 27882
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'drawcon_inst/ghost_1_sprite_inst' at clock pin 'clka' is different from the actual clock period '11.982', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'drawcon_inst/ghost_2_sprite_inst' at clock pin 'clka' is different from the actual clock period '11.982', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'drawcon_inst/ghost_3_sprite_inst' at clock pin 'clka' is different from the actual clock period '11.982', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'drawcon_inst/ghost_4_sprite_inst' at clock pin 'clka' is different from the actual clock period '11.982', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'drawcon_inst/map' at clock pin 'clka' is different from the actual clock period '11.982', this can lead to different synthesis results.
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'drawcon_inst/num_sprite_inst' at clock pin 'clka' is different from the actual clock period '11.982', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'drawcon_inst/pacman_sprite_inst' at clock pin 'clka' is different from the actual clock period '11.982', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1284 ; free virtual = 27936
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 494 ; free virtual = 27940
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1284 ; free virtual = 27936
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 494 ; free virtual = 27940
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -154,8 +159,9 @@ Applied set_property DONT_TOUCH = true for drawcon_inst/ghost_4_sprite_inst. (co
 Applied set_property DONT_TOUCH = true for clk_wiz_0_inst. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for drawcon_inst/map. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for drawcon_inst/pacman_sprite_inst. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for drawcon_inst/num_sprite_inst. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1284 ; free virtual = 27936
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 494 ; free virtual = 27940
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "r" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "r" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -176,7 +182,7 @@ INFO: [Synth 8-5544] ROM "g" won't be mapped to Block RAM because address size (
 INFO: [Synth 8-5544] ROM "g" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "b" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1276 ; free virtual = 27929
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 487 ; free virtual = 27933
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -195,28 +201,30 @@ Detailed RTL Component Info :
 	   2 Input     11 Bit       Adders := 2     
 	   2 Input     10 Bit       Adders := 2     
 	   2 Input      7 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
 	   3 Input      4 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 7     
 +---Registers : 
 	               11 Bit    Registers := 2     
 	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 9     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 5     
 +---Muxes : 
 	   2 Input     11 Bit        Muxes := 2     
+	   4 Input      8 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 28    
 	   3 Input      4 Bit        Muxes := 8     
-	   6 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 9     
-	   5 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -243,22 +251,24 @@ Detailed RTL Component Info :
 	   3 Input     13 Bit       Adders := 5     
 	   3 Input     12 Bit       Adders := 5     
 	   2 Input      7 Bit       Adders := 1     
-	   2 Input      6 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
 	   3 Input      4 Bit       Adders := 1     
 +---XORs : 
 	   2 Input      1 Bit         XORs := 2     
 +---Registers : 
+	                8 Bit    Registers := 1     
 	                7 Bit    Registers := 1     
-	                6 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
 	                4 Bit    Registers := 5     
 	                1 Bit    Registers := 4     
 +---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
 	   2 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 16    
 	   3 Input      4 Bit        Muxes := 8     
-	   6 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 3     
-	   5 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
 Module vga_out 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -306,7 +316,7 @@ INFO: [Synth 8-3886] merging instance 'drawcon_inst/g_reg[1]' (FDSE) to 'drawcon
 INFO: [Synth 8-3886] merging instance 'drawcon_inst/r_reg[0]' (FDE) to 'drawcon_inst/r_reg[3]'
 INFO: [Synth 8-3886] merging instance 'drawcon_inst/r_reg[2]' (FDE) to 'drawcon_inst/r_reg[3]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1252 ; free virtual = 27909
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 462 ; free virtual = 27918
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -318,13 +328,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1140 ; free virtual = 27797
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 175 ; free virtual = 27698
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1088 ; free virtual = 27783
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 284 ; free virtual = 27576
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -336,7 +346,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1088 ; free virtual = 27783
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 285 ; free virtual = 27577
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -360,13 +370,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1048 ; free virtual = 27772
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 294 ; free virtual = 27576
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1048 ; free virtual = 27772
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 294 ; free virtual = 27576
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -385,25 +395,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1048 ; free virtual = 27772
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 295 ; free virtual = 27577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1048 ; free virtual = 27772
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 295 ; free virtual = 27577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1048 ; free virtual = 27772
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 295 ; free virtual = 27577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1048 ; free virtual = 27772
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 295 ; free virtual = 27577
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -417,6 +427,7 @@ Report BlackBoxes:
 |2     |pacman_map_blockmem |         1|
 |3     |pacman_sprite       |         1|
 |4     |ghost_sprite        |         4|
+|5     |num_sprite          |         1|
 +------+--------------------+----------+
 
 Report Cell Usage: 
@@ -428,55 +439,56 @@ Report Cell Usage:
 |3     |ghost_sprite__4     |     1|
 |4     |ghost_sprite__5     |     1|
 |5     |ghost_sprite__6     |     1|
-|6     |pacman_map_blockmem |     1|
-|7     |pacman_sprite       |     1|
-|8     |CARRY4              |    67|
-|9     |LUT1                |    89|
-|10    |LUT2                |   144|
-|11    |LUT3                |    22|
-|12    |LUT4                |    28|
-|13    |LUT5                |    27|
-|14    |LUT6                |   134|
-|15    |MUXF7               |    49|
-|16    |MUXF8               |    15|
-|17    |FDRE                |   135|
-|18    |IBUF                |     4|
-|19    |OBUF                |    14|
+|6     |num_sprite          |     1|
+|7     |pacman_map_blockmem |     1|
+|8     |pacman_sprite       |     1|
+|9     |CARRY4              |    67|
+|10    |LUT1                |    92|
+|11    |LUT2                |   183|
+|12    |LUT3                |    24|
+|13    |LUT4                |    28|
+|14    |LUT5                |    34|
+|15    |LUT6                |   134|
+|16    |MUXF7               |    56|
+|17    |MUXF8               |    14|
+|18    |FDRE                |   149|
+|19    |IBUF                |     4|
+|20    |OBUF                |    14|
 +------+--------------------+------+
 
 Report Instance Areas: 
 +------+---------------+--------+------+
 |      |Instance       |Module  |Cells |
 +------+---------------+--------+------+
-|1     |top            |        |  1849|
+|1     |top            |        |  1936|
 |2     |  clk_div_in   |clk_div |    33|
-|3     |  drawcon_inst |drawcon |  1448|
-|4     |  vga_out_inst |vga_out |   335|
+|3     |  drawcon_inst |drawcon |  1518|
+|4     |  vga_out_inst |vga_out |   352|
 +------+---------------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1048 ; free virtual = 27772
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 295 ; free virtual = 27577
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2564.648 ; gain = 268.297 ; free physical = 1102 ; free virtual = 27826
-Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2564.648 ; gain = 436.047 ; free physical = 1102 ; free virtual = 27826
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 2565.617 ; gain = 265.328 ; free physical = 351 ; free virtual = 27633
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2565.617 ; gain = 436.047 ; free physical = 351 ; free virtual = 27633
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2564.648 ; gain = 0.000 ; free physical = 1168 ; free virtual = 27892
-INFO: [Netlist 29-17] Analyzing 131 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2565.617 ; gain = 0.000 ; free physical = 420 ; free virtual = 27701
+INFO: [Netlist 29-17] Analyzing 137 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.617 ; gain = 0.000 ; free physical = 1114 ; free virtual = 27839
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2581.391 ; gain = 0.000 ; free physical = 368 ; free virtual = 27650
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-61 Infos, 27 Warnings, 6 Critical Warnings and 0 Errors encountered.
+63 Infos, 28 Warnings, 6 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 2568.617 ; gain = 688.367 ; free physical = 1251 ; free virtual = 27975
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2568.617 ; gain = 0.000 ; free physical = 1251 ; free virtual = 27975
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 2581.391 ; gain = 701.141 ; free physical = 518 ; free virtual = 27799
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2581.391 ; gain = 0.000 ; free physical = 518 ; free virtual = 27800
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/krishnan/vivado_ws/vga/vga.runs/synth_1/game_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file game_top_utilization_synth.rpt -pb game_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 25 22:00:22 2023...
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 26 01:11:29 2023...

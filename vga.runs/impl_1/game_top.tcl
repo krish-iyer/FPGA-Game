@@ -85,6 +85,7 @@ set rc [catch {
   read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_map_blockmem/pacman_map_blockmem.xci
   read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite.xci
+  read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/num_sprite/num_sprite.xci
   read_xdc /home/krishnan/vivado_ws/vga/vga.srcs/constrs_1/imports/cs256-fall23/nexys-a7-100t-master.xdc
   link_design -top game_top -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb

@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="850823957fs"></ZoomStartTime>
-      <ZoomEndTime time="850842259fs"></ZoomEndTime>
-      <Cursor1Time time="850839208fs"></Cursor1Time>
+      <ZoomStartTime time="118880483fs"></ZoomStartTime>
+      <ZoomEndTime time="118899264fs"></ZoomEndTime>
+      <Cursor1Time time="118883613fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="278"></NameColumnWidth>
-      <ValueColumnWidth column_width="128"></ValueColumnWidth>
+      <NameColumnWidth column_width="386"></NameColumnWidth>
+      <ValueColumnWidth column_width="182"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="30" />
    <wvobject type="logic" fp_name="/vga_out_tb/clk">
@@ -135,29 +135,29 @@
       <obj_property name="ObjectShortName">draw_food</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/pacman_sprite_idx">
-      <obj_property name="ElementShortName">pacman_sprite_idx[3:0]</obj_property>
-      <obj_property name="ObjectShortName">pacman_sprite_idx[3:0]</obj_property>
+      <obj_property name="ElementShortName">pacman_sprite_idx[6:0]</obj_property>
+      <obj_property name="ObjectShortName">pacman_sprite_idx[6:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/pacman_sprite_row">
       <obj_property name="ElementShortName">pacman_sprite_row[15:0]</obj_property>
       <obj_property name="ObjectShortName">pacman_sprite_row[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/ghost_sprite_row">
-      <obj_property name="ElementShortName">ghost_sprite_row[255:0]</obj_property>
-      <obj_property name="ObjectShortName">ghost_sprite_row[255:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/num_sprite_idx">
+      <obj_property name="ElementShortName">num_sprite_idx[3:0]</obj_property>
+      <obj_property name="ObjectShortName">num_sprite_idx[3:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/ghost_sprite_idx">
-      <obj_property name="ElementShortName">ghost_sprite_idx[6:0]</obj_property>
-      <obj_property name="ObjectShortName">ghost_sprite_idx[6:0]</obj_property>
+   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/num_sprite_row">
+      <obj_property name="ElementShortName">num_sprite_row[15:0]</obj_property>
+      <obj_property name="ObjectShortName">num_sprite_row[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/blkpos_y">
-      <obj_property name="ElementShortName">blkpos_y[9:0]</obj_property>
-      <obj_property name="ObjectShortName">blkpos_y[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/score">
+      <obj_property name="ElementShortName">score[15:0]</obj_property>
+      <obj_property name="ObjectShortName">score[15:0]</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/blkpos_x">
-      <obj_property name="ElementShortName">blkpos_x[10:0]</obj_property>
-      <obj_property name="ObjectShortName">blkpos_x[10:0]</obj_property>
+   <wvobject type="array" fp_name="/vga_out_tb/game_top_inst/drawcon_inst/num_sprite_score_idx">
+      <obj_property name="ElementShortName">num_sprite_score_idx[5:0]</obj_property>
+      <obj_property name="ObjectShortName">num_sprite_score_idx[5:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>

@@ -40,6 +40,7 @@ set_property ip_cache_permissions {read write} [current_project]
 add_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/coe_map80_50.coe
 add_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/pacman.coe
 add_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/ghost.coe
+add_files /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/num_sprites.coe
 read_verilog -library xil_defaultlib {
   /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/clk_div.v
   /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/new/drawcon.v
@@ -59,6 +60,9 @@ set_property used_in_implementation false [get_files -all /home/krishnan/vivado_
 
 read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite.xci
 set_property used_in_implementation false [get_files -all /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/pacman_sprite/pacman_sprite_ooc.xdc]
+
+read_ip -quiet /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/num_sprite/num_sprite.xci
+set_property used_in_implementation false [get_files -all /home/krishnan/vivado_ws/vga/vga.srcs/sources_1/ip/num_sprite/num_sprite_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

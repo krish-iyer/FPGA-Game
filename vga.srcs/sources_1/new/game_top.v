@@ -54,6 +54,8 @@ module game_top(
     reg [3:0] ghost_2_dir = 0;
     reg [3:0] ghost_3_dir = 0;
     reg [3:0] ghost_4_dir = 0;
+    
+    reg [15:0] score = 16'h12_34;
 
     wire clk_50_Hz;
     wire clk_wide_sprite_Hz;
@@ -110,7 +112,8 @@ module game_top(
         .ghost_1_dir(ghost_1_dir),
         .ghost_2_dir(ghost_2_dir),
         .ghost_3_dir(ghost_3_dir),
-        .ghost_4_dir(ghost_4_dir)
+        .ghost_4_dir(ghost_4_dir),
+        .score(score)
     );
 
     vga_out vga_out_inst(

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Sat Nov 25 22:01:51 2023
+| Date         : Sun Nov 26 01:12:21 2023
 | Host         : OptiPlex7090 running 64-bit Ubuntu 18.04.6 LTS
 | Command      : report_control_sets -verbose -file game_top_control_sets_placed.rpt
 | Design       : game_top
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    16 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    61 |
+| Unused register locations in slices containing registers |    56 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -41,12 +41,12 @@ Table of Contents
 +--------------------+-------+
 | Total control sets |    16 |
 | >= 0 to < 4        |     2 |
-| >= 4 to < 6        |     3 |
+| >= 4 to < 6        |     2 |
 | >= 6 to < 8        |     6 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     3 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     0 |
+| >= 14 to < 16      |     1 |
 | >= 16              |     2 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              57 |           26 |
+| No           | No                    | No                     |              60 |           28 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               4 |            2 |
-| Yes          | No                    | No                     |              74 |           36 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              88 |           34 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               4 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -70,25 +70,25 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------+---------------------------------+-----------------------------------+------------------+----------------+
-|          Clock Signal         |          Enable Signal          |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
-+-------------------------------+---------------------------------+-----------------------------------+------------------+----------------+
-|  clk_div_in/out[0]            |                                 |                                   |                1 |              1 |
-|  clk_div_in/out[0]            | pacman_dir[1]_i_1_n_0           |                                   |                1 |              1 |
-|  clk_wiz_0_inst/inst/clk_out1 |                                 | vga_out_inst/hcount[10]_i_1_n_0   |                2 |              4 |
-|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/map_idx_y          | drawcon_inst/map_idx_y[5]_i_1_n_0 |                1 |              4 |
-|  clk_div_in/out[1]            |                                 |                                   |                4 |              5 |
-|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_3_sprite_idx |                                   |                2 |              7 |
-|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_4_sprite_idx |                                   |                3 |              7 |
-|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_1_sprite_idx |                                   |                4 |              7 |
-|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_2_sprite_idx |                                   |                3 |              7 |
-|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/map_idx_x          |                                   |                2 |              7 |
-|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/pacman_sprite_idx  |                                   |                3 |              7 |
-|  clk_wiz_0_inst/inst/clk_out1 | vga_out_inst/curr_y[9]_i_1_n_0  |                                   |                5 |             10 |
-|  clk_wiz_0_inst/inst/clk_out1 | vga_out_inst/vcount[9]_i_1_n_0  |                                   |                5 |             10 |
-|  clk_wiz_0_inst/inst/clk_out1 | vga_out_inst/curr_x             |                                   |                8 |             11 |
-|  clk_IBUF                     |                                 |                                   |                7 |             25 |
-|  clk_wiz_0_inst/inst/clk_out1 |                                 |                                   |               14 |             26 |
-+-------------------------------+---------------------------------+-----------------------------------+------------------+----------------+
++-------------------------------+-----------------------------------+-----------------------------------+------------------+----------------+
+|          Clock Signal         |           Enable Signal           |          Set/Reset Signal         | Slice Load Count | Bel Load Count |
++-------------------------------+-----------------------------------+-----------------------------------+------------------+----------------+
+|  clk_div_in/out[0]            |                                   |                                   |                1 |              1 |
+|  clk_div_in/out[0]            | pacman_dir[1]_i_1_n_0             |                                   |                1 |              1 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/map_idx_y            | drawcon_inst/map_idx_y[5]_i_1_n_0 |                1 |              4 |
+|  clk_div_in/out[1]            |                                   |                                   |                5 |              5 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_1_sprite_idx   |                                   |                2 |              7 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_2_sprite_idx   |                                   |                2 |              7 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_3_sprite_idx   |                                   |                3 |              7 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/ghost_4_sprite_idx   |                                   |                2 |              7 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/map_idx_x            |                                   |                2 |              7 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/pacman_sprite_idx    |                                   |                3 |              7 |
+|  clk_wiz_0_inst/inst/clk_out1 | vga_out_inst/curr_y[9]_i_1_n_0    |                                   |                4 |             10 |
+|  clk_wiz_0_inst/inst/clk_out1 | vga_out_inst/vcount[9]_i_1_n_0    |                                   |                4 |             10 |
+|  clk_wiz_0_inst/inst/clk_out1 | vga_out_inst/curr_x               |                                   |                6 |             11 |
+|  clk_wiz_0_inst/inst/clk_out1 | drawcon_inst/num_sprite_score_idx |                                   |                5 |             14 |
+|  clk_IBUF                     |                                   |                                   |                7 |             25 |
+|  clk_wiz_0_inst/inst/clk_out1 |                                   |                                   |               15 |             29 |
++-------------------------------+-----------------------------------+-----------------------------------+------------------+----------------+
 
 
