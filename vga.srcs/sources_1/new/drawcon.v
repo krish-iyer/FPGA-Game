@@ -46,26 +46,29 @@ reg map_pix = 0;
 reg draw_food = 0;
 
 always @(posedge clk) begin
-    if(map_idx_y == 50) begin
-        map_idx_y <= 0;
-    end
-    if(map_idx_x == 80) begin
-        map_idx_x <= 0;
-    end
     if(draw_y[4] ^ mod_y) begin
         mod_y <= draw_y[4];
         map_idx_y <= map_idx_y + 1;
     end
     if(draw_x[4] ^ mod_x) begin
         mod_x <= draw_x[4];
-        map_pix <= map_row[map_idx_x];
         map_idx_x <= map_idx_x + 1;
+    end
+    if(map_idx_y == 50) begin
+        map_idx_y <= 0;
+    end
+    if(map_idx_x == 80) begin
+        map_idx_x <= 0;
     end
 end
 
 always @(posedge clk) begin
+    map_pix <= map_row[map_idx_x];
+end
+
+always @(posedge clk) begin
     if(draw_x[3:0] >=6 && draw_x[3:0] <= 9 && draw_y[3:0] >= 6  && draw_y[3:0] <= 9 && map_pix) begin
-            draw_food <= 1;
+        draw_food <= 1;
     end
     else begin
         draw_food <= 0;
@@ -79,12 +82,12 @@ pacman_map_blockmem map(
 );
 
 always@(posedge clk) begin
-    if(((draw_x >= 0 && draw_x <= 10) || (draw_x >= 1269 && draw_x <= 1279)) || ((draw_y >= 0 && draw_y <= 10)  || (draw_y >= 789 && draw_y <= 799))) begin
-        bg_r <= 15;
-        bg_g <= 15;
-        bg_b <= 15;
-    end
-    else if(map_pix == 0) begin
+    // if(((draw_x >= 0 && draw_x <= 10) || (draw_x >= 1269 && draw_x <= 1279)) || ((draw_y >= 0 && draw_y <= 10)  || (draw_y >= 789 && draw_y <= 799))) begin
+    //     bg_r <= 15;
+    //     bg_g <= 15;
+    //     bg_b <= 15;
+    // end
+    if(map_pix == 0) begin
         bg_r <= 0;
         bg_g <= 0;
         bg_b <= 10;

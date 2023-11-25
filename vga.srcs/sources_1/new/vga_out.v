@@ -39,7 +39,7 @@ module vga_out(
     always@(posedge clk) begin
         
         hcount <= hcount + 1;   // blocking assignment will only take it to 1678
-        if(hcount == 1678) begin
+        if(hcount == 1679) begin
             hcount <= 0;
             vcount <= vcount + 1;
         end
