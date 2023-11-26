@@ -21,13 +21,13 @@ module collision_detection (
                                   
 	
 	_display_pos_to_map_index pacman_pos_to_map_index_inst (   .display_pos_x(pacman_curr_pos_x),
-	                                                           .display_pos_y(pacman_curr_pos_x), 
+	                                                           .display_pos_y(pacman_curr_pos_y), 
                                                                .matrix_idx_x(pacman_matrix_idx_x),
                                                                .matrix_idx_y(pacman_matrix_idx_y)
                             ); 
 	
 	_display_pos_to_map_index ghost_pos_to_map_index_inst (   .display_pos_x(ghost_curr_pos_x),
-	                                                           .display_pos_y(ghost_curr_pos_x), 
+	                                                           .display_pos_y(ghost_curr_pos_y), 
                                                                .matrix_idx_x(ghost_matrix_idx_x),
                                                                .matrix_idx_y(ghost_matrix_idx_y)
                             );

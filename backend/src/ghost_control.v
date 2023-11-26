@@ -36,7 +36,10 @@ module ghost_control (
 	reg [11:0] horizontal_distance;
 	
 	reg [3:0] reg_move_dir; 
-   reg [3:0] relative_ghost_location;  
+   reg [3:0] relative_ghost_location_x;
+   reg [3:0] relative_ghost_location_y; 
+   wire [3:0] final_valid_movements;  
+
     
     // evaluate valid moves based on the fact that ghosts don't reverse directions
 	always @(*) begin
@@ -61,14 +64,20 @@ module ghost_control (
           // if right and left are valid moves, then mask one based on the relative position
           // in this case, it is right
           if ((no_reverse_valid_moves & RIGHT != 0) && (no_reverse_valid_moves & LEFT != 0)  ) 
-               relative_ghost_location = no_reverse_valid_moves & ~LEFT; 
+               relative_ghost_location_x = no_reverse_valid_moves & ~LEFT;
+               // relative_ghost_location = 4'b0000;
+            else 
+               relative_ghost_location_x= no_reverse_valid_moves; 
       end
       else begin 
 	   	   horizontal_distance = ghost_curr_pos_x - pacman_curr_pos_x;
             // if right and left are valid moves, then mask one based on the relative position
           // in this case, it is left
             if ((no_reverse_valid_moves & RIGHT != 0) && (no_reverse_valid_moves & LEFT != 0)  ) 
-               relative_ghost_location = no_reverse_valid_moves & ~RIGHT; 
+               relative_ghost_location_x = no_reverse_valid_moves & ~RIGHT; 
+               // relative_ghost_location = 4'b0000;
+            else 
+               relative_ghost_location_x= no_reverse_valid_moves; 
       end 
 	   
 	   if (pacman_curr_pos_y > ghost_curr_pos_y)begin 
@@ -76,21 +85,28 @@ module ghost_control (
            // if up and down are valid moves, then mask one based on the relative position
           // in this case, it is down 
             if ((no_reverse_valid_moves & UP != 0) && (no_reverse_valid_moves & DOWN != 0)  ) 
-               relative_ghost_location = no_reverse_valid_moves & ~UP; 
+               relative_ghost_location_y = no_reverse_valid_moves & ~UP; 
+               // relative_ghost_location = 4'b0000;
+            else 
+               relative_ghost_location_y= no_reverse_valid_moves; 
       end  
 	   else begin 
 	   	   vertical_distance = ghost_curr_pos_y - pacman_curr_pos_y;  
              // if up and down are valid moves, then mask one based on the relative position
             // in this case, it is up 
             if ((no_reverse_valid_moves & UP != 0) && (no_reverse_valid_moves & DOWN != 0)  ) 
-               relative_ghost_location = no_reverse_valid_moves & ~DOWN;   
+               relative_ghost_location_y = no_reverse_valid_moves & ~DOWN;  
+               // relative_ghost_location = 4'b0000;
+            else 
+               relative_ghost_location_y= no_reverse_valid_moves; 
       end 
    
     end 
     
+   assign final_valid_movements = no_reverse_valid_moves & relative_ghost_location_x & relative_ghost_location_x; 
     always @(*) begin
 	
-	   case(no_reverse_valid_moves & relative_ghost_location)
+	   case(final_valid_movements)
 	   
            RIGHT | UP:
                if (horizontal_distance == 0)
@@ -142,17 +158,19 @@ module ghost_control (
 	           // we created earlier with the previous direction 
 	           // it can't assert the right and the left at once 
 	           // so is for up and down  
-                if (no_reverse_valid_moves & UP == UP)
+                if (final_valid_movements & UP == UP)
                    reg_move_dir = UP;
-                else if (no_reverse_valid_moves & DOWN == DOWN)
+                else if (final_valid_movements & DOWN == DOWN)
                    reg_move_dir= DOWN; 
-                else if (no_reverse_valid_moves & RIGHT == RIGHT)
+                else if (final_valid_movements & RIGHT == RIGHT)
                    reg_move_dir= RIGHT; 
-                else if (no_reverse_valid_moves & LEFT == LEFT)
+                else if (final_valid_movements & LEFT == LEFT)
                    reg_move_dir= LEFT; 
                 
                 else 
-                    reg_move_dir = 4'b0000;   
+                    reg_move_dir = UP;
+                  //   reg_move_dir = 4'b0000;   
+
                   
 	   endcase 
    

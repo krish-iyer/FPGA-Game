@@ -19,24 +19,24 @@ module position_update_function (
     // created on the create_map branch 
     // pacman -> 0; blinky -> 1; pinky -> 2; inky -> 3; clyde -> 4; 
     parameter PACMAN= 0;
-    parameter PACMAN_RESET_POS_X= 11'd1367;
-    parameter PACMAN_RESET_POS_Y= 10'd306;
+    parameter PACMAN_RESET_POS_X= 11'd967;
+    parameter PACMAN_RESET_POS_Y= 10'd66;
     
     parameter BLINKY=1; 
-    parameter BLINKY_RESET_POS_X= 11'd1399;
-    parameter BLINKY_RESET_POS_Y= 10'd130;
+    parameter BLINKY_RESET_POS_X= 11'd663;
+    parameter BLINKY_RESET_POS_Y= 10'd434;
     
     parameter PINKY=2; 
-    parameter PINKY_RESET_POS_X= 11'd439;
-    parameter PINKY_RESET_POS_Y= 10'd434;
+    parameter PINKY_RESET_POS_X= 11'd615;
+    parameter PINKY_RESET_POS_Y= 10'd258;
     
     parameter INKY=3; 
-    parameter INKY_RESET_POS_X= 11'd1031;
-    parameter INKY_RESET_POS_Y= 10'd402;
+    parameter INKY_RESET_POS_X= 11'd503;
+    parameter INKY_RESET_POS_Y= 10'd66;
     
     parameter CLYDE=4; 
-    parameter CLYDE_RESET_POS_X= 11'd1415;
-    parameter CLYDE_RESET_POS_Y= 10'd66;
+    parameter CLYDE_RESET_POS_X= 11'd615;
+    parameter CLYDE_RESET_POS_Y= 10'd370;
     
     
     // here defines the directions 

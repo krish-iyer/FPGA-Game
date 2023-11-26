@@ -1,4 +1,5 @@
-module input_module(input rbtn,
+module TopModule_GameLogic(
+                    input rbtn,
                     input lbtn, 
                     input ubtn, 
                     input dbtn,
@@ -14,78 +15,106 @@ module input_module(input rbtn,
                     output [9:0]inky_pos_y, 
                     output [10:0]clyde_pos_x, 
                     output [9:0]clyde_pos_y, 
-                    output pacman_is_dead); 
+                    output pacman_is_dead, 
+                    output [3:0] pacman_moving_dir_out); 
 
 
-    wire [3:0] pacman_move_dir; 
+    wire [3:0] pacman_move_direction; 
 
-    wire [10:0] pacman_curr_pos_x; 
-    wire [9:0]  pacman_curr_pos_y;
-    wire [10:0] pacman_new_pos_x; 
-    wire [9:0]  pacman_new_pos_y;
-    reg [10:0]  pacman_reg_curr_pos_x; 
-    reg [9:0]   pacman_reg_curr_pos_y;
+    reg [10:0] pacman_curr_pos_x; 
+    reg [9:0]  pacman_curr_pos_y;
+    // wire [10:0] pacman_pos_x; 
+    // wire [9:0]  pacman_pos_y;
+    // reg [10:0]  pacman_reg_curr_pos_x; 
+    // reg [9:0]   pacman_reg_curr_pos_y;
 
-    wire [10:0] blinky_curr_pos_x; 
-    wire [9:0]  blinky_curr_pos_y;
-    wire [10:0] blinky_new_pos_x; 
-    wire [9:0]  blinky_new_pos_y;
-    wire [10:0] blinky_reg_curr_pos_x; 
-    wire [9:0]  blinky_reg_curr_pos_y;
+    reg [10:0] blinky_curr_pos_x; 
+    reg [9:0]  blinky_curr_pos_y;
+    // wire [10:0] blinky_pos_x; 
+    // wire [9:0]  blinky_pos_y;
+    // wire [10:0] blinky_reg_curr_pos_x; 
+    // wire [9:0]  blinky_reg_curr_pos_y;
     reg [3:0]   blinky_previous_direction;
     wire [3:0]   blinky_move_direction;
     wire blinky_killed_pacman;  
 
 
-    wire [10:0] pinky_curr_pos_x; 
-    wire [9:0]  pinky_curr_pos_y;
-    wire [10:0] pinky_new_pos_x; 
-    wire [9:0]  pinky_new_pos_y;
-    wire [10:0] pinky_reg_curr_pos_x; 
-    wire [9:0]  pinky_reg_curr_pos_y;
+    reg [10:0] pinky_curr_pos_x; 
+    reg [9:0]  pinky_curr_pos_y;
+    // wire [10:0] pinky_pos_x; 
+    // wire [9:0]  pinky_pos_y;
+    // wire [10:0] pinky_reg_curr_pos_x; 
+    // wire [9:0]  pinky_reg_curr_pos_y;
     reg [3:0]   pinky_previous_direction; 
     wire [3:0]   pinky_move_direction; 
     wire pinky_killed_pacman;  
 
 
 
-    wire [10:0] inky_curr_pos_x; 
-    wire [9:0]  inky_curr_pos_y;
-    wire [10:0] inky_new_pos_x; 
-    wire [9:0]  inky_new_pos_y;
-    wire [10:0] inky_reg_curr_pos_x; 
-    wire [9:0]  inky_reg_curr_pos_y;
+    reg [10:0] inky_curr_pos_x; 
+    reg [9:0]  inky_curr_pos_y;
+    // wire [10:0] inky_pos_x; 
+    // wire [9:0]  inky_pos_y;
+    // wire [10:0] inky_reg_curr_pos_x; 
+    // wire [9:0]  inky_reg_curr_pos_y;
     reg [3:0]   inky_previous_direction; 
     wire [3:0]   inky_move_direction; 
     wire inky_killed_pacman;  
 
 
-    wire [10:0] clyde_curr_pos_x; 
-    wire [9:0]  clyde_curr_pos_y;
-    wire [10:0] clyde_new_pos_x; 
-    wire [9:0]  clyde_new_pos_y;
-    wire [10:0] clyde_reg_curr_pos_x; 
-    wire [9:0]  clyde_reg_curr_pos_y;
+    reg [10:0] clyde_curr_pos_x; 
+    reg [9:0]  clyde_curr_pos_y;
+    // wire [10:0] clyde_pos_x; 
+    // wire [9:0]  clyde_pos_y;
+    // wire [10:0] clyde_reg_curr_pos_x; 
+    // wire [9:0]  clyde_reg_curr_pos_y;
     reg [3:0]   clyde_previous_direction; 
     wire [3:0]   clyde_move_direction; 
-    wire inky_killed_pacman;  
+    wire clyde_killed_pacman;  
 
 
+    
+    // here defines the reset positions for the sprites 
+    // we assume the  matrix 
+    // all default positions are taken from the random_position file 
+    // created on the create_map branch 
+    // pacman -> 0; blinky -> 1; pinky -> 2; inky -> 3; clyde -> 4; 
     parameter PACMAN= 0;
+    parameter PACMAN_RESET_POS_X= 11'd967;
+    parameter PACMAN_RESET_POS_Y= 10'd66;
+    
     parameter BLINKY=1; 
+    parameter BLINKY_RESET_POS_X= 11'd663;
+    parameter BLINKY_RESET_POS_Y= 10'd434;
+    
     parameter PINKY=2; 
+    parameter PINKY_RESET_POS_X= 11'd615;
+    parameter PINKY_RESET_POS_Y= 10'd258;
+    
     parameter INKY=3; 
+    parameter INKY_RESET_POS_X= 11'd503;
+    parameter INKY_RESET_POS_Y= 10'd66;
+    
     parameter CLYDE=4; 
+    parameter CLYDE_RESET_POS_X= 11'd615;
+    parameter CLYDE_RESET_POS_Y= 10'd370;
+    
+    
+    // here defines the directions 
+    parameter RIGHT= 4'b0001; 
+	parameter LEFT=  4'b1000;	
+	parameter UP=    4'b0010;
+	parameter DOWN=  4'b0100;  
    
 
     input_module input_module_game_logic (  .rbtn(rbtn),
                                             .lbtn(lbtn), 
                                             .ubtn(ubtn), 
                                             .dbtn(dbtn),
-                                            .move_dir(pacman_move_dir) );
+                                            .move_dir(pacman_move_direction) );
 
     ghost_control blinky_ghost_control (
-                                    .clk(clka),
+                                    .clk(clk),
                                     .ghost_curr_pos_x(blinky_curr_pos_x), 
                                     .ghost_curr_pos_y(blinky_curr_pos_y), 
                                     .pacman_curr_pos_x(pacman_curr_pos_x), 
@@ -95,7 +124,7 @@ module input_module(input rbtn,
 
 
     ghost_control pinky_ghost_control (
-                                    .clk(clka),
+                                    .clk(clk),
                                     .ghost_curr_pos_x(pinky_curr_pos_x), 
                                     .ghost_curr_pos_y(pinky_curr_pos_y), 
                                     .pacman_curr_pos_x(pacman_curr_pos_x), 
@@ -104,7 +133,7 @@ module input_module(input rbtn,
                                     .move_direction(pinky_move_direction));
 
     ghost_control inky_ghost_control (
-                                    .clk(clka),
+                                    .clk(clk),
                                     .ghost_curr_pos_x(inky_curr_pos_x), 
                                     .ghost_curr_pos_y(inky_curr_pos_y), 
                                     .pacman_curr_pos_x(pacman_curr_pos_x), 
@@ -113,7 +142,7 @@ module input_module(input rbtn,
                                     .move_direction(inky_move_direction));
     
     ghost_control clyde_ghost_control (
-                                    .clk(clka),
+                                    .clk(clk),
                                     .ghost_curr_pos_x(clyde_curr_pos_x), 
                                     .ghost_curr_pos_y(clyde_curr_pos_y), 
                                     .pacman_curr_pos_x(pacman_curr_pos_x), 
@@ -122,93 +151,87 @@ module input_module(input rbtn,
                                     .move_direction(clyde_move_direction));
 
     position_update_function pacman_position_update_function (
-                                 .clk(clka),
+                                 .clk(clk),
                                  .rst(rst),
                                  .curr_pos_x(pacman_curr_pos_x),
                                  .curr_pos_y(pacman_curr_pos_y),
                                  .move_direction(pacman_move_direction),
                                   .which_sprite(PACMAN), 
-                                  .new_pos_x(pacman_new_pos_x), 
-                                  .new_pos_y(pacman_new_pos_y));
+                                  .new_pos_x(pacman_pos_x), 
+                                  .new_pos_y(pacman_pos_y));
     
     position_update_function blinky_position_update_function (
-                                 .clk(clka),
+                                 .clk(clk),
                                  .rst(rst),
                                  .curr_pos_x(blinky_curr_pos_x),
                                  .curr_pos_y(blinky_curr_pos_y),
                                  .move_direction(blinky_move_direction),
                                   .which_sprite(BLINKY), 
-                                  .new_pos_x(blinky_new_pos_x), 
-                                  .new_pos_y(blinky_new_pos_y));
+                                  .new_pos_x(blinky_pos_x), 
+                                  .new_pos_y(blinky_pos_y));
 
     position_update_function pinky_position_update_function (
-                                 .clk(clka),
+                                 .clk(clk),
                                  .rst(rst),
                                  .curr_pos_x(pinky_curr_pos_x),
                                  .curr_pos_y(pinky_curr_pos_y),
                                  .move_direction(pinky_move_direction),
                                   .which_sprite(PINKY), 
-                                  .new_pos_x(pinky_new_pos_x), 
-                                  .new_pos_y(pinky_new_pos_y));
+                                  .new_pos_x(pinky_pos_x), 
+                                  .new_pos_y(pinky_pos_y));
 
     position_update_function inky_position_update_function (
-                                 .clk(clka),
+                                 .clk(clk),
                                  .rst(rst),
                                  .curr_pos_x(inky_curr_pos_x),
                                  .curr_pos_y(inky_curr_pos_y),
                                  .move_direction(inky_move_direction),
                                   .which_sprite(INKY), 
-                                  .new_pos_x(inky_new_pos_x), 
-                                  .new_pos_y(inky_new_pos_y));
+                                  .new_pos_x(inky_pos_x), 
+                                  .new_pos_y(inky_pos_y));
 
     position_update_function clyde_position_update_function (
-                                 .clk(clka),
+                                 .clk(clk),
                                  .rst(rst),
                                  .curr_pos_x(clyde_curr_pos_x),
                                  .curr_pos_y(clyde_curr_pos_y),
                                  .move_direction(clyde_move_direction),
                                   .which_sprite(CLYDE), 
-                                  .new_pos_x(clyde_new_pos_x), 
-                                  .new_pos_y(clyde_new_pos_y));
+                                  .new_pos_x(clyde_pos_x), 
+                                  .new_pos_y(clyde_pos_y));
+
+  
 
     collision_detection blinky_collision_detection (
                                     
-                                    .ghost_curr_pos_x(blinky_new_pos_x), 
-                                    .ghost_curr_pos_y(blinky_new_pos_y), 
-                                    .pacman_curr_pos_x(pacman_new_pos_x), 
-                                    .pacman_curr_pos_y(pacman_new_pos_y),
-                                    .pacman_is_dead(blinky_killed_pacman));
-
-    collision_detection blinky_collision_detection (
-                                    
-                                    .ghost_curr_pos_x(blinky_new_pos_x), 
-                                    .ghost_curr_pos_y(blinky_new_pos_y), 
-                                    .pacman_curr_pos_x(pacman_new_pos_x), 
-                                    .pacman_curr_pos_y(pacman_new_pos_y),
+                                    .ghost_curr_pos_x(blinky_pos_x), 
+                                    .ghost_curr_pos_y(blinky_pos_y), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y),
                                     .pacman_is_dead(blinky_killed_pacman));
 
     collision_detection pinky_collision_detection (
                                     
-                                    .ghost_curr_pos_x(pinky_new_pos_x), 
-                                    .ghost_curr_pos_y(pinky_new_pos_y), 
-                                    .pacman_curr_pos_x(pacman_new_pos_x), 
-                                    .pacman_curr_pos_y(pacman_new_pos_y),
+                                    .ghost_curr_pos_x(pinky_pos_x), 
+                                    .ghost_curr_pos_y(pinky_pos_y), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y),
                                     .pacman_is_dead(pinky_killed_pacman));
 
     collision_detection inky_collision_detection (
                                     
-                                    .ghost_curr_pos_x(inky_new_pos_x), 
-                                    .ghost_curr_pos_y(inky_new_pos_y), 
-                                    .pacman_curr_pos_x(pacman_new_pos_x), 
-                                    .pacman_curr_pos_y(pacman_new_pos_y),
+                                    .ghost_curr_pos_x(inky_pos_x), 
+                                    .ghost_curr_pos_y(inky_pos_y), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y),
                                     .pacman_is_dead(inky_killed_pacman));
 
     collision_detection clyde_collision_detection (
                                     
-                                    .ghost_curr_pos_x(clyde_new_pos_x), 
-                                    .ghost_curr_pos_y(clyde_new_pos_y), 
-                                    .pacman_curr_pos_x(pacman_new_pos_x), 
-                                    .pacman_curr_pos_y(pacman_new_pos_y),
+                                    .ghost_curr_pos_x(clyde_pos_x), 
+                                    .ghost_curr_pos_y(clyde_pos_y), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y),
                                     .pacman_is_dead(clyde_killed_pacman));                                
 
     assign pacman_is_dead = blinky_killed_pacman 
@@ -217,25 +240,44 @@ module input_module(input rbtn,
                           ||clyde_killed_pacman; 
 
     always @(posedge clk)begin 
-        
-        blinky_previous_direction <= blinky_move_direction; 
-        pinky_previous_direction <=  pinky_move_direction; 
-        inky_previous_direction <=   inky_move_direction; 
-        clyde_previous_direction <= clyde_move_direction; 
 
-        pacman_curr_pos_x <= pacman_new_pos_x; 
-        pacman_curr_pos_y <= pacman_new_pos_y; 
-        blinky_curr_pos_x <= blinky_new_pos_x; 
-        blinky_curr_pos_y <= blinky_new_pos_y;
-        pinky_curr_pos_x <= pinky_new_pos_x; 
-        pinky_curr_pos_y <= pinky_new_pos_y;
-        inky_curr_pos_x <= inky_new_pos_x; 
-        inky_curr_pos_y <= inky_new_pos_y;
-        clyde_curr_pos_x <= clyde_new_pos_x; 
-        clyde_curr_pos_y <= clyde_new_pos_y;
+        if (rst) begin 
+            blinky_previous_direction <= RIGHT; 
+            pinky_previous_direction <=  RIGHT; 
+            inky_previous_direction <=   RIGHT; 
+            clyde_previous_direction <= RIGHT;
 
+            // pacman_curr_pos_x <= PACMAN_RESET_POS_X; 
+            // pacman_curr_pos_y <= PACMAN_RESET_POS_Y; 
+            // blinky_curr_pos_x <= BLINKY_RESET_POS_X; 
+            // blinky_curr_pos_y <= BLINKY_RESET_POS_Y;
+            // pinky_curr_pos_x <= PINKY_RESET_POS_X; 
+            // pinky_curr_pos_y <= PINKY_RESET_POS_Y;
+            // inky_curr_pos_x <= INKY_RESET_POS_X; 
+            // inky_curr_pos_y <= INKY_RESET_POS_Y;
+            // clyde_curr_pos_x <= CLYDE_RESET_POS_X; 
+            // clyde_curr_pos_y <= CLYDE_RESET_POS_Y;
+
+        end
+        else begin  
+            blinky_previous_direction <= blinky_move_direction; 
+            pinky_previous_direction <=  pinky_move_direction; 
+            inky_previous_direction <=   inky_move_direction; 
+            clyde_previous_direction <= clyde_move_direction; 
+
+            pacman_curr_pos_x <= pacman_pos_x; 
+            pacman_curr_pos_y <= pacman_pos_y; 
+            blinky_curr_pos_x <= blinky_pos_x; 
+            blinky_curr_pos_y <= blinky_pos_y;
+            pinky_curr_pos_x <= pinky_pos_x; 
+            pinky_curr_pos_y <= pinky_pos_y;
+            inky_curr_pos_x <= inky_pos_x; 
+            inky_curr_pos_y <= inky_pos_y;
+            clyde_curr_pos_x <= clyde_pos_x; 
+            clyde_curr_pos_y <= clyde_pos_y;
+        end
     end   
-                            
+    assign pacman_moving_dir_out = pacman_move_direction;                 
 
 
 
