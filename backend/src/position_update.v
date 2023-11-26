@@ -73,29 +73,29 @@ module position_update_function (
 	valid_move_detector inside_pos_update_valid_move_detector (.clk(clk),.curr_pos_x(curr_pos_x), .curr_pos_y(curr_pos_y), 
 							.valid_moves(valid_moves));
 	
-	always @(*) begin
+	always @(posedge clk) begin
      
         if (rst)begin 
             case (which_sprite)
                 PACMAN:begin 
-                        reg_new_pos_x = PACMAN_RESET_POS_X; 
-                        reg_new_pos_y= PACMAN_RESET_POS_Y; 
+                        reg_new_pos_x <= PACMAN_RESET_POS_X; 
+                        reg_new_pos_y <= PACMAN_RESET_POS_Y; 
                         end 
                 BLINKY:begin 
-                        reg_new_pos_x = BLINKY_RESET_POS_X; 
-                        reg_new_pos_y= BLINKY_RESET_POS_Y; 
+                        reg_new_pos_x <= BLINKY_RESET_POS_X; 
+                        reg_new_pos_y<= BLINKY_RESET_POS_Y; 
                         end 
                 PINKY:begin 
-                        reg_new_pos_x = PINKY_RESET_POS_X; 
-                        reg_new_pos_y= PINKY_RESET_POS_Y; 
+                        reg_new_pos_x <= PINKY_RESET_POS_X; 
+                        reg_new_pos_y<= PINKY_RESET_POS_Y; 
                         end 
                 INKY:begin 
-                        reg_new_pos_x = INKY_RESET_POS_X; 
-                        reg_new_pos_y= INKY_RESET_POS_Y; 
+                        reg_new_pos_x <= INKY_RESET_POS_X; 
+                        reg_new_pos_y<= INKY_RESET_POS_Y; 
                         end 
                 CLYDE:begin 
-                        reg_new_pos_x = CLYDE_RESET_POS_X; 
-                        reg_new_pos_y= CLYDE_RESET_POS_Y; 
+                        reg_new_pos_x <= CLYDE_RESET_POS_X; 
+                        reg_new_pos_y<= CLYDE_RESET_POS_Y; 
                         end                                                                                    
             
             endcase
@@ -110,11 +110,11 @@ module position_update_function (
                  
                  // wrap around for the right move 
                  if ((curr_pos_x + DISTANCE_BETWEEN_BLOCKS) > WRAP_LEFT) 
-                        reg_new_pos_x = WRAP_RIGHT; 
+                        reg_new_pos_x <= WRAP_RIGHT; 
                  else 
-                    reg_new_pos_x= curr_pos_x + DISTANCE_BETWEEN_BLOCKS; 
+                    reg_new_pos_x<= curr_pos_x + DISTANCE_BETWEEN_BLOCKS; 
                     
-                 reg_new_pos_y= curr_pos_y; 
+                 reg_new_pos_y<= curr_pos_y; 
             
             
             end 
@@ -122,23 +122,23 @@ module position_update_function (
                     ((valid_moves & LEFT) != 0)) begin  
                  
                  if ((curr_pos_x - DISTANCE_BETWEEN_BLOCKS)< WRAP_RIGHT)
-                    reg_new_pos_x= WRAP_LEFT; 
+                    reg_new_pos_x<= WRAP_LEFT; 
                  else 
-                    reg_new_pos_x= curr_pos_x - DISTANCE_BETWEEN_BLOCKS;
+                    reg_new_pos_x<= curr_pos_x - DISTANCE_BETWEEN_BLOCKS;
                      
-                 reg_new_pos_y= curr_pos_y; 
+                 reg_new_pos_y<= curr_pos_y; 
             
             
             end 
             else if ((move_direction == UP) && 
                      ((valid_moves & UP) != 0)) begin 
                      
-                     reg_new_pos_x= curr_pos_x; 
+                     reg_new_pos_x<= curr_pos_x; 
                      
                      if ((curr_pos_y - DISTANCE_BETWEEN_BLOCKS) < WRAP_DOWN)
-                        reg_new_pos_y = WRAP_UP; 
+                        reg_new_pos_y <= WRAP_UP; 
                      else 
-                        reg_new_pos_y= curr_pos_y - DISTANCE_BETWEEN_BLOCKS;
+                        reg_new_pos_y<= curr_pos_y - DISTANCE_BETWEEN_BLOCKS;
                         
                      
                        
@@ -148,12 +148,12 @@ module position_update_function (
             else if ((move_direction == DOWN) && 
                     ((valid_moves & DOWN) != 0)) begin 
 
-                    reg_new_pos_x= curr_pos_x;  
+                    reg_new_pos_x<= curr_pos_x;  
                     
                     if ((curr_pos_y + DISTANCE_BETWEEN_BLOCKS)> WRAP_UP)
-                        reg_new_pos_y = WRAP_DOWN; 
+                        reg_new_pos_y <= WRAP_DOWN; 
                     else 
-                        reg_new_pos_y= curr_pos_y + DISTANCE_BETWEEN_BLOCKS;
+                        reg_new_pos_y<= curr_pos_y + DISTANCE_BETWEEN_BLOCKS;
                         
                     
                     
@@ -161,8 +161,8 @@ module position_update_function (
             
             end          
             else begin 
-                    reg_new_pos_x = curr_pos_x; 
-                    reg_new_pos_y = curr_pos_y; 
+                    reg_new_pos_x <= curr_pos_x; 
+                    reg_new_pos_y <= curr_pos_y; 
             
             end 
         end  

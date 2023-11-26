@@ -105,7 +105,13 @@ module TopModule_GameLogic(
 	parameter LEFT=  4'b1000;	
 	parameter UP=    4'b0010;
 	parameter DOWN=  4'b0100;  
-   
+    
+    // wire slower_clk_3; 
+    // clk_div  #(.DIV(3)) topmodule_gamelogic_clkdiv
+    // (
+    //     .clk(clk),
+    //     .clk_out (slower_clk_3)
+    // );
 
     input_module input_module_game_logic (  .rbtn(rbtn),
                                             .lbtn(lbtn), 
@@ -241,10 +247,21 @@ module TopModule_GameLogic(
 
     always @(posedge clk)begin 
 
+        pacman_curr_pos_x <= pacman_pos_x; 
+        pacman_curr_pos_y <= pacman_pos_y; 
+        blinky_curr_pos_x <= blinky_pos_x; 
+        blinky_curr_pos_y <= blinky_pos_y;
+        pinky_curr_pos_x <= pinky_pos_x; 
+        pinky_curr_pos_y <= pinky_pos_y;
+        inky_curr_pos_x <= inky_pos_x; 
+        inky_curr_pos_y <= inky_pos_y;
+        clyde_curr_pos_x <= clyde_pos_x; 
+        clyde_curr_pos_y <= clyde_pos_y;
+
         if (rst) begin 
             blinky_previous_direction <= RIGHT; 
             pinky_previous_direction <=  RIGHT; 
-            inky_previous_direction <=   RIGHT; 
+            inky_previous_direction <=   DOWN; 
             clyde_previous_direction <= RIGHT;
 
             // pacman_curr_pos_x <= PACMAN_RESET_POS_X; 
@@ -265,16 +282,7 @@ module TopModule_GameLogic(
             inky_previous_direction <=   inky_move_direction; 
             clyde_previous_direction <= clyde_move_direction; 
 
-            pacman_curr_pos_x <= pacman_pos_x; 
-            pacman_curr_pos_y <= pacman_pos_y; 
-            blinky_curr_pos_x <= blinky_pos_x; 
-            blinky_curr_pos_y <= blinky_pos_y;
-            pinky_curr_pos_x <= pinky_pos_x; 
-            pinky_curr_pos_y <= pinky_pos_y;
-            inky_curr_pos_x <= inky_pos_x; 
-            inky_curr_pos_y <= inky_pos_y;
-            clyde_curr_pos_x <= clyde_pos_x; 
-            clyde_curr_pos_y <= clyde_pos_y;
+            
         end
     end   
     assign pacman_moving_dir_out = pacman_move_direction;                 
