@@ -107,14 +107,18 @@ module TopModule_GameLogic(
 	parameter DOWN=  4'b0100;  
     
     wire slower_clk_2; 
-    // clk_div  #(.DIV(2)) topmodule_gamelogic_clkdiv(
-    //     .clk(clk),
-    //     .clk_out (slower_clk_2)
-    // );
-    clk_div #(.DIV(1)) clk_div(
+    clk_div  #(.DIV(1)) topmodule_gamelogic_clkdiv2(
         .clk(clk),
-        .clk_out(slower_clk_2)
+        .clk_out (slower_clk_2)
     );
+
+    wire slower_clk_4; 
+    clk_div  #(.DIV(2)) topmodule_gamelogic_clkdiv4(
+        .clk(clk),
+        .clk_out (slower_clk_4)
+    );
+
+    
 
     input_module input_module_game_logic (  .rbtn(rbtn),
                                             .lbtn(lbtn), 
@@ -252,7 +256,7 @@ module TopModule_GameLogic(
     //                       ||clyde_killed_pacman; 
     assign pacman_is_dead = pinky_killed_pacman; 
 
-    always @(posedge clk or rst)begin 
+    always @(posedge slower_clk_2)begin 
 
         pacman_curr_pos_x <= pacman_pos_x; 
         pacman_curr_pos_y <= pacman_pos_y; 
@@ -264,34 +268,14 @@ module TopModule_GameLogic(
         inky_curr_pos_y <= inky_pos_y;
         clyde_curr_pos_x <= clyde_pos_x; 
         clyde_curr_pos_y <= clyde_pos_y;
-
-        if (rst) begin 
-            blinky_previous_direction <= RIGHT; 
-            pinky_previous_direction <=  RIGHT; 
-            inky_previous_direction <=   DOWN; 
-            clyde_previous_direction <= RIGHT;
-
-            // pacman_curr_pos_x <= PACMAN_RESET_POS_X; 
-            // pacman_curr_pos_y <= PACMAN_RESET_POS_Y; 
-            // blinky_curr_pos_x <= BLINKY_RESET_POS_X; 
-            // blinky_curr_pos_y <= BLINKY_RESET_POS_Y;
-            // pinky_curr_pos_x <= PINKY_RESET_POS_X; 
-            // pinky_curr_pos_y <= PINKY_RESET_POS_Y;
-            // inky_curr_pos_x <= INKY_RESET_POS_X; 
-            // inky_curr_pos_y <= INKY_RESET_POS_Y;
-            // clyde_curr_pos_x <= CLYDE_RESET_POS_X; 
-            // clyde_curr_pos_y <= CLYDE_RESET_POS_Y;
-
-        end
-        else begin  
-            blinky_previous_direction <= blinky_move_direction; 
-            pinky_previous_direction <=  pinky_move_direction; 
-            inky_previous_direction <=   inky_move_direction; 
-            clyde_previous_direction <= clyde_move_direction; 
+        blinky_previous_direction <= blinky_move_direction; 
+        pinky_previous_direction <=  pinky_move_direction; 
+        inky_previous_direction <=   inky_move_direction; 
+        clyde_previous_direction <= clyde_move_direction; 
 
             
         end
-    end   
+       
     assign pacman_moving_dir_out = pacman_move_direction;                 
 
 
