@@ -25,8 +25,9 @@ module ghost_control (
 	parameter LEFT=  4'b1000;	
 	parameter UP=    4'b0010;
 	parameter DOWN=  4'b0100; 
+   parameter ZEROS= 4'b0000;
 	
-	reg [3:0] no_reverse_valid_moves; 
+	reg [3:0] no_reverse_valid_moves;
 	reg [10:0] vertical_distance; 
 	reg [11:0] horizontal_distance;
 	
@@ -86,10 +87,7 @@ module ghost_control (
     
     end 
     
-     
-   
-   wire [3:0] final_and_right; 
-   assign final_and_right = final_valid_movements & RIGHT; 
+
 
    always @(posedge slower_clk) begin
 	
@@ -153,20 +151,21 @@ module ghost_control (
             RIGHT: reg_move_dir  <= RIGHT; 
             LEFT: reg_move_dir <= LEFT;
 
-	       default: 
-            begin  
+	         default: begin  
 	           // here we made the priority for up/down then right/left 
 	           // these are not cases we should provide based on the mask 
 	           // we created earlier with the previous direction 
 	           // it can't assert the right and the left at once 
 	           // so is for up and down  
-                if (no_reverse_valid_moves & UP == UP)
+                
+
+               if ((no_reverse_valid_moves & UP) != 0)
                    reg_move_dir  <= UP;
-                else if (no_reverse_valid_moves & DOWN == DOWN)
+                else if ((no_reverse_valid_moves & DOWN) !=0)
                    reg_move_dir <= DOWN; 
-                else if (no_reverse_valid_moves & RIGHT == RIGHT)
+                else if ((no_reverse_valid_moves & RIGHT) !=0)
                    reg_move_dir <= RIGHT; 
-                else if (no_reverse_valid_moves & LEFT == LEFT)
+                else if ((no_reverse_valid_moves & LEFT) != 0 )
                    reg_move_dir <= LEFT; 
                 
                   
