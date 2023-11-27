@@ -1,0 +1,52 @@
+{
+  "M": {
+    "matrix_index_pos": [
+      39,
+      2
+    ],
+    "display_pos": [
+      967,
+      66
+    ]
+  },
+  "P": {
+    "matrix_index_pos": [
+      17,
+      14
+    ],
+    "display_pos": [
+      615,
+      258
+    ]
+  },
+  "B": {
+    "matrix_index_pos": [
+      20,
+      25
+    ],
+    "display_pos": [
+      663,
+      434
+    ]
+  },
+  "I": {
+    "matrix_index_pos": [
+      10,
+      2
+    ],
+    "display_pos": [
+      503,
+      66
+    ]
+  },
+  "C": {
+    "matrix_index_pos": [
+      17,
+      21
+    ],
+    "display_pos": [
+      615,
+      370
+    ]
+  }
+}
