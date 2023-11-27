@@ -5,6 +5,7 @@
 module ghost_control (
                      input clk, 
                      input slower_clk, 
+                     input rst, 
                      input [10:0]ghost_curr_pos_x, 
                     input [9:0]ghost_curr_pos_y, 
                     input [10:0]pacman_curr_pos_x, 
@@ -12,6 +13,9 @@ module ghost_control (
                     input [3:0] prev_direction, 
                     output [3:0]move_direction);
  
+
+   wire [3:0] rand_four_bit; 
+   rand_num_gen ghost_rand_num_gen (.clock(clk), .reset(rst), .rand_four_bit(rand_four_bit)); 
 
 	wire [3:0] valid_moves;
 	valid_move_detector inside_pos_update_valid_move_detector (.clk(clk), .curr_pos_x(ghost_curr_pos_x), .curr_pos_y(ghost_curr_pos_y), 
@@ -217,6 +221,9 @@ module ghost_control (
 	           // we created earlier with the previous direction 
 	           // it can't assert the right and the left at once 
 	           // so is for up and down 
+               if ((no_reverse_valid_moves & rand_four_bit) != 0)
+                  no_reverse_valid_moves = no_reverse_valid_moves & rand_four_bit; 
+               
                if ((no_reverse_valid_moves & RIGHT) !=0)
                    reg_move_dir <= RIGHT; 
                else if ((no_reverse_valid_moves & LEFT) != 0 )

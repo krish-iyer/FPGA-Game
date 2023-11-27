@@ -160,6 +160,7 @@ module TopModule_GameLogic(
     ghost_control clyde_ghost_control (
                                     .clk(clk),
                                     .slower_clk(slower_clk_2),
+                                    .rst(rst),
                                     .ghost_curr_pos_x(clyde_curr_pos_x), 
                                     .ghost_curr_pos_y(clyde_curr_pos_y), 
                                     .pacman_curr_pos_x(pacman_curr_pos_x), 
