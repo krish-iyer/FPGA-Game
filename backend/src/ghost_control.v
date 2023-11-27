@@ -40,6 +40,7 @@ module ghost_control (
    reg [3:0] relative_ghost_location_y; 
    reg [3:0] final_valid_movements;  
 
+   reg [3:0] mask_rand_bits;  
     
     // evaluate valid moves based on the fact that ghosts don't reverse directions
 	always @(posedge slower_clk) begin
@@ -87,7 +88,7 @@ module ghost_control (
       end 
 
       final_valid_movements = no_reverse_valid_moves & (relative_ghost_location_x | relative_ghost_location_y);
-
+      mask_rand_bits = no_reverse_valid_moves & rand_four_bit; 
     
     end 
     
@@ -221,18 +222,26 @@ module ghost_control (
 	           // we created earlier with the previous direction 
 	           // it can't assert the right and the left at once 
 	           // so is for up and down 
-               if ((no_reverse_valid_moves & rand_four_bit) != 0)
-                  no_reverse_valid_moves = no_reverse_valid_moves & rand_four_bit; 
-               
-               if ((no_reverse_valid_moves & RIGHT) !=0)
-                   reg_move_dir <= RIGHT; 
-               else if ((no_reverse_valid_moves & LEFT) != 0 )
-                   reg_move_dir <= LEFT;  
-               else if ((no_reverse_valid_moves & UP) != 0)
-                   reg_move_dir  <= UP;
-               else if ((no_reverse_valid_moves & DOWN) !=0)
-                   reg_move_dir <= DOWN; 
-                
+               if (mask_rand_bits != 0) begin 
+                  if ((mask_rand_bits & RIGHT) !=0)
+                     reg_move_dir <= RIGHT; 
+                  else if ((mask_rand_bits & LEFT) != 0 )
+                     reg_move_dir <= LEFT;  
+                  else if ((mask_rand_bits & UP) != 0)
+                     reg_move_dir  <= UP;
+                  else if ((mask_rand_bits & DOWN) !=0)
+                     reg_move_dir <= DOWN;  
+               end 
+               else begin 
+                  if ((no_reverse_valid_moves & RIGHT) !=0)
+                     reg_move_dir <= RIGHT; 
+                  else if ((no_reverse_valid_moves & LEFT) != 0 )
+                     reg_move_dir <= LEFT;  
+                  else if ((no_reverse_valid_moves & UP) != 0)
+                     reg_move_dir  <= UP;
+                  else if ((no_reverse_valid_moves & DOWN) !=0)
+                     reg_move_dir <= DOWN; 
+               end
                 
                   
             end 
