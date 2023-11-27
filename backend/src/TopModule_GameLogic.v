@@ -23,17 +23,10 @@ module TopModule_GameLogic(
 
     reg [10:0] pacman_curr_pos_x; 
     reg [9:0]  pacman_curr_pos_y;
-    // wire [10:0] pacman_pos_x; 
-    // wire [9:0]  pacman_pos_y;
-    // reg [10:0]  pacman_reg_curr_pos_x; 
-    // reg [9:0]   pacman_reg_curr_pos_y;
+   
 
     reg [10:0] blinky_curr_pos_x; 
     reg [9:0]  blinky_curr_pos_y;
-    // wire [10:0] blinky_pos_x; 
-    // wire [9:0]  blinky_pos_y;
-    // wire [10:0] blinky_reg_curr_pos_x; 
-    // wire [9:0]  blinky_reg_curr_pos_y;
     reg [3:0]   blinky_previous_direction;
     wire [3:0]   blinky_move_direction;
     wire blinky_killed_pacman;  
@@ -41,10 +34,6 @@ module TopModule_GameLogic(
 
     reg [10:0] pinky_curr_pos_x; 
     reg [9:0]  pinky_curr_pos_y;
-    // wire [10:0] pinky_pos_x; 
-    // wire [9:0]  pinky_pos_y;
-    // wire [10:0] pinky_reg_curr_pos_x; 
-    // wire [9:0]  pinky_reg_curr_pos_y;
     reg [3:0]   pinky_previous_direction; 
     wire [3:0]   pinky_move_direction; 
     wire pinky_killed_pacman;  
@@ -53,10 +42,6 @@ module TopModule_GameLogic(
 
     reg [10:0] inky_curr_pos_x; 
     reg [9:0]  inky_curr_pos_y;
-    // wire [10:0] inky_pos_x; 
-    // wire [9:0]  inky_pos_y;
-    // wire [10:0] inky_reg_curr_pos_x; 
-    // wire [9:0]  inky_reg_curr_pos_y;
     reg [3:0]   inky_previous_direction; 
     wire [3:0]   inky_move_direction; 
     wire inky_killed_pacman;  
@@ -64,10 +49,6 @@ module TopModule_GameLogic(
 
     reg [10:0] clyde_curr_pos_x; 
     reg [9:0]  clyde_curr_pos_y;
-    // wire [10:0] clyde_pos_x; 
-    // wire [9:0]  clyde_pos_y;
-    // wire [10:0] clyde_reg_curr_pos_x; 
-    // wire [9:0]  clyde_reg_curr_pos_y;
     reg [3:0]   clyde_previous_direction; 
     wire [3:0]   clyde_move_direction; 
     wire clyde_killed_pacman;  
@@ -126,36 +107,36 @@ module TopModule_GameLogic(
                                             .dbtn(dbtn),
                                             .move_dir(pacman_move_direction) );
 
-    // ghost_control blinky_ghost_control (
-    //                                 .clk(clk),
-    //                                 .slower_clk(slower_clk_2),
-    //                                 .ghost_curr_pos_x(blinky_curr_pos_x), 
-    //                                 .ghost_curr_pos_y(blinky_curr_pos_y), 
-    //                                 .pacman_curr_pos_x(pacman_curr_pos_x), 
-    //                                 .pacman_curr_pos_y(pacman_curr_pos_y),
-    //                                 .prev_direction(blinky_previous_direction), 
-    //                                 .move_direction(blinky_move_direction));
+    ghost_control blinky_ghost_control (
+                                    .clk(clk),
+                                    .slower_clk(slower_clk_2),
+                                    .ghost_curr_pos_x(blinky_curr_pos_x), 
+                                    .ghost_curr_pos_y(blinky_curr_pos_y), 
+                                    .pacman_curr_pos_x(pacman_curr_pos_x), 
+                                    .pacman_curr_pos_y(pacman_curr_pos_y),
+                                    .prev_direction(blinky_previous_direction), 
+                                    .move_direction(blinky_move_direction));
 
 
-    // ghost_control pinky_ghost_control (
-    //                                 .clk(clk),
-    //                                 .slower_clk(slower_clk_2), 
-    //                                 .ghost_curr_pos_x(pinky_curr_pos_x), 
-    //                                 .ghost_curr_pos_y(pinky_curr_pos_y), 
-    //                                 .pacman_curr_pos_x(pacman_curr_pos_x), 
-    //                                 .pacman_curr_pos_y(pacman_curr_pos_y),
-    //                                 .prev_direction(pinky_previous_direction), 
-    //                                 .move_direction(pinky_move_direction));
+    ghost_control pinky_ghost_control (
+                                    .clk(clk),
+                                    .slower_clk(slower_clk_2), 
+                                    .ghost_curr_pos_x(pinky_curr_pos_x), 
+                                    .ghost_curr_pos_y(pinky_curr_pos_y), 
+                                    .pacman_curr_pos_x(pacman_curr_pos_x), 
+                                    .pacman_curr_pos_y(pacman_curr_pos_y),
+                                    .prev_direction(pinky_previous_direction), 
+                                    .move_direction(pinky_move_direction));
 
-    // ghost_control inky_ghost_control (
-    //                                 .clk(clk),
-    //                                 .slower_clk(slower_clk_2),
-    //                                 .ghost_curr_pos_x(inky_curr_pos_x), 
-    //                                 .ghost_curr_pos_y(inky_curr_pos_y), 
-    //                                 .pacman_curr_pos_x(pacman_curr_pos_x), 
-    //                                 .pacman_curr_pos_y(pacman_curr_pos_y),
-    //                                 .prev_direction(inky_previous_direction), 
-    //                                 .move_direction(inky_move_direction));
+    ghost_control inky_ghost_control (
+                                    .clk(clk),
+                                    .slower_clk(slower_clk_2),
+                                    .ghost_curr_pos_x(inky_curr_pos_x), 
+                                    .ghost_curr_pos_y(inky_curr_pos_y), 
+                                    .pacman_curr_pos_x(pacman_curr_pos_x), 
+                                    .pacman_curr_pos_y(pacman_curr_pos_y),
+                                    .prev_direction(inky_previous_direction), 
+                                    .move_direction(inky_move_direction));
     
     ghost_control clyde_ghost_control (
                                     .clk(clk),
@@ -179,38 +160,38 @@ module TopModule_GameLogic(
                                   .new_pos_x(pacman_pos_x), 
                                   .new_pos_y(pacman_pos_y));
     
-    // position_update_function blinky_position_update_function (
-    //                              .clk(clk),
-    //                              .slower_clk(slower_clk_2),
-    //                              .rst(rst),
-    //                              .curr_pos_x(blinky_curr_pos_x),
-    //                              .curr_pos_y(blinky_curr_pos_y),
-    //                              .move_direction(blinky_move_direction),
-    //                               .which_sprite(BLINKY), 
-    //                               .new_pos_x(blinky_pos_x), 
-    //                               .new_pos_y(blinky_pos_y));
+    position_update_function blinky_position_update_function (
+                                 .clk(clk),
+                                 .slower_clk(slower_clk_2),
+                                 .rst(rst),
+                                 .curr_pos_x(blinky_curr_pos_x),
+                                 .curr_pos_y(blinky_curr_pos_y),
+                                 .move_direction(blinky_move_direction),
+                                  .which_sprite(BLINKY), 
+                                  .new_pos_x(blinky_pos_x), 
+                                  .new_pos_y(blinky_pos_y));
 
-    // position_update_function pinky_position_update_function (
-    //                              .clk(clk),
-    //                              .slower_clk(slower_clk_2),
-    //                              .rst(rst),
-    //                              .curr_pos_x(pinky_curr_pos_x),
-    //                              .curr_pos_y(pinky_curr_pos_y),
-    //                              .move_direction(pinky_move_direction),
-    //                               .which_sprite(PINKY), 
-    //                               .new_pos_x(pinky_pos_x), 
-    //                               .new_pos_y(pinky_pos_y));
+    position_update_function pinky_position_update_function (
+                                 .clk(clk),
+                                 .slower_clk(slower_clk_2),
+                                 .rst(rst),
+                                 .curr_pos_x(pinky_curr_pos_x),
+                                 .curr_pos_y(pinky_curr_pos_y),
+                                 .move_direction(pinky_move_direction),
+                                  .which_sprite(PINKY), 
+                                  .new_pos_x(pinky_pos_x), 
+                                  .new_pos_y(pinky_pos_y));
 
-    // position_update_function inky_position_update_function (
-    //                              .clk(clk),
-    //                              .slower_clk(slower_clk_2),
-    //                              .rst(rst),
-    //                              .curr_pos_x(inky_curr_pos_x),
-    //                              .curr_pos_y(inky_curr_pos_y),
-    //                              .move_direction(inky_move_direction),
-    //                               .which_sprite(INKY), 
-    //                               .new_pos_x(inky_pos_x), 
-    //                               .new_pos_y(inky_pos_y));
+    position_update_function inky_position_update_function (
+                                 .clk(clk),
+                                 .slower_clk(slower_clk_2),
+                                 .rst(rst),
+                                 .curr_pos_x(inky_curr_pos_x),
+                                 .curr_pos_y(inky_curr_pos_y),
+                                 .move_direction(inky_move_direction),
+                                  .which_sprite(INKY), 
+                                  .new_pos_x(inky_pos_x), 
+                                  .new_pos_y(inky_pos_y));
 
     position_update_function clyde_position_update_function (
                                  .clk(clk),
@@ -225,29 +206,29 @@ module TopModule_GameLogic(
 
   
 
-    // collision_detection blinky_collision_detection (
+    collision_detection blinky_collision_detection (
                                     
-    //                                 .ghost_curr_pos_x(blinky_pos_x), 
-    //                                 .ghost_curr_pos_y(blinky_pos_y), 
-    //                                 .pacman_curr_pos_x(pacman_pos_x), 
-    //                                 .pacman_curr_pos_y(pacman_pos_y),
-    //                                 .pacman_is_dead(blinky_killed_pacman));
+                                    .ghost_curr_pos_x(blinky_pos_x), 
+                                    .ghost_curr_pos_y(blinky_pos_y), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y),
+                                    .pacman_is_dead(blinky_killed_pacman));
 
-    // collision_detection pinky_collision_detection (
+    collision_detection pinky_collision_detection (
                                     
-    //                                 .ghost_curr_pos_x(pinky_pos_x), 
-    //                                 .ghost_curr_pos_y(pinky_pos_y), 
-    //                                 .pacman_curr_pos_x(pacman_pos_x), 
-    //                                 .pacman_curr_pos_y(pacman_pos_y),
-    //                                 .pacman_is_dead(pinky_killed_pacman));
+                                    .ghost_curr_pos_x(pinky_pos_x), 
+                                    .ghost_curr_pos_y(pinky_pos_y), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y),
+                                    .pacman_is_dead(pinky_killed_pacman));
 
-    // collision_detection inky_collision_detection (
+    collision_detection inky_collision_detection (
                                     
-    //                                 .ghost_curr_pos_x(inky_pos_x), 
-    //                                 .ghost_curr_pos_y(inky_pos_y), 
-    //                                 .pacman_curr_pos_x(pacman_pos_x), 
-    //                                 .pacman_curr_pos_y(pacman_pos_y),
-    //                                 .pacman_is_dead(inky_killed_pacman));
+                                    .ghost_curr_pos_x(inky_pos_x), 
+                                    .ghost_curr_pos_y(inky_pos_y), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y),
+                                    .pacman_is_dead(inky_killed_pacman));
 
     collision_detection clyde_collision_detection (
                                     
@@ -257,12 +238,11 @@ module TopModule_GameLogic(
                                     .pacman_curr_pos_y(pacman_pos_y),
                                     .pacman_is_dead(clyde_killed_pacman));                                
 
-    // assign pacman_is_dead = blinky_killed_pacman 
-    //                       ||pinky_killed_pacman
-    //                       ||inky_killed_pacman
-    //                       ||clyde_killed_pacman; 
+    assign pacman_is_dead = blinky_killed_pacman 
+                          ||pinky_killed_pacman
+                          ||inky_killed_pacman
+                          ||clyde_killed_pacman; 
 
-    assign pacman_is_dead = clyde_killed_pacman; 
 
     always @(posedge slower_clk_2)begin 
 
