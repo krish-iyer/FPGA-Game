@@ -120,7 +120,7 @@ module TopModule_GameLogic_tb();
        
        
        
-        #10000 $finish;
+        #11000 $finish;
 
     end
     

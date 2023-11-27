@@ -145,28 +145,87 @@ module ghost_control (
                end
             end
 
-             // here we made the priority for up/down then right/left 
-            UP:  reg_move_dir  <= UP;
-            DOWN: reg_move_dir  <= DOWN;
+             // here we made the priority  right/left for then up/down  
             RIGHT: reg_move_dir  <= RIGHT; 
             LEFT: reg_move_dir <= LEFT;
+            UP:  reg_move_dir  <= UP;
+            DOWN: reg_move_dir  <= DOWN;
+            
 
 	         default: begin  
-	           // here we made the priority for up/down then right/left 
+	           
+                
+               // if (no_reverse_valid_moves == (RIGHT | UP)) begin 
+
+               //    if (horizontal_distance == 0)
+               //       reg_move_dir  <= UP;
+               //    else if (vertical_distance == 0)
+               //       reg_move_dir  <= RIGHT; 
+               //    else begin        
+               //       if (horizontal_distance < vertical_distance)
+               //          reg_move_dir  <= RIGHT;
+               //       else 
+               //          reg_move_dir <= UP; 
+               //    end
+
+               // end 
+               // else if (no_reverse_valid_moves == ( RIGHT | DOWN)) begin 
+
+               //    if (horizontal_distance == 0)
+               //       reg_move_dir  <= DOWN;
+               //    else if (vertical_distance == 0)
+               //       reg_move_dir  <= RIGHT; 
+               //    else begin    
+               //    if (horizontal_distance < vertical_distance)
+               //       reg_move_dir  <= RIGHT;
+               //    else 
+               //       reg_move_dir <= DOWN; 
+               //    end 
+
+               // end
+               // else if (no_reverse_valid_moves == ( LEFT | UP)) begin 
+
+               //    if (horizontal_distance == 0)
+               //       reg_move_dir  <= UP;
+               //    else if (vertical_distance == 0)
+               //       reg_move_dir  <= LEFT; 
+               //    else begin     
+               //    if (horizontal_distance < vertical_distance)
+               //       reg_move_dir  <= LEFT;
+               //    else 
+               //       reg_move_dir <= UP; 
+               //    end
+
+               // end 
+               // else if (no_reverse_valid_moves == ( LEFT | DOWN)) begin 
+
+               //    if (horizontal_distance == 0)
+               //       reg_move_dir  <= DOWN;
+               //    else if (vertical_distance == 0)
+               //       reg_move_dir  <= LEFT; 
+               //    else begin  
+               //    if (horizontal_distance < vertical_distance)
+               //       reg_move_dir  <= LEFT;
+               //    else 
+               //       reg_move_dir <= DOWN;    
+               //    end
+
+               // end 
+
+            // here we made the priority  right/left for then up/down 
 	           // these are not cases we should provide based on the mask 
 	           // we created earlier with the previous direction 
 	           // it can't assert the right and the left at once 
-	           // so is for up and down  
-                
-
-               if ((no_reverse_valid_moves & UP) != 0)
-                   reg_move_dir  <= UP;
-                else if ((no_reverse_valid_moves & DOWN) !=0)
-                   reg_move_dir <= DOWN; 
-                else if ((no_reverse_valid_moves & RIGHT) !=0)
+	           // so is for up and down 
+               if ((no_reverse_valid_moves & RIGHT) !=0)
                    reg_move_dir <= RIGHT; 
-                else if ((no_reverse_valid_moves & LEFT) != 0 )
-                   reg_move_dir <= LEFT; 
+               else if ((no_reverse_valid_moves & LEFT) != 0 )
+                   reg_move_dir <= LEFT;  
+               else if ((no_reverse_valid_moves & UP) != 0)
+                   reg_move_dir  <= UP;
+               else if ((no_reverse_valid_moves & DOWN) !=0)
+                   reg_move_dir <= DOWN; 
+                
                 
                   
             end 
