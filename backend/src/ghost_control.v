@@ -4,6 +4,7 @@
 // return move_direction for the ghost
 module ghost_control (
                      input clk, 
+                     input slower_clk, 
                      input [10:0]ghost_curr_pos_x, 
                     input [9:0]ghost_curr_pos_y, 
                     input [10:0]pacman_curr_pos_x, 
@@ -11,13 +12,7 @@ module ghost_control (
                     input [3:0] prev_direction, 
                     output [3:0]move_direction);
  
-  
-    
-    
-	
-	
-	
-	
+
 	wire [3:0] valid_moves;
 	valid_move_detector inside_pos_update_valid_move_detector (.clk(clk), .curr_pos_x(ghost_curr_pos_x), .curr_pos_y(ghost_curr_pos_y), 
 							.valid_moves(valid_moves)); 
@@ -38,19 +33,19 @@ module ghost_control (
 	reg [3:0] reg_move_dir; 
    reg [3:0] relative_ghost_location_x;
    reg [3:0] relative_ghost_location_y; 
-   wire [3:0] final_valid_movements;  
+   reg [3:0] final_valid_movements;  
 
     
     // evaluate valid moves based on the fact that ghosts don't reverse directions
-	always @(*) begin
+	always @(posedge slower_clk) begin
 	   
 	   case(prev_direction)
 	   
-           RIGHT:   no_reverse_valid_moves = valid_moves & ~LEFT;
-           LEFT:    no_reverse_valid_moves = valid_moves & ~RIGHT;
-           UP:      no_reverse_valid_moves = valid_moves & ~DOWN;
-           DOWN:    no_reverse_valid_moves = valid_moves & ~UP; 
-           default: no_reverse_valid_moves = valid_moves;    
+           RIGHT:   no_reverse_valid_moves <= valid_moves & ~LEFT;
+           LEFT:    no_reverse_valid_moves <= valid_moves & ~RIGHT;
+           UP:      no_reverse_valid_moves <= valid_moves & ~DOWN;
+           DOWN:    no_reverse_valid_moves <= valid_moves & ~UP; 
+           default: no_reverse_valid_moves <= valid_moves;    
 	   
 	   endcase 
    
@@ -101,15 +96,17 @@ module ghost_control (
             else 
                relative_ghost_location_y = no_reverse_valid_moves; 
       end 
-   
+
+      final_valid_movements = no_reverse_valid_moves & relative_ghost_location_x & relative_ghost_location_x;
+    
     end 
     
-   assign final_valid_movements = no_reverse_valid_moves & relative_ghost_location_x & relative_ghost_location_x; 
+     
    
    wire [3:0] final_and_right; 
    assign final_and_right = final_valid_movements & RIGHT; 
 
-   always @(posedge clk) begin
+   always @(posedge slower_clk) begin
 	
 	   case(final_valid_movements)
 	   
@@ -156,21 +153,28 @@ module ghost_control (
                    reg_move_dir  <= LEFT;
                 else 
                    reg_move_dir <= DOWN;    
-               end 
-	       default:  
-	           // here we made the priority for up/down then right/left 
-	           // these are not cases we should provide based on the mask 
-	           // we created earlier with the previous direction 
-	           // it can't assert the right and the left at once 
-	           // so is for up and down  
-                if (final_valid_movements & UP == UP)
-                   reg_move_dir  <= UP;
-                else if (final_valid_movements & DOWN == DOWN)
-                   reg_move_dir <= DOWN; 
-                else if (final_valid_movements & RIGHT == RIGHT)
-                   reg_move_dir <= RIGHT; 
-                else if (final_valid_movements & LEFT == LEFT)
-                   reg_move_dir <= LEFT; 
+               end
+
+             // here we made the priority for up/down then right/left 
+            UP:  reg_move_dir  <= UP;
+            DOWN: reg_move_dir  <= DOWN;
+            RIGHT: reg_move_dir  <= RIGHT; 
+            LEFT: reg_move_dir <= LEFT;
+             
+	      //  default:  
+	      //      // here we made the priority for up/down then right/left 
+	      //      // these are not cases we should provide based on the mask 
+	      //      // we created earlier with the previous direction 
+	      //      // it can't assert the right and the left at once 
+	      //      // so is for up and down  
+         //        if (final_valid_movements & UP == UP)
+         //           reg_move_dir  <= UP;
+         //        else if (final_valid_movements & DOWN == DOWN)
+         //           reg_move_dir <= DOWN; 
+         //        else if (final_valid_movements & RIGHT == RIGHT)
+         //           reg_move_dir <= RIGHT; 
+         //        else if (final_valid_movements & LEFT == LEFT)
+         //           reg_move_dir <= LEFT; 
                 
                //  else 
                //      reg_move_dir <= UP;

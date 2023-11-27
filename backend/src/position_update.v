@@ -5,6 +5,7 @@
 // it also uses teh valid move detector function to detect if the move is valid 
 module position_update_function (
                                 input clk, 
+                                input slower_clk,
                                  input rst,
                                  input [10:0]curr_pos_x,
                                  input [9:0]curr_pos_y,
@@ -73,7 +74,7 @@ module position_update_function (
 	valid_move_detector inside_pos_update_valid_move_detector (.clk(clk),.curr_pos_x(curr_pos_x), .curr_pos_y(curr_pos_y), 
 							.valid_moves(valid_moves));
 	
-	always @(posedge clk) begin
+	always @(posedge slower_clk or rst) begin
      
         if (rst)begin 
             case (which_sprite)

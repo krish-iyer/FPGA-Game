@@ -91,7 +91,7 @@ module TopModule_GameLogic_tb();
     initial begin
         clka = 1 ; 
         rst =1; 
-        # 30 
+        # 40 
         rst = 0; 
 
          
@@ -120,7 +120,7 @@ module TopModule_GameLogic_tb();
        
        
        
-        #1000 $finish;
+        #10000 $finish;
 
     end
     
