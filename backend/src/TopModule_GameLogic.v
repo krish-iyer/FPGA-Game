@@ -21,24 +21,50 @@ module TopModule_GameLogic(
     
     
     
-    // here defines the reset positions for the sprites 
+   // here defines the reset positions for the sprites 
     // we assume the  matrix 
     // all default positions are taken from the random_position file 
     // created on the create_map branch 
     // pacman -> 0; blinky -> 1; pinky -> 2; inky -> 3; clyde -> 4; 
+        
+    //        parameter MOVE_TO_CENTER= 7; 
+     // parameter H_VISIBLE_START= 336; 
+     // parameter V_VISIBLE_START= 27; 
+
+        parameter RATIO = 16; 
+        parameter MOVE_TO_CENTER= 0; 
+     parameter H_VISIBLE_START= 0; 
+     parameter V_VISIBLE_START= 0;
+
     parameter PACMAN= 0;
-   
+    parameter PACMAN_X=39;
+    parameter PACMAN_Y=2;
+    parameter PACMAN_RESET_POS_X= PACMAN_X * RATIO + H_VISIBLE_START + MOVE_TO_CENTER;
+    parameter PACMAN_RESET_POS_Y= PACMAN_Y * RATIO + V_VISIBLE_START + MOVE_TO_CENTER;
     
     parameter BLINKY=1; 
+    parameter BLINKY_X=20; 
+    parameter BLINKY_Y=25; 
+    parameter BLINKY_RESET_POS_X= BLINKY_X * RATIO + H_VISIBLE_START + MOVE_TO_CENTER;
+    parameter BLINKY_RESET_POS_Y= BLINKY_Y * RATIO + V_VISIBLE_START + MOVE_TO_CENTER;
     
+    parameter PINKY=2;
+    parameter PINKY_X=17; 
+    parameter PINKY_Y=14; 
+    parameter PINKY_RESET_POS_X= PINKY_X * RATIO + H_VISIBLE_START + MOVE_TO_CENTER;
+    parameter PINKY_RESET_POS_Y= PINKY_Y * RATIO + V_VISIBLE_START + MOVE_TO_CENTER;
     
-    parameter PINKY=2; 
+    parameter INKY=3;
+    parameter INKY_X=10; 
+    parameter INKY_Y=2; 
+    parameter INKY_RESET_POS_X= INKY_X * RATIO + H_VISIBLE_START + MOVE_TO_CENTER;
+    parameter INKY_RESET_POS_Y= INKY_Y * RATIO + V_VISIBLE_START + MOVE_TO_CENTER;
     
-    
-    parameter INKY=3; 
-    
-    
-    parameter CLYDE=4; 
+    parameter CLYDE=4;
+    parameter CLYDE_X=17; 
+    parameter CLYDE_Y=21; 
+    parameter CLYDE_RESET_POS_X= CLYDE_X * RATIO + H_VISIBLE_START + MOVE_TO_CENTER;
+    parameter CLYDE_RESET_POS_Y= CLYDE_Y * RATIO + V_VISIBLE_START + MOVE_TO_CENTER;
    
 
 
@@ -259,6 +285,19 @@ module TopModule_GameLogic(
             pinky_previous_direction <=  4'b0000; 
             inky_previous_direction <=   4'b0000; 
             clyde_previous_direction <= 4'b0000; 
+            
+            pacman_curr_pos_x <= PACMAN_RESET_POS_X; 
+            pacman_curr_pos_y <= PACMAN_RESET_POS_Y; 
+            blinky_curr_pos_x <= BLINKY_RESET_POS_X; 
+            blinky_curr_pos_y <= BLINKY_RESET_POS_Y;
+            pinky_curr_pos_x <= PINKY_RESET_POS_X; 
+            pinky_curr_pos_y <= PINKY_RESET_POS_Y;
+            inky_curr_pos_x <= INKY_RESET_POS_X; 
+            inky_curr_pos_y <= INKY_RESET_POS_Y;
+            clyde_curr_pos_x <= CLYDE_RESET_POS_X; 
+            clyde_curr_pos_y <= CLYDE_RESET_POS_Y;
+            
+            
 //            pacman_move_direction <= 4'b0000; 
         end 
 
