@@ -95,6 +95,9 @@ module ghost_control (
 
 
    always @(posedge slower_clk) begin
+        
+        
+     
 	
 	   case(final_valid_movements)
 	   
@@ -233,6 +236,9 @@ module ghost_control (
                //       reg_move_dir <= DOWN;  
                // end 
                // else begin 
+               
+//                  if ((no_reverse_valid_moves & prev_direction) != 0)
+//                    reg_move_dir <= prev_direction; 
                   if ((no_reverse_valid_moves & RIGHT) !=0)
                      reg_move_dir <= RIGHT; 
                   else if ((no_reverse_valid_moves & LEFT) != 0 )
@@ -241,6 +247,7 @@ module ghost_control (
                      reg_move_dir  <= UP;
                   else if ((no_reverse_valid_moves & DOWN) !=0)
                      reg_move_dir <= DOWN; 
+                     
                // end
                 
                   

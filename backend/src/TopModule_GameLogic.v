@@ -246,23 +246,31 @@ module TopModule_GameLogic(
                           ||clyde_killed_pacman; 
 
 
-    always @(posedge clk)begin 
+    always @(posedge clk or posedge rst)begin 
+        if (rst) begin 
+            blinky_previous_direction <= 4'b0000; 
+            pinky_previous_direction <=  4'b0000; 
+            inky_previous_direction <=   4'b0000; 
+            clyde_previous_direction <= 4'b0000; 
+//            pacman_move_direction <= 4'b0000; 
+        end 
 
-        pacman_curr_pos_x <= pacman_pos_x; 
-        pacman_curr_pos_y <= pacman_pos_y; 
-        blinky_curr_pos_x <= blinky_pos_x; 
-        blinky_curr_pos_y <= blinky_pos_y;
-        pinky_curr_pos_x <= pinky_pos_x; 
-        pinky_curr_pos_y <= pinky_pos_y;
-        inky_curr_pos_x <= inky_pos_x; 
-        inky_curr_pos_y <= inky_pos_y;
-        clyde_curr_pos_x <= clyde_pos_x; 
-        clyde_curr_pos_y <= clyde_pos_y;
-        blinky_previous_direction <= blinky_move_direction; 
-        pinky_previous_direction <=  pinky_move_direction; 
-        inky_previous_direction <=   inky_move_direction; 
-        clyde_previous_direction <= clyde_move_direction; 
-
+        else begin 
+            pacman_curr_pos_x <= pacman_pos_x; 
+            pacman_curr_pos_y <= pacman_pos_y; 
+            blinky_curr_pos_x <= blinky_pos_x; 
+            blinky_curr_pos_y <= blinky_pos_y;
+            pinky_curr_pos_x <= pinky_pos_x; 
+            pinky_curr_pos_y <= pinky_pos_y;
+            inky_curr_pos_x <= inky_pos_x; 
+            inky_curr_pos_y <= inky_pos_y;
+            clyde_curr_pos_x <= clyde_pos_x; 
+            clyde_curr_pos_y <= clyde_pos_y;
+            blinky_previous_direction <= blinky_move_direction; 
+            pinky_previous_direction <=  pinky_move_direction; 
+            inky_previous_direction <=   inky_move_direction; 
+            clyde_previous_direction <= clyde_move_direction; 
+        end 
             
         end
        
