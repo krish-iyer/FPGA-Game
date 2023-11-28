@@ -20,11 +20,12 @@ module position_update_function (
     // created on the create_map branch 
     // pacman -> 0; blinky -> 1; pinky -> 2; inky -> 3; clyde -> 4; 
         
-        parameter MOVE_TO_CENTER= 7; 
+//        parameter MOVE_TO_CENTER= 7; 
      // parameter H_VISIBLE_START= 336; 
      // parameter V_VISIBLE_START= 27; 
 
         parameter RATIO = 16; 
+        parameter MOVE_TO_CENTER= 0; 
      parameter H_VISIBLE_START= 0; 
      parameter V_VISIBLE_START= 0;
 

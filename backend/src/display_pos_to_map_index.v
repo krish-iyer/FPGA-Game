@@ -32,10 +32,11 @@ module _display_pos_to_map_index (input [10:0]display_pos_x, input [9:0]display_
      // the equation to update this given that I have display_pos(x,y)
      // matrix_idx = (x - 7-336 ) >> 4   // move it back from the center and out of the visible region and divide by the ratio which is 16
      
-     parameter MOVE_TO_CENTER= 7; 
+//     parameter MOVE_TO_CENTER= 7; 
 //      parameter H_VISIBLE_START= 336; 
 //      parameter V_VISIBLE_START= 27; 
 
+    parameter MOVE_TO_CENTER= 0;
      parameter H_VISIBLE_START= 0; 
      parameter V_VISIBLE_START= 0; 
      assign matrix_idx_x= (display_pos_x - MOVE_TO_CENTER - H_VISIBLE_START) >> 4; 

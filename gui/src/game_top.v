@@ -24,6 +24,7 @@ module game_top(
     input clk, rst,
     input btn_u, btn_d, btn_l, btn_r, btn_c,
     output [3:0] pix_r, pix_g, pix_b,
+    output pacman_dead,
     output hsync, vsync
     );
 
@@ -39,7 +40,9 @@ module game_top(
     wire [3:0] r,g,b;
     reg [15:0] score = 16'h12_34;
 
-
+    
+     
+    
     wire [10:0] pacman_blkpos_x; 
     wire [9:0] pacman_blkpos_y ;
     wire [10:0] ghost_1_blkpos_x; 
@@ -55,7 +58,6 @@ module game_top(
     wire [3:0] ghost_2_dir;
     wire [3:0] ghost_3_dir;
     wire [3:0] ghost_4_dir;
-    wire pacman_dead;
     wire rst_synth;
     assign rst_synth = ~rst;
 
