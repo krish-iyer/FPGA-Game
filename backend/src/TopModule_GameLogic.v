@@ -240,6 +240,13 @@ module TopModule_GameLogic(
                                     .pacman_curr_pos_y(pacman_pos_y),
                                     .pacman_is_dead(clyde_killed_pacman));                                
 
+    flush_eaten_food uut_flush_eaten_food (
+                                    
+                                    .clk(clk), 
+                                    .pacman_curr_pos_x(pacman_pos_x), 
+                                    .pacman_curr_pos_y(pacman_pos_y)
+                                    );
+                                    
     assign pacman_is_dead = blinky_killed_pacman 
                           ||pinky_killed_pacman
                           ||inky_killed_pacman

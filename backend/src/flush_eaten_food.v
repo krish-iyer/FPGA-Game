@@ -37,9 +37,9 @@ module flush_eaten_food (
         .douta(douta)  // output wire [79 : 0] douta
     );                     
 
-    always @(*)begin 
-        reg_douta = douta ; 
-        reg_douta [pacman_matrix_idx_x] = 0;  
+    always @(posedge clk)begin 
+        reg_douta <= douta ; 
+        reg_douta [pacman_matrix_idx_x] <= 0;  
     end 
     // assign douta[pacman_matrix_idx_x] = 0;              
     assign dina = reg_douta; 
