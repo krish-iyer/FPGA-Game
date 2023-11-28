@@ -37,62 +37,54 @@ module game_top(
     wire [10:0] curr_x;
     wire [9:0] curr_y;
     wire [3:0] r,g,b;
-
-    reg [10:0] pacman_blkpos_x = 471; 
-    reg [9:0] pacman_blkpos_y = 386;
-    
-    reg [10:0] ghost_1_blkpos_x = 200; 
-    reg [9:0] ghost_1_blkpos_y = 200;
-    reg [10:0] ghost_2_blkpos_x = 300; 
-    reg [9:0] ghost_2_blkpos_y = 300;
-    reg [10:0] ghost_3_blkpos_x = 400;
-    reg [9:0] ghost_3_blkpos_y = 400;
-    reg [10:0] ghost_4_blkpos_x = 100; 
-    reg [9:0] ghost_4_blkpos_y = 100;
-    reg [3:0] pacman_dir =  0;
-    reg [3:0] ghost_1_dir = 0;
-    reg [3:0] ghost_2_dir = 0;
-    reg [3:0] ghost_3_dir = 0;
-    reg [3:0] ghost_4_dir = 0;
-    
     reg [15:0] score = 16'h12_34;
 
-    wire clk_50_Hz;
-    wire clk_wide_sprite_Hz;
 
-    clk_div #(.DIV(8)) clk_div_in(
+    wire [10:0] pacman_blkpos_x; 
+    wire [9:0] pacman_blkpos_y ;
+    wire [10:0] ghost_1_blkpos_x; 
+    wire [9:0] ghost_1_blkpos_y;
+    wire [10:0] ghost_2_blkpos_x; 
+    wire [9:0] ghost_2_blkpos_y;
+    wire [10:0] ghost_3_blkpos_x;
+    wire [9:0] ghost_3_blkpos_y;
+    wire [10:0] ghost_4_blkpos_x; 
+    wire [9:0] ghost_4_blkpos_y;
+    wire [3:0] pacman_dir ;
+    wire [3:0] ghost_1_dir;
+    wire [3:0] ghost_2_dir;
+    wire [3:0] ghost_3_dir;
+    wire [3:0] ghost_4_dir;
+    wire pacman_dead;
+    wire rst_synth;
+    assign rst_synth = ~rst;
+
+    wire clk_game_logic; 
+    clk_div  #(.DIV(20)) clk_div_game_logic_inst(
         .clk(clk),
-        .clk_out(clk_50_Hz)
+        .clk_out (clk_game_logic)
     );
 
-    clk_div #(.DIV(24)) clk_div_sprite_wide(
-        .clk(clk),
-        .clk_out(clk_wide_sprite_Hz)
-    );
 
-    always @(posedge clk_wide_sprite_Hz) begin
-        pacman_dir[0] <= pacman_dir[0] ^ 1;
-        ghost_1_dir[0] <= ghost_1_dir[0] ^ 1;
-        ghost_2_dir[0] <= ghost_2_dir[0] ^ 1;
-        ghost_3_dir[0] <= ghost_3_dir[0] ^ 1;
-        ghost_4_dir[0] <= ghost_4_dir[0] ^ 1;
-
-    end
-
-    always@(posedge clk_50_Hz) begin
-        if(btn_d == 1) begin
-            pacman_dir[3:1] <= 4'b011;
-        end
-        else if(btn_u == 1 ) begin
-            pacman_dir[3:1] <= 4'b0100;
-        end
-        else if(btn_l == 1) begin
-            pacman_dir[3:1] <= 4'b0010;
-        end
-        else if(btn_r == 1) begin
-            pacman_dir[3:1] <= 4'b0000;
-        end
-    end 
+    TopModule_GameLogic Game_Logic_inst (
+                            .rbtn(btn_r), 
+                            .lbtn(btn_l),  
+                            .ubtn(btn_u), 
+                            .dbtn(btn_d),
+                            .clk(clk_game_logic), 
+                            .rst(rst_synth), 
+                             .pacman_pos_x(pacman_blkpos_x), 
+                             .pacman_pos_y(pacman_blkpos_y), 
+                             .blinky_pos_x(ghost_1_blkpos_x), 
+                             .blinky_pos_y(ghost_1_blkpos_y), 
+                             .pinky_pos_x(ghost_2_blkpos_x), 
+                             .pinky_pos_y(ghost_2_blkpos_y), 
+                             .inky_pos_x(ghost_3_blkpos_x), 
+                             .inky_pos_y(ghost_3_blkpos_y), 
+                             .clyde_pos_x(ghost_4_blkpos_x), 
+                             .clyde_pos_y(ghost_4_blkpos_y), 
+                            .pacman_is_dead(pacman_dead),
+                             .pacman_moving_dir_out(pacman_dir));
 
     drawcon drawcon_inst(
         .clk(clk_83_MHz),

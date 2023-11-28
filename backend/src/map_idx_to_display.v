@@ -29,8 +29,11 @@ module _map_index_to_display (input [6:0]matrix_idx_x, input [5:0]matrix_idx_y,
      // the equation to update this given that I have matrix_idx(x,y)
      // display_pos_x = (x << 4 )+ 7 + 336    // multiply by 16 and move to the center in the visible area  
      parameter MOVE_TO_CENTER= 7; 
-     parameter H_VISIBLE_START= 336; 
-     parameter V_VISIBLE_START= 27; 
+     // parameter H_VISIBLE_START= 336; 
+     // parameter V_VISIBLE_START= 27; 
+
+     parameter H_VISIBLE_START= 0; 
+     parameter V_VISIBLE_START= 0; 
      assign display_pos_x= (matrix_idx_x << 4) + MOVE_TO_CENTER + H_VISIBLE_START; 
      assign display_pos_y= (matrix_idx_y << 4) + MOVE_TO_CENTER + V_VISIBLE_START; 
      

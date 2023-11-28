@@ -2,6 +2,7 @@ module input_module(input rbtn,
                     input lbtn, 
                     input ubtn, 
                     input dbtn,
+                    input clk, 
                     output [3:0] move_dir );
 
     // here defines the directions 
@@ -12,17 +13,16 @@ module input_module(input rbtn,
 
     reg [3:0] reg_move_dir; 
     // the priority is for up/down right/left if two buttons are pressed at the same time
-    always @(*)begin 
+    always @(posedge clk)begin 
         if (ubtn)
-            reg_move_dir = UP; 
+            reg_move_dir <= UP; 
         else if (dbtn)
-            reg_move_dir = DOWN; 
+            reg_move_dir <= DOWN; 
         else if (rbtn)
-            reg_move_dir = RIGHT; 
+            reg_move_dir <= RIGHT; 
         else if (lbtn)
-            reg_move_dir= LEFT;
-        else 
-            reg_move_dir= 4'b0000; 
+            reg_move_dir <= LEFT;
+      
 
     end
 

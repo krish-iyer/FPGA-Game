@@ -14,8 +14,8 @@ module ghost_control (
                     output [3:0]move_direction);
  
 
-   wire [3:0] rand_four_bit; 
-   rand_num_gen ghost_rand_num_gen (.clock(clk), .reset(rst), .rand_four_bit(rand_four_bit)); 
+   // wire [3:0] rand_four_bit; 
+   // rand_num_gen ghost_rand_num_gen (.clock(clk), .reset(rst), .rand_four_bit(rand_four_bit)); 
 
 	wire [3:0] valid_moves;
 	valid_move_detector inside_pos_update_valid_move_detector (.clk(clk), .curr_pos_x(ghost_curr_pos_x), .curr_pos_y(ghost_curr_pos_y), 
@@ -88,7 +88,7 @@ module ghost_control (
       end 
 
       final_valid_movements = no_reverse_valid_moves & (relative_ghost_location_x | relative_ghost_location_y);
-      mask_rand_bits = no_reverse_valid_moves & rand_four_bit; 
+      // mask_rand_bits = no_reverse_valid_moves & rand_four_bit; 
     
     end 
     
@@ -222,17 +222,17 @@ module ghost_control (
 	           // we created earlier with the previous direction 
 	           // it can't assert the right and the left at once 
 	           // so is for up and down 
-               if (mask_rand_bits != 0) begin 
-                  if ((mask_rand_bits & RIGHT) !=0)
-                     reg_move_dir <= RIGHT; 
-                  else if ((mask_rand_bits & LEFT) != 0 )
-                     reg_move_dir <= LEFT;  
-                  else if ((mask_rand_bits & UP) != 0)
-                     reg_move_dir  <= UP;
-                  else if ((mask_rand_bits & DOWN) !=0)
-                     reg_move_dir <= DOWN;  
-               end 
-               else begin 
+               // if (mask_rand_bits != 0) begin 
+               //    if ((mask_rand_bits & RIGHT) !=0)
+               //       reg_move_dir <= RIGHT; 
+               //    else if ((mask_rand_bits & LEFT) != 0 )
+               //       reg_move_dir <= LEFT;  
+               //    else if ((mask_rand_bits & UP) != 0)
+               //       reg_move_dir  <= UP;
+               //    else if ((mask_rand_bits & DOWN) !=0)
+               //       reg_move_dir <= DOWN;  
+               // end 
+               // else begin 
                   if ((no_reverse_valid_moves & RIGHT) !=0)
                      reg_move_dir <= RIGHT; 
                   else if ((no_reverse_valid_moves & LEFT) != 0 )
@@ -241,7 +241,7 @@ module ghost_control (
                      reg_move_dir  <= UP;
                   else if ((no_reverse_valid_moves & DOWN) !=0)
                      reg_move_dir <= DOWN; 
-               end
+               // end
                 
                   
             end 

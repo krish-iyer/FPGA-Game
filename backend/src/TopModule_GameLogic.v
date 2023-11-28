@@ -18,6 +18,30 @@ module TopModule_GameLogic(
                     output pacman_is_dead, 
                     output [3:0] pacman_moving_dir_out); 
 
+    
+    
+    
+    // here defines the reset positions for the sprites 
+    // we assume the  matrix 
+    // all default positions are taken from the random_position file 
+    // created on the create_map branch 
+    // pacman -> 0; blinky -> 1; pinky -> 2; inky -> 3; clyde -> 4; 
+    parameter PACMAN= 0;
+   
+    
+    parameter BLINKY=1; 
+    
+    
+    parameter PINKY=2; 
+    
+    
+    parameter INKY=3; 
+    
+    
+    parameter CLYDE=4; 
+   
+
+
 
     wire [3:0] pacman_move_direction; 
 
@@ -55,30 +79,7 @@ module TopModule_GameLogic(
 
 
     
-    // here defines the reset positions for the sprites 
-    // we assume the  matrix 
-    // all default positions are taken from the random_position file 
-    // created on the create_map branch 
-    // pacman -> 0; blinky -> 1; pinky -> 2; inky -> 3; clyde -> 4; 
-    parameter PACMAN= 0;
-    parameter PACMAN_RESET_POS_X= 11'd967;
-    parameter PACMAN_RESET_POS_Y= 10'd66;
     
-    parameter BLINKY=1; 
-    parameter BLINKY_RESET_POS_X= 11'd663;
-    parameter BLINKY_RESET_POS_Y= 10'd434;
-    
-    parameter PINKY=2; 
-    parameter PINKY_RESET_POS_X= 11'd615;
-    parameter PINKY_RESET_POS_Y= 10'd258;
-    
-    parameter INKY=3; 
-    parameter INKY_RESET_POS_X= 11'd503;
-    parameter INKY_RESET_POS_Y= 10'd66;
-    
-    parameter CLYDE=4; 
-    parameter CLYDE_RESET_POS_X= 11'd615;
-    parameter CLYDE_RESET_POS_Y= 10'd370;
     
     
     // here defines the directions 
@@ -105,6 +106,7 @@ module TopModule_GameLogic(
                                             .lbtn(lbtn), 
                                             .ubtn(ubtn), 
                                             .dbtn(dbtn),
+                                            .clk(slower_clk_2),
                                             .move_dir(pacman_move_direction) );
 
     ghost_control blinky_ghost_control (
@@ -244,7 +246,7 @@ module TopModule_GameLogic(
                           ||clyde_killed_pacman; 
 
 
-    always @(posedge slower_clk_2)begin 
+    always @(posedge clk)begin 
 
         pacman_curr_pos_x <= pacman_pos_x; 
         pacman_curr_pos_y <= pacman_pos_y; 

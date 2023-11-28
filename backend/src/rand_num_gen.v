@@ -37,7 +37,7 @@ module rand_num_gen (
         if (count == 4)
         begin
             count = 0;
-            random_done = random; //assign the random number to output after 13 shifts
+            random_done = random; //assign the random number to output after 4 shifts
         end
     
     end
