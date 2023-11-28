@@ -43,7 +43,7 @@ module ghost_control (
    reg [3:0] mask_rand_bits;  
     
     // evaluate valid moves based on the fact that ghosts don't reverse directions
-	always @(posedge slower_clk) begin
+	always @(posedge clk) begin
 	   
 	   case(prev_direction)
 	   
@@ -237,8 +237,8 @@ module ghost_control (
                // end 
                // else begin 
                
-//                  if ((no_reverse_valid_moves & prev_direction) != 0)
-//                    reg_move_dir <= prev_direction; 
+                  if ((no_reverse_valid_moves & prev_direction) != 0)
+                    reg_move_dir <= prev_direction; 
                   if ((no_reverse_valid_moves & RIGHT) !=0)
                      reg_move_dir <= RIGHT; 
                   else if ((no_reverse_valid_moves & LEFT) != 0 )
