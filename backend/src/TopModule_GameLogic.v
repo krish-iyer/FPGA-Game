@@ -280,7 +280,7 @@ module TopModule_GameLogic(
 
 
     always @(posedge clk or posedge rst)begin 
-        if (rst) begin 
+        if (rst || pacman_is_dead) begin 
             blinky_previous_direction <= 4'b0000; 
             pinky_previous_direction <=  4'b0000; 
             inky_previous_direction <=   4'b0000; 
