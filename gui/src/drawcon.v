@@ -41,7 +41,7 @@ module drawcon(
     input [10:0] draw_x, 
     input [9:0] draw_y,
 //    input [6:0] food_idx_x,
-    input reg [5:0] food_idx_y,
+//    input reg [5:0] food_idx_y,
     output reg [3:0] r,g,b
 );
 
@@ -111,7 +111,8 @@ reg [10:0] num_sprite_blkpos_x = 1100;
 reg [9:0]  num_sprite_blkpos_y = 16;
 
 reg [5:0] num_sprite_score_idx = 0;
-reg [6:0] food_idx_x; 
+reg [6:0] food_idx_x;
+reg [5:0] food_idx_y;  
 
 
 wire is_food; 
