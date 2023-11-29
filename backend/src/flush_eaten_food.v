@@ -43,7 +43,8 @@ module flush_eaten_food (
       .dina(reg_douta),    // input wire [79 : 0] dina
       .douta(douta),  // output wire [79 : 0] douta
       .clkb(food_map_clk),    // input wire clkb
-      .enb(food_read_en),      // input wire enb
+      .enb(1),      // input wire enb
+//      .enb(food_read_en),      // input wire enb
       .web(0),      // input wire [0 : 0] web
       .addrb($unsigned(food_map_read_y)),  // input wire [5 : 0] addrb
       .dinb(dina),    // input wire [79 : 0] dinb

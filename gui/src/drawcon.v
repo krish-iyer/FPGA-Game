@@ -137,12 +137,13 @@ always @(posedge clk) begin
         mod_y <= draw_y[4];
         map_idx_y <= map_idx_y + 1;
         food_idx_y <= map_idx_y + 1;
-        food_idx_x <= map_idx_x + 1;
+        
 
     end
     if(draw_x[4] ^ mod_x) begin
         mod_x <= draw_x[4];
         map_idx_x <= map_idx_x + 1;
+        food_idx_x <= map_idx_x + 1;
     end
     if(map_idx_y == 50) begin
         map_idx_y <= 0;
