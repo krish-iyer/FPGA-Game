@@ -40,6 +40,8 @@ module drawcon(
     input [15:0] score,
     input [10:0] draw_x, 
     input [9:0] draw_y,
+    input [6:0] food_idx_x,
+    input [5:0] food_idx_y,
     output reg [3:0] r,g,b
 );
 
@@ -113,6 +115,9 @@ always @(posedge clk) begin
     if(draw_y[4] ^ mod_y) begin
         mod_y <= draw_y[4];
         map_idx_y <= map_idx_y + 1;
+        food_idx_y <= map_idx_y + 1;
+        food_idx_x <= map_idx_x + 1;
+
     end
     if(draw_x[4] ^ mod_x) begin
         mod_x <= draw_x[4];
@@ -128,7 +133,7 @@ end
 
 always @(posedge clk) begin
     map_pix <= map_row[map_idx_x];
-    food_pix <= food_row [map_idx_x]; 
+    food_pix <= food_row [food_idx_x]; 
     
 end
 
@@ -140,15 +145,7 @@ always @(posedge clk) begin
         draw_food <= 0;
     end
 end
-
-food_map food_map_inst (
-        .clka(clk),    // input wire clka
-        .ena(1),      // input wire ena
-        .wea(0),      // input wire [0 : 0] wea
-        .addra($unsigned(map_idx_y)),  // input wire [5 : 0] addra
-        .dina(dina),    // input wire [79 : 0] dina
-        .douta(food_row)  // output wire [79 : 0] douta
-    );    
+    
     
     
 pacman_map_blockmem map(

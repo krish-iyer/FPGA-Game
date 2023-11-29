@@ -79,6 +79,24 @@ module game_top(
         .clk_out (clk_flush_food)
     );
     
+//    wire [5:0]food_idx_y;
+//    wire [6:0] food_idx_x; 
+   
+    
+//    food_map food_map_inst (
+//        .clka(clk),    // input wire clka
+//        .ena(1),      // input wire ena
+//        .wea(0),      // input wire [0 : 0] wea
+//        .addra($unsigned(map_idx_y)),  // input wire [5 : 0] addra
+//        .dina(dina),    // input wire [79 : 0] dina
+//        .douta(food_row)  // output wire [79 : 0] douta
+//        .clkb(clk),    // input wire clka
+//        .enb(1),      // input wire ena
+//        .web(0),      // input wire [0 : 0] wea
+//        .addrb($unsigned(food_idx_y)),  // input wire [5 : 0] addra
+//        .dinb(dina),    // input wire [79 : 0] dina
+//        .doutb(food_row)  // output wire [79 : 0] douta
+//    );    
      
     TopModule_GameLogic Game_Logic_inst (
                             .rbtn(btn_r), 
@@ -137,7 +155,11 @@ module game_top(
         .ghost_2_dir(ghost_2_dir),
         .ghost_3_dir(ghost_3_dir),
         .ghost_4_dir(ghost_4_dir),
-        .score(score)
+        .score(score),
+        .food_idx_x(food_idx_x),
+        .food_idx_y(food_idx_y),
+        .food_row(row)
+        
     );
 
     vga_out vga_out_inst(
