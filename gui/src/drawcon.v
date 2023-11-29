@@ -88,7 +88,7 @@ wire [79:0] dina;
 reg mod_y = 0;
 reg mod_x = 0;
 reg map_pix = 0;
-reg food_pix=0; 
+reg food_pix=1; 
 reg draw_food = 0;
 
 reg [6:0] pacman_sprite_idx = 0;
@@ -137,8 +137,7 @@ always @(posedge clk) begin
         mod_y <= draw_y[4];
         map_idx_y <= map_idx_y + 1;
         food_idx_y <= map_idx_y + 1;
-        
-
+       
     end
     if(draw_x[4] ^ mod_x) begin
         mod_x <= draw_x[4];

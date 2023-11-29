@@ -274,8 +274,10 @@ module TopModule_GameLogic(
     wire is_food; 
     flush_eaten_food gamelogic_flush_eaten_food (
                                     
-                                    .clk(clk),
-                                    .slower_clk(slower_clk_2), 
+//                                    .clk(clk),
+                                    .clk(food_map_read_clk),
+//                                    .slower_clk(slower_clk_2), 
+                                    .slower_clk(clk), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
                                     .pacman_curr_pos_y(pacman_pos_y), 
                                     .food_map_clk(food_map_read_clk), 
