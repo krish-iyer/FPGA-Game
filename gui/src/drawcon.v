@@ -40,8 +40,10 @@ module drawcon(
     input [15:0] score,
     input [10:0] draw_x, 
     input [9:0] draw_y,
-//    input [6:0] food_idx_x,
-//    input reg [5:0] food_idx_y,
+    input [79:0] food_row, 
+//    input food_map_read_clk,
+//    output reg [6:0] food_idx_x,
+    output reg [5:0] food_idx_y,
     output reg [3:0] r,g,b
 );
 
@@ -80,7 +82,7 @@ reg [6:0] map_idx_x = 0;
 
 
 wire [79:0] map_row;
-wire [79:0] food_row;
+//wire [79:0] food_row;
 wire [79:0] dina;
 
 reg mod_y = 0;
@@ -111,22 +113,24 @@ reg [10:0] num_sprite_blkpos_x = 1100;
 reg [9:0]  num_sprite_blkpos_y = 16;
 
 reg [5:0] num_sprite_score_idx = 0;
+
 reg [6:0] food_idx_x;
-reg [5:0] food_idx_y;  
+//reg [5:0] food_idx_y;  
 
-
-wire is_food; 
-    flush_eaten_food gamelogic_flush_eaten_food (
+//output [79:0] food_row;
+//    wire is_food; 
+//    flush_eaten_food gamelogic_flush_eaten_food (
                                     
-                                    .clk(clk),
-                                    .slower_clk(slower_clk_4), 
-                                    .pacman_curr_pos_x(pacman_pos_x), 
-                                    .pacman_curr_pos_y(pacman_pos_y), 
-                                    .food_map_clk(food_map_read_clk), 
-                                    .food_map_read_y (food_map_read_y), 
-                                    .food_row(food_row), 
-                                    .is_food(is_food)
-                                    );
+//                                    .clk(clk),
+//                                    .slower_clk(slower_clk_4), 
+//                                    .pacman_curr_pos_x(pacman_pos_x), 
+//                                    .pacman_curr_pos_y(pacman_pos_y), 
+//                                    .food_map_clk(food_map_read_clk), 
+//                                    .food_map_read_y (food_map_read_y), 
+//                                    .food_row(food_row), 
+//                                    .is_food(is_food)
+//                                    );
+                                    
                                     
 always @(posedge clk) begin
     if(draw_y[4] ^ mod_y) begin
