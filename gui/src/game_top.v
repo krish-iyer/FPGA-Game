@@ -72,7 +72,12 @@ module game_top(
         .clk(clk),
         .clk_out (clk_bcd_converter)
     );
-
+    
+     wire clk_flush_food; 
+    clk_div  #(.DIV(18)) clk_div_flush_food_inst(
+        .clk(clk),
+        .clk_out (clk_flush_food)
+    );
     
      
     TopModule_GameLogic Game_Logic_inst (
@@ -80,7 +85,8 @@ module game_top(
                             .lbtn(btn_l),  
                             .ubtn(btn_u), 
                             .dbtn(btn_d),
-                            .very_fast_clk(clk_bcd_converter),
+                            .bcd_clk(clk_bcd_converter),
+                            .flush_food_clk(clk_flush_food),
                             .clk(clk_game_logic), 
                             .rst(rst_synth), 
                              .pacman_pos_x(pacman_blkpos_x), 

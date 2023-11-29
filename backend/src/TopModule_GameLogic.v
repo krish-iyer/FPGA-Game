@@ -3,7 +3,8 @@ module TopModule_GameLogic(
                     input lbtn, 
                     input ubtn, 
                     input dbtn,
-                    input very_fast_clk,
+                    input bcd_clk,
+                    input flush_food_clk,
                     input clk, 
                     input rst, 
                     output [10:0]pacman_pos_x, 
@@ -271,7 +272,8 @@ module TopModule_GameLogic(
     wire is_food; 
     flush_eaten_food gamelogic_flush_eaten_food (
                                     
-                                    .clk(clk), 
+                                    .clk(flush_food_clk),
+                                    .slower_clk(slower_clk_2), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
                                     .pacman_curr_pos_y(pacman_pos_y), 
                                     .is_food(is_food)
@@ -294,7 +296,7 @@ module TopModule_GameLogic(
       #(.INPUT_WIDTH (INPUT_WIDTH),
         .DECIMAL_DIGITS(DECIMAL_DIGITS)) gamelogic_bcd_converter
       (
-            .i_Clock(very_fast_clk),
+            .i_Clock(bcd_clk),
             .slower_clk(clk),
            .i_Binary(reg_total_score),
            .i_Start(1),
@@ -336,7 +338,7 @@ module TopModule_GameLogic(
         end 
 
         else begin 
-//            if (is_food) 
+            if (is_food) 
                 reg_total_score <= reg_total_score +1; 
         
 //             reg_total_score <= 12'd1567;
@@ -365,8 +367,8 @@ module TopModule_GameLogic(
         end
        
     assign pacman_moving_dir_out = pacman_move_direction;  
-//    assign total_score_bcd= reg_bcd_score;                
-    assign total_score_bcd= bcd_module_out;                
+    assign total_score_bcd= reg_bcd_score;                
+//    assign total_score_bcd= bcd_module_out;                
 
 
 
