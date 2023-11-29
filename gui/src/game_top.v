@@ -38,8 +38,8 @@ module game_top(
     wire [10:0] curr_x;
     wire [9:0] curr_y;
     wire [3:0] r,g,b;
-    reg [15:0] score = 16'h12_34;
-
+//    reg [15:0] score = 16'h12_34;
+    wire [15:0] score; 
     
      
     
@@ -66,13 +66,21 @@ module game_top(
         .clk(clk),
         .clk_out (clk_game_logic)
     );
+    
+    wire clk_bcd_converter; 
+    clk_div  #(.DIV(13)) clk_div_bcd_converetr_inst(
+        .clk(clk),
+        .clk_out (clk_bcd_converter)
+    );
 
-
+    
+     
     TopModule_GameLogic Game_Logic_inst (
                             .rbtn(btn_r), 
                             .lbtn(btn_l),  
                             .ubtn(btn_u), 
                             .dbtn(btn_d),
+                            .very_fast_clk(clk_bcd_converter),
                             .clk(clk_game_logic), 
                             .rst(rst_synth), 
                              .pacman_pos_x(pacman_blkpos_x), 
@@ -86,8 +94,24 @@ module game_top(
                              .clyde_pos_x(ghost_4_blkpos_x), 
                              .clyde_pos_y(ghost_4_blkpos_y), 
                             .pacman_is_dead(pacman_dead),
-                             .pacman_moving_dir_out(pacman_dir));
-
+                             .pacman_moving_dir_out(pacman_dir), 
+                              .total_score_bcd(score));
+    
+//     parameter INPUT_WIDTH= 12;
+//    parameter DECIMAL_DIGITS= 4; 
+//    wire bcd_done; 
+//    bcd_converter
+//      #(.INPUT_WIDTH (INPUT_WIDTH),
+//        .DECIMAL_DIGITS(DECIMAL_DIGITS)) top_module_bcd_converter
+//      (
+//       .i_Clock(clk_83_MHz),
+//       .i_Binary(total_score),
+//       .i_Start(1),
+//       //
+//       .o_BCD(score),
+//       .o_DV (bcd_done)
+//       );
+       
     drawcon drawcon_inst(
         .clk(clk_83_MHz),
         .r(r), .g(g), .b(b),

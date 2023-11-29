@@ -2,7 +2,7 @@
 // it returns if pacman is dead or not
 // it should use the display to matrix index mapping function
 module collision_detection (
-
+    input clk,
     input [10:0]ghost_curr_pos_x, 
 	input [9:0]ghost_curr_pos_y,
 	input [10:0]pacman_curr_pos_x, 
@@ -32,8 +32,12 @@ module collision_detection (
                                                                .matrix_idx_y(ghost_matrix_idx_y)
                             );
                          
+	reg reg_pacman_is_dead;
+	always @(posedge clk) begin 
+	   reg_pacman_is_dead <= (pacman_matrix_idx_x == ghost_matrix_idx_x) && (pacman_matrix_idx_y == ghost_matrix_idx_y); 
 	
-	assign pacman_is_dead = (pacman_matrix_idx_x == ghost_matrix_idx_x) && (pacman_matrix_idx_y == ghost_matrix_idx_y); 
+	end 
+	assign pacman_is_dead = reg_pacman_is_dead; 
 
 	
 											

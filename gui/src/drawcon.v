@@ -313,16 +313,16 @@ always@(posedge clk) begin
             num_sprite_score_idx <= (draw_x - num_sprite_blkpos_x);
             case (num_sprite_score_idx[5:4])
                 2'b00: begin
-                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[3:0]*16;
+                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[15:12]*16;
                 end
                 2'b01: begin
-                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[7:4]*16;
-                end
-                2'b10: begin
                     num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[11:8]*16;
                 end
+                2'b10: begin
+                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[7:4]*16;
+                end
                 2'b11: begin
-                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[15:12]*16;
+                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[3:0]*16;
                 end
             endcase
             if(num_sprite_row[num_sprite_score_idx[3:0]]) begin

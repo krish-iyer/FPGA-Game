@@ -3,6 +3,7 @@ module TopModule_GameLogic(
                     input lbtn, 
                     input ubtn, 
                     input dbtn,
+                    input very_fast_clk,
                     input clk, 
                     input rst, 
                     output [10:0]pacman_pos_x, 
@@ -16,7 +17,8 @@ module TopModule_GameLogic(
                     output [10:0]clyde_pos_x, 
                     output [9:0]clyde_pos_y, 
                     output pacman_is_dead, 
-                    output [3:0] pacman_moving_dir_out); 
+                    output [3:0] pacman_moving_dir_out,
+                    output [15:0] total_score_bcd); 
 
     
     
@@ -235,7 +237,7 @@ module TopModule_GameLogic(
   
 
     collision_detection blinky_collision_detection (
-                                    
+                                    .clk(clk),
                                     .ghost_curr_pos_x(blinky_pos_x), 
                                     .ghost_curr_pos_y(blinky_pos_y), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
@@ -243,7 +245,7 @@ module TopModule_GameLogic(
                                     .pacman_is_dead(blinky_killed_pacman));
 
     collision_detection pinky_collision_detection (
-                                    
+                                    .clk(clk),
                                     .ghost_curr_pos_x(pinky_pos_x), 
                                     .ghost_curr_pos_y(pinky_pos_y), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
@@ -251,7 +253,7 @@ module TopModule_GameLogic(
                                     .pacman_is_dead(pinky_killed_pacman));
 
     collision_detection inky_collision_detection (
-                                    
+                                    .clk(clk),
                                     .ghost_curr_pos_x(inky_pos_x), 
                                     .ghost_curr_pos_y(inky_pos_y), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
@@ -259,18 +261,20 @@ module TopModule_GameLogic(
                                     .pacman_is_dead(inky_killed_pacman));
 
     collision_detection clyde_collision_detection (
-                                    
+                                    .clk(clk),
                                     .ghost_curr_pos_x(clyde_pos_x), 
                                     .ghost_curr_pos_y(clyde_pos_y), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
                                     .pacman_curr_pos_y(pacman_pos_y),
                                     .pacman_is_dead(clyde_killed_pacman));                                
 
-    flush_eaten_food uut_flush_eaten_food (
+    wire is_food; 
+    flush_eaten_food gamelogic_flush_eaten_food (
                                     
                                     .clk(clk), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
-                                    .pacman_curr_pos_y(pacman_pos_y)
+                                    .pacman_curr_pos_y(pacman_pos_y), 
+                                    .is_food(is_food)
                                     );
                                     
     assign pacman_is_dead = blinky_killed_pacman 
@@ -279,8 +283,38 @@ module TopModule_GameLogic(
                           ||clyde_killed_pacman; 
 
 
+     parameter INPUT_WIDTH= 12;
+    parameter DECIMAL_DIGITS= 4; 
+    reg [15:0] reg_bcd_score; 
+//    reg [15:0] reg_bcd_module_out; 
+    reg [11:0] reg_total_score; 
+    wire [15:0] bcd_module_out; 
+    wire bcd_done; 
+    bcd_converter
+      #(.INPUT_WIDTH (INPUT_WIDTH),
+        .DECIMAL_DIGITS(DECIMAL_DIGITS)) gamelogic_bcd_converter
+      (
+            .i_Clock(very_fast_clk),
+            .slower_clk(clk),
+           .i_Binary(reg_total_score),
+           .i_Start(1),
+           //
+           .o_BCD(bcd_module_out),
+           .o_DV (bcd_done)
+       );
+       
+//    always @(posedge bcd_done)begin   
+//        if (bcd_done) 
+//              reg_bcd_module_out <= bcd_module_out; 
+        
+//    end 
+    
     always @(posedge clk or posedge rst)begin 
         if (rst || pacman_is_dead) begin 
+            reg_total_score <= 12'd0; 
+//            reg_bcd_module_out <= 0; 
+//            reg_total_score <= 0; 
+//            reg_total_score <= 12'd1567;
             blinky_previous_direction <= 4'b0000; 
             pinky_previous_direction <=  4'b0000; 
             inky_previous_direction <=   4'b0000; 
@@ -302,6 +336,16 @@ module TopModule_GameLogic(
         end 
 
         else begin 
+//            if (is_food) 
+//                reg_total_score <= reg_total_score +1; 
+        
+             reg_total_score <= 12'd1567;
+            if (bcd_done)
+                reg_bcd_score <= bcd_module_out; 
+//            else 
+//                reg_bcd_score <= reg_bcd_module_out; 
+           
+                
             pacman_curr_pos_x <= pacman_pos_x; 
             pacman_curr_pos_y <= pacman_pos_y; 
             blinky_curr_pos_x <= blinky_pos_x; 
@@ -320,7 +364,8 @@ module TopModule_GameLogic(
             
         end
        
-    assign pacman_moving_dir_out = pacman_move_direction;                 
+    assign pacman_moving_dir_out = pacman_move_direction;  
+    assign total_score_bcd= reg_bcd_score;                
 
 
 

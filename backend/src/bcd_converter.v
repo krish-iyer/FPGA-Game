@@ -6,6 +6,7 @@ module bcd_converter
     parameter DECIMAL_DIGITS= 2)
   (
    input                         i_Clock,
+   input slower_clk,
    input [INPUT_WIDTH-1:0]       i_Binary,
    input                         i_Start,
    //

@@ -5,7 +5,8 @@ module flush_eaten_food (
 
     input clk, 
 	input [10:0]pacman_curr_pos_x, 
-	input [9:0]pacman_curr_pos_y
+	input [9:0]pacman_curr_pos_y, 
+	output is_food
 	
 	); 
 	
@@ -37,8 +38,10 @@ module flush_eaten_food (
         .douta(douta)  // output wire [79 : 0] douta
     );                     
 
+    reg reg_is_food; 
     always @(posedge clk)begin 
-        reg_douta <= douta ; 
+        reg_douta <= douta ;
+        reg_is_food <= douta [pacman_matrix_idx_x]; 
         reg_douta [pacman_matrix_idx_x] <= 0;  
     end 
     // assign douta[pacman_matrix_idx_x] = 0;              
@@ -52,6 +55,6 @@ module flush_eaten_food (
         .dina(dina),    // input wire [79 : 0] dina
         .douta(douta2)  // output wire [79 : 0] douta
     );  
-											
-
+										
+    assign is_food = reg_is_food; 
 endmodule
