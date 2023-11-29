@@ -37,7 +37,10 @@ module bcd_converter
   reg [7:0]                  r_Loop_Count = 0;
  
   wire [3:0]                 w_BCD_Digit;
-  reg                        r_DV = 1'b0;                       
+  reg                        r_DV = 1'b0;        
+  
+  
+   reg [DECIMAL_DIGITS*4-1:0] r_buffered_BCD;               
     
   always @(posedge i_Clock)
     begin
@@ -119,6 +122,7 @@ module bcd_converter
           begin
             r_DV      <= 1'b1;
             r_SM_Main <= s_IDLE;
+            r_buffered_BCD <= r_BCD;
           end
          
          
@@ -131,10 +135,14 @@ module bcd_converter
  
  // The vector that contains the output BCD
   reg [DECIMAL_DIGITS*4-1:0] r_slow_BCD;
+   
+    
+    
+
   always @(posedge slower_clk)begin 
     
-    if (r_DV)
-        r_slow_BCD <= r_BCD;
+    
+        r_slow_BCD <= r_buffered_BCD;
   
   end 
   

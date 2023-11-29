@@ -76,11 +76,15 @@ reg [5:0] map_idx_y = 0;
 reg [6:0] map_idx_x = 0;
 
 
+
 wire [79:0] map_row;
+wire [79:0] food_row;
+wire [79:0] dina;
 
 reg mod_y = 0;
 reg mod_x = 0;
 reg map_pix = 0;
+reg food_pix=0; 
 reg draw_food = 0;
 
 reg [6:0] pacman_sprite_idx = 0;
@@ -124,10 +128,12 @@ end
 
 always @(posedge clk) begin
     map_pix <= map_row[map_idx_x];
+    food_pix <= food_row [map_idx_x]; 
+    
 end
 
 always @(posedge clk) begin
-    if(draw_x[3:0] >=6 && draw_x[3:0] <= 9 && draw_y[3:0] >= 6  && draw_y[3:0] <= 9 && map_pix) begin
+    if(draw_x[3:0] >=6 && draw_x[3:0] <= 9 && draw_y[3:0] >= 6  && draw_y[3:0] <= 9 && map_pix && food_pix) begin
         draw_food <= 1;
     end
     else begin
@@ -135,6 +141,16 @@ always @(posedge clk) begin
     end
 end
 
+food_map food_map_inst (
+        .clka(clk),    // input wire clka
+        .ena(1),      // input wire ena
+        .wea(0),      // input wire [0 : 0] wea
+        .addra($unsigned(map_idx_y)),  // input wire [5 : 0] addra
+        .dina(dina),    // input wire [79 : 0] dina
+        .douta(food_row)  // output wire [79 : 0] douta
+    );    
+    
+    
 pacman_map_blockmem map(
     .clka(clk),                            
     .addra($unsigned(map_idx_y)),
