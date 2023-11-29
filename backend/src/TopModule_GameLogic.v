@@ -4,9 +4,11 @@ module TopModule_GameLogic(
                     input ubtn, 
                     input dbtn,
                     input bcd_clk,
-                    input flush_food_clk,
+                    input food_map_read_clk,
                     input clk, 
                     input rst, 
+                    input [5:0] food_map_read_y,
+	                output [79:0] food_row,
                     output [10:0]pacman_pos_x, 
                     output [9:0]pacman_pos_y, 
                     output [10:0]blinky_pos_x, 
@@ -272,10 +274,13 @@ module TopModule_GameLogic(
     wire is_food; 
     flush_eaten_food gamelogic_flush_eaten_food (
                                     
-                                    .clk(flush_food_clk),
-                                    .slower_clk(slower_clk_2), 
+                                    .clk(clk),
+                                    .slower_clk(slower_clk_4), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
                                     .pacman_curr_pos_y(pacman_pos_y), 
+                                    .food_map_clk(food_map_read_clk), 
+                                    .food_map_read_y (food_map_read_y), 
+                                    .food_row(food_row), 
                                     .is_food(is_food)
                                     );
                                     

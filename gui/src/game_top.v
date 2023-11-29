@@ -79,7 +79,8 @@ module game_top(
         .clk_out (clk_flush_food)
     );
     
-//    wire [5:0]food_idx_y;
+    wire [5:0]food_idx_y;
+    wire [79:0] food_row;
 //    wire [6:0] food_idx_x; 
    
     
@@ -104,9 +105,11 @@ module game_top(
                             .ubtn(btn_u), 
                             .dbtn(btn_d),
                             .bcd_clk(clk_bcd_converter),
-                            .flush_food_clk(clk_flush_food),
+                            .food_map_read_clk(clk_83_MHz),
                             .clk(clk_game_logic), 
-                            .rst(rst_synth), 
+                            .rst(rst_synth),
+                            .food_map_read_y (food_idx_y),
+	                        .food_row(food_row), 
                              .pacman_pos_x(pacman_blkpos_x), 
                              .pacman_pos_y(pacman_blkpos_y), 
                              .blinky_pos_x(ghost_1_blkpos_x), 
@@ -156,9 +159,9 @@ module game_top(
         .ghost_3_dir(ghost_3_dir),
         .ghost_4_dir(ghost_4_dir),
         .score(score),
-        .food_idx_x(food_idx_x),
+//        .food_idx_x(food_idx_x),
         .food_idx_y(food_idx_y),
-        .food_row(row)
+        .food_row(food_row)
         
     );
 
