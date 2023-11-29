@@ -128,10 +128,21 @@ module bcd_converter
       endcase
     end // always @ (posedge i_Clock)  
  
+ 
+ // The vector that contains the output BCD
+  reg [DECIMAL_DIGITS*4-1:0] r_slow_BCD;
+  always @(posedge slower_clk)begin 
+    
+    if (r_DV)
+        r_slow_BCD <= r_BCD;
+  
+  end 
+  
+  
    
   assign w_BCD_Digit = r_BCD[r_Digit_Index*4 +: 4];
        
-  assign o_BCD = r_BCD;
+  assign o_BCD = r_slow_BCD;
   assign o_DV  = r_DV;
       
 endmodule // Binary_to_BCD

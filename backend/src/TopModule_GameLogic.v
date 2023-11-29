@@ -337,10 +337,10 @@ module TopModule_GameLogic(
 
         else begin 
 //            if (is_food) 
-//                reg_total_score <= reg_total_score +1; 
+                reg_total_score <= reg_total_score +1; 
         
-             reg_total_score <= 12'd1567;
-            if (bcd_done)
+//             reg_total_score <= 12'd1567;
+//            if (bcd_done)
                 reg_bcd_score <= bcd_module_out; 
 //            else 
 //                reg_bcd_score <= reg_bcd_module_out; 
@@ -365,7 +365,9 @@ module TopModule_GameLogic(
         end
        
     assign pacman_moving_dir_out = pacman_move_direction;  
-    assign total_score_bcd= reg_bcd_score;                
+//    assign total_score_bcd= reg_bcd_score;                
+    assign total_score_bcd= bcd_module_out;                
+
 
 
 
