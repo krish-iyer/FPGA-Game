@@ -44,22 +44,14 @@ module flush_eaten_food (
       .douta(douta),  // output wire [79 : 0] douta
       .clkb(food_map_clk),    // input wire clkb
       .enb(1),      // input wire enb
-//      .enb(food_read_en),      // input wire enb
+
       .web(0),      // input wire [0 : 0] web
       .addrb($unsigned(food_map_read_y)),  // input wire [5 : 0] addrb
       .dinb(dina),    // input wire [79 : 0] dinb
       .doutb(food_row)  // output wire [79 : 0] doutb
     );
 
-
-//    food_map flush_food_inst (
-//        .clka(clk),    // input wire clka
-//        .ena(1),      // input wire ena
-//        .wea(0),      // input wire [0 : 0] wea
-//        .addra($unsigned(pacman_matrix_idx_y)),  // input wire [5 : 0] addra
-//        .dina(dina),    // input wire [79 : 0] dina
-//        .douta(douta)  // output wire [79 : 0] douta
-//    );                     
+                
 
      
     always @(posedge slower_clk)begin 
@@ -78,20 +70,7 @@ module flush_eaten_food (
         end 
     end 
     
-//    always @(posedge clk) begin 
-//        wen <=0; 
-//    end 
-    // assign douta[pacman_matrix_idx_x] = 0;              
-    // assign dina = reg_douta;  
-	
-//    food_map write_flushed_food (
-//        .clka(clk),    // input wire clka
-//        .ena(1),      // input wire ena
-//        .wea(wen),      // input wire [0 : 0] wea
-//        .addra($unsigned(pacman_matrix_idx_y)),  // input wire [5 : 0] addra
-//        .dina(reg_douta),    // input wire [79 : 0] dina
-//        .douta(douta2)  // output wire [79 : 0] douta
-//    );  
+
 										
     assign is_food = reg_is_food; 
 endmodule
