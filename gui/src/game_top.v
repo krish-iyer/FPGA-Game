@@ -54,7 +54,7 @@ module game_top(
     wire [10:0] ghost_4_blkpos_x; 
     wire [9:0] ghost_4_blkpos_y;
     wire [3:0] pacman_dir ;
-    reg [3:0] pacman_gui_dir ;
+    reg [3:0] pacman_gui_dir =0 ;
 
     wire [3:0] ghost_1_dir;
     wire [3:0] ghost_2_dir;
@@ -145,17 +145,24 @@ module game_top(
 	parameter LEFT=  4'b1000;	
 	parameter UP=    4'b0010;
 	parameter DOWN=  4'b0100; 
-	
-    always @(posedge clk_game_logic) begin
-        pacman_gui_dir[0] <= pacman_dir[0] ^ 1;
-    end
 
+    wire clk_wide_sprite_Hz;
+    
+    clk_div #(.DIV(24)) clk_div_sprite_wide(
+        .clk(clk),
+        .clk_out(clk_wide_sprite_Hz)
+    );
+    
+    always @(posedge clk_wide_sprite_Hz) begin
+        pacman_gui_dir[0] <= pacman_gui_dir[0] ^ 1;
+    end
+    
     always@(posedge clk_game_logic) begin
         case(pacman_dir)
             RIGHT: pacman_gui_dir[3:1] <= 3'b000;
             LEFT: pacman_gui_dir[3:1] <= 3'b001;
-            UP: pacman_gui_dir[3:1] <=  3'b0010;
-            DOWN: pacman_gui_dir[3:1] <= 3'b0011;
+            UP: pacman_gui_dir[3:1] <=  3'b010;
+            DOWN: pacman_gui_dir[3:1] <= 3'b011;
         endcase
     end      
        
