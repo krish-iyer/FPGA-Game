@@ -28,7 +28,6 @@ module game_top(
     output hsync, vsync
     );
 
-    wire en_game;
     wire clk_83_MHz;
 
     clk_wiz_0 clk_wiz_0_inst(   // set clock
@@ -123,8 +122,7 @@ module game_top(
                              .clyde_pos_y(ghost_4_blkpos_y), 
                             .pacman_is_dead(pacman_dead),
                              .pacman_moving_dir_out(pacman_dir), 
-                              .total_score_bcd(score),
-                              .en_game(en_game));
+                              .total_score_bcd(score));
     
 //     parameter INPUT_WIDTH= 12;
 //    parameter DECIMAL_DIGITS= 4; 
@@ -143,7 +141,6 @@ module game_top(
        
     drawcon drawcon_inst(
         .clk(clk_83_MHz),
-        .en_game(en_game),
         .r(r), .g(g), .b(b),
         .draw_x(curr_x), .draw_y(curr_y),
         .pacman_blkpos_x(pacman_blkpos_x), 

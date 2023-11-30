@@ -21,8 +21,7 @@ module TopModule_GameLogic(
                     output [9:0]clyde_pos_y, 
                     output pacman_is_dead, 
                     output [3:0] pacman_moving_dir_out,
-                    output [15:0] total_score_bcd,
-                    input en_game); 
+                    output [15:0] total_score_bcd); 
 
     
     
@@ -257,7 +256,7 @@ module TopModule_GameLogic(
                                     .pacman_is_dead(pinky_killed_pacman));
 
     collision_detection inky_collision_detection (
-                                    .clk(food_map_read_clk),
+                                    .clk(clk),
                                     .ghost_curr_pos_x(inky_pos_x), 
                                     .ghost_curr_pos_y(inky_pos_y), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
@@ -277,7 +276,6 @@ module TopModule_GameLogic(
                                     
 //                                    .clk(clk),
                                     .clk(food_map_read_clk),
-                                    .rst(rst),
 //                                    .slower_clk(slower_clk_2), 
                                     .slower_clk(clk), 
                                     .pacman_curr_pos_x(pacman_pos_x), 
@@ -285,8 +283,7 @@ module TopModule_GameLogic(
                                     .food_map_clk(food_map_read_clk), 
                                     .food_map_read_y (food_map_read_y), 
                                     .food_row(food_row), 
-                                    .is_food(is_food),
-                                    .en_game(en_game)
+                                    .is_food(is_food)
                                     );
                                     
     assign pacman_is_dead = blinky_killed_pacman 
@@ -320,8 +317,7 @@ module TopModule_GameLogic(
 //              reg_bcd_module_out <= bcd_module_out; 
         
 //    end 
-
-
+    
     always @(posedge clk or posedge rst)begin 
         if (rst || pacman_is_dead) begin 
             reg_total_score <= 12'd0; 
