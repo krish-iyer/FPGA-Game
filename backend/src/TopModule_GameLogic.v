@@ -320,7 +320,8 @@ module TopModule_GameLogic(
     
     always @(posedge clk or posedge rst)begin 
         if (rst || pacman_is_dead) begin 
-            reg_total_score <= 12'd0; 
+            if (rst)
+                reg_total_score <= 12'd0; 
 //            reg_bcd_module_out <= 0; 
 //            reg_total_score <= 0; 
 //            reg_total_score <= 12'd1567;
