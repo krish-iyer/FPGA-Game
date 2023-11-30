@@ -246,6 +246,7 @@ always@(posedge clk) begin
         
         if ((draw_x > pacman_blkpos_x && draw_x < (pacman_blkpos_x+16)) && (draw_y > pacman_blkpos_y && 
         draw_y < (pacman_blkpos_y+16))) begin
+            
             pacman_sprite_idx <= (draw_y - pacman_blkpos_y)+pacman_dir*16;
             if(pacman_sprite_row[draw_x - pacman_blkpos_x]) begin
                 r <= blk_r;

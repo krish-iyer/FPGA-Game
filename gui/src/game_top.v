@@ -54,6 +54,8 @@ module game_top(
     wire [10:0] ghost_4_blkpos_x; 
     wire [9:0] ghost_4_blkpos_y;
     wire [3:0] pacman_dir ;
+    reg [3:0] pacman_gui_dir ;
+
     wire [3:0] ghost_1_dir;
     wire [3:0] ghost_2_dir;
     wire [3:0] ghost_3_dir;
@@ -138,6 +140,24 @@ module game_top(
 //       .o_BCD(score),
 //       .o_DV (bcd_done)
 //       );
+ // here defines the directions 
+    parameter RIGHT= 4'b0001; 
+	parameter LEFT=  4'b1000;	
+	parameter UP=    4'b0010;
+	parameter DOWN=  4'b0100; 
+	
+    always @(posedge clk_game_logic) begin
+        pacman_gui_dir[0] <= pacman_dir[0] ^ 1;
+    end
+
+    always@(posedge clk_game_logic) begin
+        case(pacman_dir)
+            RIGHT: pacman_gui_dir[3:1] <= 3'b000;
+            LEFT: pacman_gui_dir[3:1] <= 3'b001;
+            UP: pacman_gui_dir[3:1] <=  3'b0010;
+            DOWN: pacman_gui_dir[3:1] <= 3'b0011;
+        endcase
+    end      
        
     drawcon drawcon_inst(
         .clk(clk_83_MHz),
@@ -153,7 +173,7 @@ module game_top(
         .ghost_3_blkpos_y(ghost_3_blkpos_y),
         .ghost_4_blkpos_x(ghost_4_blkpos_x), 
         .ghost_4_blkpos_y(ghost_4_blkpos_y),
-        .pacman_dir (pacman_dir),
+        .pacman_dir (pacman_gui_dir),
         .ghost_1_dir(ghost_1_dir),
         .ghost_2_dir(ghost_2_dir),
         .ghost_3_dir(ghost_3_dir),
