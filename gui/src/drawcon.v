@@ -22,6 +22,7 @@
 
 module drawcon(
     input clk,
+    input en_game,
     input [10:0] pacman_blkpos_x, 
     input [9:0] pacman_blkpos_y,
     input [10:0] ghost_1_blkpos_x, 
@@ -231,156 +232,158 @@ end
 
 always@(posedge clk) begin
 
-    if((draw_x > pacman_blkpos_x && draw_x < (pacman_blkpos_x+16)) && (draw_y > pacman_blkpos_y && 
-        draw_y < (pacman_blkpos_y+16)) 
-        || (draw_x > ghost_1_blkpos_x && draw_x < (ghost_1_blkpos_x+16)) && (draw_y > ghost_1_blkpos_y && 
-        draw_y < (ghost_1_blkpos_y+16)) 
-        || (draw_x > ghost_2_blkpos_x && draw_x < (ghost_2_blkpos_x+16)) && (draw_y > ghost_2_blkpos_y && 
-        draw_y < (ghost_2_blkpos_y+16))
-        || (draw_x > ghost_3_blkpos_x && draw_x < (ghost_3_blkpos_x+16)) && (draw_y > ghost_3_blkpos_y && 
-        draw_y < (ghost_3_blkpos_y+16))
-        || (draw_x > ghost_4_blkpos_x && draw_x < (ghost_4_blkpos_x+16)) && (draw_y > ghost_4_blkpos_y && 
-        draw_y < (ghost_4_blkpos_y+16))
-        || (draw_x > num_sprite_blkpos_x && draw_x < (num_sprite_blkpos_x+64)) && (draw_y > num_sprite_blkpos_y && 
-        draw_y < (num_sprite_blkpos_y+16))) begin
-        
-        if ((draw_x > pacman_blkpos_x && draw_x < (pacman_blkpos_x+16)) && (draw_y > pacman_blkpos_y && 
-        draw_y < (pacman_blkpos_y+16))) begin
-            pacman_sprite_idx <= (draw_y - pacman_blkpos_y)+pacman_dir*16;
-            if(pacman_sprite_row[draw_x - pacman_blkpos_x]) begin
-                r <= blk_r;
-                g <= blk_g;
-                b <= blk_b;
-            end
-            else begin
-                r <= 0;
-                g <= 0;
-                b <= 0;
-            end
-        end
-        else if ((draw_x > ghost_1_blkpos_x && draw_x < (ghost_1_blkpos_x+16)) && (draw_y > ghost_1_blkpos_y && 
-        draw_y < (ghost_1_blkpos_y+16))) begin
-            ghost_1_sprite_idx <= (draw_y - ghost_1_blkpos_y)+ghost_1_dir*16;
-            case (ghost_1_sprite_row[(draw_x - ghost_1_blkpos_x)*4+:4])
-                16'h02:begin
-                    r <= ghost_1_body_r;
-                    g <= ghost_1_body_g;
-                    b <= ghost_1_body_b;     
+    if(en_game) begin
+        if((draw_x > pacman_blkpos_x && draw_x < (pacman_blkpos_x+16)) && (draw_y > pacman_blkpos_y && 
+            draw_y < (pacman_blkpos_y+16)) 
+            || (draw_x > ghost_1_blkpos_x && draw_x < (ghost_1_blkpos_x+16)) && (draw_y > ghost_1_blkpos_y && 
+            draw_y < (ghost_1_blkpos_y+16)) 
+            || (draw_x > ghost_2_blkpos_x && draw_x < (ghost_2_blkpos_x+16)) && (draw_y > ghost_2_blkpos_y && 
+            draw_y < (ghost_2_blkpos_y+16))
+            || (draw_x > ghost_3_blkpos_x && draw_x < (ghost_3_blkpos_x+16)) && (draw_y > ghost_3_blkpos_y && 
+            draw_y < (ghost_3_blkpos_y+16))
+            || (draw_x > ghost_4_blkpos_x && draw_x < (ghost_4_blkpos_x+16)) && (draw_y > ghost_4_blkpos_y && 
+            draw_y < (ghost_4_blkpos_y+16))
+            || (draw_x > num_sprite_blkpos_x && draw_x < (num_sprite_blkpos_x+64)) && (draw_y > num_sprite_blkpos_y && 
+            draw_y < (num_sprite_blkpos_y+16))) begin
+            
+            if ((draw_x > pacman_blkpos_x && draw_x < (pacman_blkpos_x+16)) && (draw_y > pacman_blkpos_y && 
+            draw_y < (pacman_blkpos_y+16))) begin
+                pacman_sprite_idx <= (draw_y - pacman_blkpos_y)+pacman_dir*16;
+                if(pacman_sprite_row[draw_x - pacman_blkpos_x]) begin
+                    r <= blk_r;
+                    g <= blk_g;
+                    b <= blk_b;
                 end
-                16'h07: begin
-                    r <= ghost_eyes_r;
-                    g <= ghost_eyes_g;
-                    b <= ghost_eyes_b;  
-                end
-                default: begin 
+                else begin
                     r <= 0;
                     g <= 0;
                     b <= 0;
                 end
-            endcase
-        end
-        else if ((draw_x > ghost_2_blkpos_x && draw_x < (ghost_2_blkpos_x+16)) && (draw_y > ghost_2_blkpos_y && 
-        draw_y < (ghost_2_blkpos_y+16))) begin
-            ghost_2_sprite_idx <= (draw_y - ghost_2_blkpos_y)+ghost_2_dir*16;
-            case (ghost_2_sprite_row[(draw_x - ghost_2_blkpos_x)*4+:4])
-                16'h02:begin
-                    r <= ghost_2_body_r;
-                    g <= ghost_2_body_g;
-                    b <= ghost_2_body_b;     
-                end
-                16'h07: begin
-                    r <= ghost_eyes_r;
-                    g <= ghost_eyes_g;
-                    b <= ghost_eyes_b;  
-                end
-                default: begin 
-                    r <= 0;
-                    g <= 0;
-                    b <= 0;
-                end
-            endcase
-        end
-        else if ((draw_x > ghost_3_blkpos_x && draw_x < (ghost_3_blkpos_x+16)) && (draw_y > ghost_3_blkpos_y && 
-        draw_y < (ghost_3_blkpos_y+16))) begin
-            ghost_3_sprite_idx <= (draw_y - ghost_3_blkpos_y)+ghost_3_dir*16;
-            case (ghost_3_sprite_row[(draw_x - ghost_3_blkpos_x)*4+:4])
-                16'h02:begin
-                    r <= ghost_3_body_r;
-                    g <= ghost_3_body_g;
-                    b <= ghost_3_body_b;     
-                end
-                16'h07: begin
-                    r <= ghost_eyes_r;
-                    g <= ghost_eyes_g;
-                    b <= ghost_eyes_b;  
-                end
-                default: begin 
-                    r <= 0;
-                    g <= 0;
-                    b <= 0;
-                end
-            endcase
-        end
-        else if ((draw_x > ghost_4_blkpos_x && draw_x < (ghost_4_blkpos_x+16)) && (draw_y > ghost_4_blkpos_y && 
-        draw_y < (ghost_4_blkpos_y+16))) begin
-            ghost_4_sprite_idx <= (draw_y - ghost_4_blkpos_y)+ghost_4_dir*16;
-            case (ghost_4_sprite_row[(draw_x - ghost_4_blkpos_x)*4+:4])
-                16'h02:begin
-                    r <= ghost_4_body_r;
-                    g <= ghost_4_body_g;
-                    b <= ghost_4_body_b;     
-                end
-                16'h07: begin
-                    r <= ghost_eyes_r;
-                    g <= ghost_eyes_g;
-                    b <= ghost_eyes_b;  
-                end
-                default: begin 
-                    r <= 0;
-                    g <= 0;
-                    b <= 0;
-                end
-            endcase
-        end
-        else if ((draw_x > num_sprite_blkpos_x && draw_x < (num_sprite_blkpos_x+64)) && (draw_y > num_sprite_blkpos_y && 
-        draw_y < (num_sprite_blkpos_y+16))) begin
-            num_sprite_score_idx <= (draw_x - num_sprite_blkpos_x);
-            case (num_sprite_score_idx[5:4])
-                2'b00: begin
-                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[15:12]*16;
-                end
-                2'b01: begin
-                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[11:8]*16;
-                end
-                2'b10: begin
-                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[7:4]*16;
-                end
-                2'b11: begin
-                    num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[3:0]*16;
-                end
-            endcase
-            if(num_sprite_row[num_sprite_score_idx[3:0]]) begin
-                r <= num_r;
-                g <= num_g;
-                b <= num_b;
             end
-            else begin
-                r <= 0;
-                g <= 0;
-                b <= 0;
+            else if ((draw_x > ghost_1_blkpos_x && draw_x < (ghost_1_blkpos_x+16)) && (draw_y > ghost_1_blkpos_y && 
+            draw_y < (ghost_1_blkpos_y+16))) begin
+                ghost_1_sprite_idx <= (draw_y - ghost_1_blkpos_y)+ghost_1_dir*16;
+                case (ghost_1_sprite_row[(draw_x - ghost_1_blkpos_x)*4+:4])
+                    16'h02:begin
+                        r <= ghost_1_body_r;
+                        g <= ghost_1_body_g;
+                        b <= ghost_1_body_b;     
+                    end
+                    16'h07: begin
+                        r <= ghost_eyes_r;
+                        g <= ghost_eyes_g;
+                        b <= ghost_eyes_b;  
+                    end
+                    default: begin 
+                        r <= 0;
+                        g <= 0;
+                        b <= 0;
+                    end
+                endcase
+            end
+            else if ((draw_x > ghost_2_blkpos_x && draw_x < (ghost_2_blkpos_x+16)) && (draw_y > ghost_2_blkpos_y && 
+            draw_y < (ghost_2_blkpos_y+16))) begin
+                ghost_2_sprite_idx <= (draw_y - ghost_2_blkpos_y)+ghost_2_dir*16;
+                case (ghost_2_sprite_row[(draw_x - ghost_2_blkpos_x)*4+:4])
+                    16'h02:begin
+                        r <= ghost_2_body_r;
+                        g <= ghost_2_body_g;
+                        b <= ghost_2_body_b;     
+                    end
+                    16'h07: begin
+                        r <= ghost_eyes_r;
+                        g <= ghost_eyes_g;
+                        b <= ghost_eyes_b;  
+                    end
+                    default: begin 
+                        r <= 0;
+                        g <= 0;
+                        b <= 0;
+                    end
+                endcase
+            end
+            else if ((draw_x > ghost_3_blkpos_x && draw_x < (ghost_3_blkpos_x+16)) && (draw_y > ghost_3_blkpos_y && 
+            draw_y < (ghost_3_blkpos_y+16))) begin
+                ghost_3_sprite_idx <= (draw_y - ghost_3_blkpos_y)+ghost_3_dir*16;
+                case (ghost_3_sprite_row[(draw_x - ghost_3_blkpos_x)*4+:4])
+                    16'h02:begin
+                        r <= ghost_3_body_r;
+                        g <= ghost_3_body_g;
+                        b <= ghost_3_body_b;     
+                    end
+                    16'h07: begin
+                        r <= ghost_eyes_r;
+                        g <= ghost_eyes_g;
+                        b <= ghost_eyes_b;  
+                    end
+                    default: begin 
+                        r <= 0;
+                        g <= 0;
+                        b <= 0;
+                    end
+                endcase
+            end
+            else if ((draw_x > ghost_4_blkpos_x && draw_x < (ghost_4_blkpos_x+16)) && (draw_y > ghost_4_blkpos_y && 
+            draw_y < (ghost_4_blkpos_y+16))) begin
+                ghost_4_sprite_idx <= (draw_y - ghost_4_blkpos_y)+ghost_4_dir*16;
+                case (ghost_4_sprite_row[(draw_x - ghost_4_blkpos_x)*4+:4])
+                    16'h02:begin
+                        r <= ghost_4_body_r;
+                        g <= ghost_4_body_g;
+                        b <= ghost_4_body_b;     
+                    end
+                    16'h07: begin
+                        r <= ghost_eyes_r;
+                        g <= ghost_eyes_g;
+                        b <= ghost_eyes_b;  
+                    end
+                    default: begin 
+                        r <= 0;
+                        g <= 0;
+                        b <= 0;
+                    end
+                endcase
+            end
+            else if ((draw_x > num_sprite_blkpos_x && draw_x < (num_sprite_blkpos_x+64)) && (draw_y > num_sprite_blkpos_y && 
+            draw_y < (num_sprite_blkpos_y+16))) begin
+                num_sprite_score_idx <= (draw_x - num_sprite_blkpos_x);
+                case (num_sprite_score_idx[5:4])
+                    2'b00: begin
+                        num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[15:12]*16;
+                    end
+                    2'b01: begin
+                        num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[11:8]*16;
+                    end
+                    2'b10: begin
+                        num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[7:4]*16;
+                    end
+                    2'b11: begin
+                        num_sprite_idx <= (draw_y - num_sprite_blkpos_y)+score[3:0]*16;
+                    end
+                endcase
+                if(num_sprite_row[num_sprite_score_idx[3:0]]) begin
+                    r <= num_r;
+                    g <= num_g;
+                    b <= num_b;
+                end
+                else begin
+                    r <= 0;
+                    g <= 0;
+                    b <= 0;
+                end
             end
         end
-    end
-    else if(draw_food) begin
-        r <= 15;
-        g <= 15;
-        b <= 15;
-    end
-    else begin
+        else if(draw_food) begin
+            r <= 15;
+            g <= 15;
+            b <= 15;
+        end
+       else begin
         r <= bg_r;
         g <= bg_g;
         b <= bg_b;        
     end
+   end
     
 end
 
