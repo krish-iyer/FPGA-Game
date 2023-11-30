@@ -4,30 +4,29 @@
 module flush_eaten_food (
 
     input clk, 
+    input rst,
     input slower_clk, 
 	input [10:0]pacman_curr_pos_x, 
 	input [9:0]pacman_curr_pos_y, 
 	input food_map_clk, 
 	input [5:0] food_map_read_y,
 	output [79:0] food_row,
-	output is_food
-	
+	output is_food,
+	output en_game
 	); 
 	
-	
-    wire [6:0]pacman_matrix_idx_x;
-    wire [5:0]pacman_matrix_idx_y;
+    reg reset_en_game = 0;
+    reg [6:0]pacman_matrix_idx_x;
+    reg [5:0]pacman_matrix_idx_y;
 
-    
-                                  
-                                  
-	
-	_display_pos_to_map_index pacman_pos_to_map_index_inst (   
-                                .display_pos_x(pacman_curr_pos_x),
-                                .display_pos_y(pacman_curr_pos_y), 
-                                .matrix_idx_x(pacman_matrix_idx_x),
-                                .matrix_idx_y(pacman_matrix_idx_y)); 
-	
+        parameter MOVE_TO_CENTER= 0;
+     parameter H_VISIBLE_START= 0; 
+     parameter V_VISIBLE_START= 0; 
+
+
+                               
+                              
+
 	wire [79:0] dina; 
     wire [79:0] douta;
     reg [79:0] reg_douta; 
@@ -53,23 +52,45 @@ module flush_eaten_food (
 
                 
 
-     
-    always @(posedge slower_clk)begin 
-        if (wena) begin 
-            wena <= 0; // at the next clock cycle now the writing is done 
-            // now it is time for read 
-            food_read_en <= 1;
-        
-        end 
-        else begin 
-            food_read_en <= 0; // this means the value has been read already 
-            reg_douta <= douta ;
-            reg_is_food <= douta [pacman_matrix_idx_x]; 
-            reg_douta [pacman_matrix_idx_x] <= 0; 
-            wena <=1;  
-        end 
-    end 
-    
+    reg [5:0] map_idx_y = 0;
+    wire [79:0] map_row;
+
+    pacman_map_blockmem map_food(
+        .clka(clk),                            
+        .addra($unsigned(map_idx_y)),
+        .douta(map_row)
+    );
+    assign en_game = 1;
+    reg [5:0] load_game_counter = 0;
+    always @(posedge clk) begin
+//        en_game <= 1;
+        if(reset_en_game == 0) begin
+            //en_game <= 1;
+            reset_en_game <= 1;
+        end
+        else begin
+            //load_game_counter <= load_game_counter + 1;
+            if(en_game == 1'b0) begin
+                if(load_game_counter > 49)begin
+                    wena <= 0;
+                    //en_game <= 1;
+                end
+                else begin
+                    map_idx_y <= load_game_counter;
+                    pacman_matrix_idx_y <= load_game_counter;
+                    wena <= 1;
+                    reg_douta <= map_row;
+                    load_game_counter <= load_game_counter+1;
+                end 
+            
+            end
+            else begin
+                pacman_matrix_idx_x <= (pacman_curr_pos_x - MOVE_TO_CENTER - H_VISIBLE_START) >> 4; 
+                pacman_matrix_idx_y <= (pacman_curr_pos_y - MOVE_TO_CENTER - V_VISIBLE_START) >> 4; 
+            end
+            end
+        end
+   
 
 										
     assign is_food = reg_is_food; 
