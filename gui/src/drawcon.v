@@ -49,12 +49,12 @@ module drawcon(
 
 reg [3:0] bg_r, bg_g, bg_b;
 reg [3:0] blk_r = 15; 
-reg [3:0] blk_g = 14; 
-reg [3:0] blk_b = 2;
+reg [3:0] blk_g = 13; 
+reg [3:0] blk_b = 9;
 
-reg [3:0] ghost_1_body_r = 13; 
-reg [3:0] ghost_1_body_g = 7; 
-reg [3:0] ghost_1_body_b = 0;
+reg [3:0] ghost_1_body_r = 15; 
+reg [3:0] ghost_1_body_g = 12; 
+reg [3:0] ghost_1_body_b = 14;
 
 reg [3:0] ghost_2_body_r = 15; 
 reg [3:0] ghost_2_body_g = 0; 
@@ -218,9 +218,9 @@ always@(posedge clk) begin
     //     bg_b <= 15;
     // end
     if(map_pix == 0) begin
-        bg_r <= 0;
-        bg_g <= 0;
-        bg_b <= 10;
+        bg_r <= 9;
+        bg_g <= 5;
+        bg_b <= 1;
     end
     else begin
         bg_r <= 0;
