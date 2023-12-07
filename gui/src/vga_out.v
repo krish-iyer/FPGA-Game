@@ -30,6 +30,22 @@ module vga_out(
     output reg [9:0] curr_y
     );
     
+    // video parameters
+    parameter H_COUNT_MAX = 1679;
+    parameter V_COUNT_MAX = 827;
+
+    parameter H_COUNT_ADDR_MIN = 336;
+    parameter H_COUNT_ADDR_MAX = 1615;
+    parameter V_COUNT_ADDR_MIN = 27;
+    parameter V_COUNT_ADDR_MAX = 826;
+
+    parameter CURR_X_MAX = 1279;
+    parameter CURR_Y_MAX = 799;
+
+    parameter H_SYNC_TOGGLE = 135;
+    parameter V_SYNC_TOGGLE = 2;
+
+    // counters
     reg [10:0] hcount = 0;      // max : 1679
     reg [9:0] vcount = 0;       // max : 827
 
@@ -39,11 +55,11 @@ module vga_out(
     always@(posedge clk) begin
         
         hcount <= hcount + 1;   // blocking assignment will only take it to 1678
-        if(hcount == 1679) begin
+        if(hcount == H_COUNT_MAX) begin
             hcount <= 0;
             vcount <= vcount + 1;
         end
-        if(vcount == 826) begin
+        if(vcount == V_COUNT_MAX) begin
             vcount <= 0;
         end
         
@@ -51,29 +67,29 @@ module vga_out(
 
     always@(posedge clk) begin
         
-        if(hcount >= 336 && hcount <= 1615) begin
+        if(hcount >= H_COUNT_ADDR_MIN && hcount <= H_COUNT_ADDR_MAX) begin
             curr_x <= curr_x + 1;
         end
-        if(curr_x == 1279) begin
+        if(curr_x == CURR_X_MAX) begin
             curr_x <= 0;
-            if(vcount >= 27 && vcount <= 826) begin
+            if(vcount >= V_COUNT_ADDR_MIN && vcount <= V_COUNT_ADDR_MAX) begin
                 curr_y <= curr_y + 1;
             end
         end
-        if(curr_y == 799) begin
+        if(curr_y == CURR_X_MAX) begin
             curr_y <= 0;
         end
 
     end
     
-assign hsync = hcount <= 135 ? 0 : 1;
-assign vsync = vcount <= 2 ? 1 : 0;
+assign hsync = hcount <= H_SYNC_TOGGLE ? 0 : 1;
+assign vsync = vcount <= V_SYNC_TOGGLE ? 1 : 0;
 
-assign pix_r = hcount >= 336 ? hcount <= 1615 ? vcount >= 27 ? vcount <= 826 ? 
+assign pix_r = hcount >= H_COUNT_ADDR_MIN ? hcount <= H_COUNT_ADDR_MAX ? vcount >= V_COUNT_ADDR_MIN ? vcount <= V_COUNT_ADDR_MAX ? 
                 r : 0 : 0 : 0 : 0;  
-assign pix_g = hcount >= 336 ? hcount <= 1615 ? vcount >= 27 ? vcount <= 826 ? 
+assign pix_g = hcount >= H_COUNT_ADDR_MIN ? hcount <= H_COUNT_ADDR_MAX ? vcount >= V_COUNT_ADDR_MIN ? vcount <= V_COUNT_ADDR_MAX ? 
                 g : 0 : 0 : 0 : 0;  
-assign pix_b = hcount >= 336 ? hcount <= 1615 ? vcount >= 27 ? vcount <= 826 ?
+assign pix_b = hcount >= H_COUNT_ADDR_MIN ? hcount <= H_COUNT_ADDR_MAX ? vcount >= V_COUNT_ADDR_MIN ? vcount <= V_COUNT_ADDR_MAX ?
                 b : 0 : 0 : 0 : 0;
 
 

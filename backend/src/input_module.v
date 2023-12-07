@@ -22,8 +22,6 @@ module input_module(input rbtn,
             reg_move_dir <= RIGHT; 
         else if (lbtn)
             reg_move_dir <= LEFT;
-      
-
     end
 
     assign move_dir= reg_move_dir; 
