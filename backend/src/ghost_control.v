@@ -163,79 +163,6 @@ module ghost_control (
 	         default: begin  
 	           
                 
-               // if (no_reverse_valid_moves == (RIGHT | UP)) begin 
-
-               //    if (horizontal_distance == 0)
-               //       reg_move_dir  <= UP;
-               //    else if (vertical_distance == 0)
-               //       reg_move_dir  <= RIGHT; 
-               //    else begin        
-               //       if (horizontal_distance < vertical_distance)
-               //          reg_move_dir  <= RIGHT;
-               //       else 
-               //          reg_move_dir <= UP; 
-               //    end
-
-               // end 
-               // else if (no_reverse_valid_moves == ( RIGHT | DOWN)) begin 
-
-               //    if (horizontal_distance == 0)
-               //       reg_move_dir  <= DOWN;
-               //    else if (vertical_distance == 0)
-               //       reg_move_dir  <= RIGHT; 
-               //    else begin    
-               //    if (horizontal_distance < vertical_distance)
-               //       reg_move_dir  <= RIGHT;
-               //    else 
-               //       reg_move_dir <= DOWN; 
-               //    end 
-
-               // end
-               // else if (no_reverse_valid_moves == ( LEFT | UP)) begin 
-
-               //    if (horizontal_distance == 0)
-               //       reg_move_dir  <= UP;
-               //    else if (vertical_distance == 0)
-               //       reg_move_dir  <= LEFT; 
-               //    else begin     
-               //    if (horizontal_distance < vertical_distance)
-               //       reg_move_dir  <= LEFT;
-               //    else 
-               //       reg_move_dir <= UP; 
-               //    end
-
-               // end 
-               // else if (no_reverse_valid_moves == ( LEFT | DOWN)) begin 
-
-               //    if (horizontal_distance == 0)
-               //       reg_move_dir  <= DOWN;
-               //    else if (vertical_distance == 0)
-               //       reg_move_dir  <= LEFT; 
-               //    else begin  
-               //    if (horizontal_distance < vertical_distance)
-               //       reg_move_dir  <= LEFT;
-               //    else 
-               //       reg_move_dir <= DOWN;    
-               //    end
-
-               // end 
-
-            // here we made the priority  right/left for then up/down 
-	           // these are not cases we should provide based on the mask 
-	           // we created earlier with the previous direction 
-	           // it can't assert the right and the left at once 
-	           // so is for up and down 
-               // if (mask_rand_bits != 0) begin 
-               //    if ((mask_rand_bits & RIGHT) !=0)
-               //       reg_move_dir <= RIGHT; 
-               //    else if ((mask_rand_bits & LEFT) != 0 )
-               //       reg_move_dir <= LEFT;  
-               //    else if ((mask_rand_bits & UP) != 0)
-               //       reg_move_dir  <= UP;
-               //    else if ((mask_rand_bits & DOWN) !=0)
-               //       reg_move_dir <= DOWN;  
-               // end 
-               // else begin 
                
                   if ((no_reverse_valid_moves & prev_direction) != 0)
                     reg_move_dir <= prev_direction; 
@@ -248,7 +175,7 @@ module ghost_control (
                   else if ((no_reverse_valid_moves & DOWN) !=0)
                      reg_move_dir <= DOWN; 
                      
-               // end
+             
                 
                   
             end 
