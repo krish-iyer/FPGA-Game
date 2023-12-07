@@ -19,6 +19,10 @@
 // each pixel represents 16x16 pixels in the original display
 // matrix_idx_x -> 7 bits
 // matrix_idx_y -> 6 bits 
+
+// if these values are taken care of by the FrontEnd, just make it all zeros in a parameterized fashion
+
+
 // this function takes the matrix id and it returns the actual position in the display
 module _map_index_to_display (input [6:0]matrix_idx_x, input [5:0]matrix_idx_y,
                             output [10:0]display_pos_x, output [9:0]display_pos_y); 
