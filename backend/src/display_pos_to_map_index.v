@@ -20,6 +20,8 @@
 // matrix_idx_x -> 7 bits
 // matrix_idx_y -> 6 bits 
 
+// if these values are taken care of by the FrontEnd, just make it all zeros in a parameterized fashion
+
 // this function takes the actual position of the display and returns back matrix_indices
 
 module _display_pos_to_map_index (input [10:0]display_pos_x, input [9:0]display_pos_y, 
